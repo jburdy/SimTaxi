@@ -1,0 +1,814 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html40/loose.dtd">
+
+<html>
+         
+  <head>
+    <title>Class: Station</title>
+  </head>
+
+  <body bgcolor="#ffffff">
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+        
+        <table border="0" cellpadding="5" cellspacing="0" width="100%">
+        <tr>
+            <th rowspan="2"
+                valign="top"
+                align="left"
+                width="10%"
+                bgcolor="#88bbee"><font color="#000000">Class: Station</font>
+            </th>
+            <th bgcolor="#88bbee"
+                width="90%"
+                align="right"><font color="#000000">./gestionnaires/Station.py</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<h3>Implemente une station.</h3>
+<p>    Cette classe fournit une station de taxis et des methodes permettant
+    de la gerer.</p>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Methods">Methods</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+
+            <table border="0" cellspacing="2" cellpadding="2" width="100%">
+              <tr>
+            <td align="LEFT" valign="TOP">
+<a href="#__init__">__init__</a><br>
+<a href="#affecterTaxi">affecterTaxi</a><br>
+<a href="#annulerReservation">annulerReservation</a><br>
+<a href="#arc">arc</a><br>
+<a href="#getNbPlacesLibres">getNbPlacesLibres</a><br>
+<a href="#getNbPlacesTot">getNbPlacesTot</a><br>
+<a href="#getNbTaxis">getNbTaxis</a><br>
+</td>
+<td align="LEFT" valign="TOP">
+<a href="#getNo">getNo</a><br>
+<a href="#getPosition">getPosition</a><br>
+<a href="#getTaxiSuivant">getTaxiSuivant</a><br>
+<a href="#prendPlace">prendPlace</a><br>
+<a href="#quitterPlace">quitterPlace</a><br>
+<a href="#reserverPlace">reserverPlace</a><br>
+</td>
+</tr>
+            </table>
+            
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="__init__"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">__init__&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+__init__ (
+        self,
+        nbPlaces,
+        no,
+        sommet1,
+        sommet2,
+        )
+
+</pre></font>
+
+<h3>Constructeur.</h3>
+<p>        Permet de creer un objet de la classe.</p>
+<dl>
+<dt>        nbPlaces (int)</dt>
+<dd>Le nombre de places de la station</dd>
+<dt>        no (int)</dt>
+<dd>Le no de la station</dd>
+<dt>        sommet1, sommet2 (tuple(nomSommet, Point))</dt>
+<dd>Les sommets entre lesquels est la station</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<a href="ErreurSommetsIdentiques.html">ErreurSommetsIdentiques</a><br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="affecterTaxi"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">affecterTaxi&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+affecterTaxi ( self,  noTaxi )
+
+</pre></font>
+
+<h3>affecte un taxi a la station.</h3>
+<p>        Permet d'affecter un taxi a la station. Sera appelee a
+        l'initialisation du programme.</p>
+<dl>
+<dt>        noTaxi (int)</dt>
+<dd>Le no du taxi a ajouter</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.2</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+erreurAffectationImpossible<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="annulerReservation"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">annulerReservation&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+annulerReservation ( self )
+
+</pre></font>
+
+<h3>Annuler une reservation anterieure.</h3>
+<p>        Permet d'annuler une reservation faite plus tôt. Si aucune reservation
+        n'existe, une exception est propagee.</p>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+erreurAnnulationReservation<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="arc"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">arc&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+arc ( self )
+
+</pre></font>
+
+<h3>renvoie l'arc sur lequel la station se trouve.</h3>
+<p>        Permet de connaitre l'arc sur laquelle la station se trouve.</p>
+<dl>
+<dt>        retourne (tuple(NomSommet,NomSommet))</dt>
+<dd>un tuple contenant les sommets entre lesquels la
+                               station se trouve.
+        - depuis - 1.3</dd>
+</dl>
+
+<ul>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getNbPlacesLibres"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getNbPlacesLibres&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getNbPlacesLibres ( self )
+
+</pre></font>
+
+<h3>Renvoie le nombre de places libres de la station.</h3>
+<p>        Permet de connaitre le nombre de places libres de la station.</p>
+<dl>
+<dt>        retourne (int)</dt>
+<dd>le nombre de places libres</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getNbPlacesTot"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getNbPlacesTot&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getNbPlacesTot ( self )
+
+</pre></font>
+
+<h3>Renvoie le nombre de places de la station.</h3>
+<p>        Permet de connaitre le nombre de places totales de la station.</p>
+<dl>
+<dt>        retourne (int)</dt>
+<dd>le nombre de places</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getNbTaxis"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getNbTaxis&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getNbTaxis ( self )
+
+</pre></font>
+
+<h3>renvoie le nombre de taxi.</h3>
+<p>        Permet de connaitre le nombre de taxis qui sont dans la station.</p>
+<dl>
+<dt>        retourne (int)</dt>
+<dd>le nombre de taxis.
+        - depuis - 1.14</dd>
+</dl>
+
+<ul>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getNo"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getNo&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getNo ( self )
+
+</pre></font>
+
+<h3>Renvoie le no de la station.</h3>
+<p>        Permet de connaitre le no qui a ete attribue a la station.</p>
+<dl>
+<dt>        retourne (int)</dt>
+<dd>Le no attribué</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.2</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getPosition"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getPosition&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getPosition ( self )
+
+</pre></font>
+
+<h3>Renvoie la position de la station.</h3>
+<p>        Permet de connaitre la position de la station sur le graphe en
+        fonction des informations contenues dans les sommets.</p>
+<dl>
+<dt>        retourne (tuple(tuple(float,float),tuple(float,float)))</dt>
+<dd>un tuple contenant 2 tuples.
+                        1 avec la position (x,y)  et le 2e avec
+                        vecteur d'orientation.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getTaxiSuivant"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getTaxiSuivant&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getTaxiSuivant ( self )
+
+</pre></font>
+
+<h3>renvoie le no du 1er taxi de la liste.</h3>
+<p>        Permet de connaitre le no du taxi qui est en tête de la liste.</p>
+<dl>
+<dt>        retourne (int)</dt>
+<dd>le no du taxi.
+        - depuis - 1.14</dd>
+</dl>
+
+<ul>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<a href="ErreurStationVide.html">ErreurStationVide</a><br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="prendPlace"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">prendPlace&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+prendPlace ( self,  noTaxi )
+
+</pre></font>
+
+<h3>Pour dire qu'un taxi prend place dans la station.</h3>
+<p>        Est appelee quand un taxi prend place dans la station. Si aucune place
+        n'a ete reservee, une exception est levee.</p>
+<dl>
+<dt>        noTaxi (int)</dt>
+<dd>Le no du taxi qui prend place dans la station</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+erreurReservationManquante<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="quitterPlace"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">quitterPlace&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+quitterPlace ( self,  noTaxi )
+
+</pre></font>
+
+<h3>Quitter une place.</h3>
+<p>        Permet de liberer une place dans la station. Le no du taxi qui part
+        est passe en parametre. Si le taxi n'est pas dans la station, une
+        Exception est propagee.</p>
+<dl>
+<dt>        noTaxi (int)</dt>
+<dd>le no du taxi qui quitte la station</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<a href="ErreurTaxisInconnu.html">ErreurTaxisInconnu</a><br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="reserverPlace"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">reserverPlace&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+reserverPlace ( self )
+
+</pre></font>
+
+<h3>Reserver une place dans la station.</h3>
+<p>        Permet de reserver une place dans la station. Si il ne reste plus de
+        places, on propage une Exception.</p>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<a href="ErreurReservation.html">ErreurReservation</a><br>
+
+</td></tr>
+</table>
+</td></tr>
+</td></tr>
+</table>
+
+        </td>
+        </tr>
+        </table>
+
+        <hr>
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+
+        <font size="-2"><i>This document was automatically generated
+        on Mon Mar  3 11:17:06 2003 by
+        <a href="http://happydoc.sourceforge.net">HappyDoc</a> version
+        2.1</i></font>
+        
+        </body>
+        </html>
+        

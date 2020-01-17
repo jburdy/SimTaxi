@@ -1,0 +1,528 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html40/loose.dtd">
+
+<html>
+         
+  <head>
+    <title>Class: GrapheXY</title>
+  </head>
+
+  <body bgcolor="#ffffff">
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+        
+        <table border="0" cellpadding="5" cellspacing="0" width="100%">
+        <tr>
+            <th rowspan="2"
+                valign="top"
+                align="left"
+                width="10%"
+                bgcolor="#88bbee"><font color="#000000">Class: GrapheXY</font>
+            </th>
+            <th bgcolor="#88bbee"
+                width="90%"
+                align="right"><font color="#000000">./graphe/GrapheXY.py</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<h3>Graphe oriente et pondere (pondere par des attributs).</h3>
+<p>    Les sommets et les arcs ont des attributs de n'importe quel type.</p>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Base Classes">Base Classes</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Graphe<br>
+
+</td></tr>
+</table>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Methods">Methods</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<a href="#cheminPlusCourt">cheminPlusCourt</a><br>
+<a href="#dump">dump</a><br>
+<a href="#genererGraphe">genererGraphe</a><br>
+<a href="#init">init</a><br>
+<a href="#insererArc">insererArc</a><br>
+<a href="#insererSommet">insererSommet</a><br>
+<a href="#remplacerAttributsSommet">remplacerAttributsSommet</a><br>
+
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="cheminPlusCourt"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">cheminPlusCourt&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+cheminPlusCourt (
+        self,
+        arcDepart,
+        arcFin,
+        )
+
+</pre></font>
+
+<h3>Algo du chemin le plus court</h3>
+<dl>
+<dt>        arcDepart</dt>
+<dd>Arc de départ (tuple de sommets)</dd>
+<dt>        arcFin</dt>
+<dd>Arc de fin (tuple de sommets)</dd>
+<dt>        retourne (Chemin)</dt>
+<dd>Le chemin le plus court</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.5</p></li>
+<li><p>auteur - Lionel Guelat</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Exception, 'Pas de chemin entre ces deux sommets'<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="dump"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">dump&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+dump ( self )
+
+</pre></font>
+
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="genererGraphe"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">genererGraphe&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+genererGraphe (
+        self,
+        nbSommets,
+        nbArcs,
+        distanceMax,
+        germe=None,
+        )
+
+</pre></font>
+
+<h3>Cette methode permet de generer un graphe.</h3>
+<p>        Exception levee si le graphe ne peut pas etre connexe.</p>
+<dl>
+<dt>        nbSommets (Int)</dt>
+<dd>Le nombre de sommets</dd>
+<dt>        nbArcs (Int)</dt>
+<dd>Le nombre d'arcs</dd>
+<dt>        distanceMax (Float)</dt>
+<dd>La distance maximale entre 2 sommets</dd>
+<dt>        germe (Int)</dt>
+<dd>Le germe de la fonction aleatoire</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.8</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Exception, "Nombre d'arcs trop grand: " + ` nbArcs `<br>
+Exception, "Nombre d'arcs trop petit: " + ` nbArcs `<br>
+Exception, 'Distance max. invalide: ' + ` distanceMax `<br>
+Exception, 'Nombre de sommets trop petit: ' + ` nbSommets `<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="init"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">init&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+init ( self,  fichierImport=None )
+
+</pre></font>
+
+<h3>Cette methode sert a creer un graphe.</h3>
+<p>        On peut importer un graphe a partir d'un fichier donne.</p>
+<dl>
+<dt>        fichierImport (String)</dt>
+<dd>Le nom du fichier a importer</dd>
+<dt>        retourne (Graphe)</dt>
+<dd>Un objet Graphe</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lionel Guélat</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="insererArc"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">insererArc&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+insererArc (
+        self,
+        sommetDep,
+        sommetArr,
+        )
+
+</pre></font>
+
+<h3>Cette methode permet d'inserer un arc dont on calcule sa longueur.</h3>
+<p>        Exception levee si les sommets ne sont pas definis dans le graphe ou
+        si l'arc est deja defini.</p>
+<dl>
+<dt>        sommetDep</dt>
+<dd>Le nom du sommet de depart de l'arc</dd>
+<dt>        sommetArr</dt>
+<dd>Le nom du sommet d'arrivee de l'arc</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="insererSommet"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">insererSommet&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+insererSommet (
+        self,
+        nomSommet,
+        point,
+        )
+
+</pre></font>
+
+<h3>Cette methode permet d'inserer un sommet avec son point.</h3>
+<p>        Exception levee si le point n'est pas un objet Point.</p>
+<dl>
+<dt>        nomSommet</dt>
+<dd>Le nom du sommet</dd>
+<dt>        Point point</dt>
+<dd>Le point du sommet</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.2</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+erreurTypePoint<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="remplacerAttributsSommet"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">remplacerAttributsSommet&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+remplacerAttributsSommet (
+        self,
+        sommet,
+        point,
+        )
+
+</pre></font>
+
+<h3>Cette methode permet de modifier le point d'un sommet.</h3>
+<p>        On recalcule la logueur des arcs relies au sommet.
+        Exception levee si le point n'est pas un objet Point.</p>
+<dl>
+<dt>        sommet</dt>
+<dd>Le nom du sommet</dd>
+<dt>        point (Point)</dt>
+<dd>Le nouveau point du sommet</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.2</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+erreurTypePoint<br>
+
+</td></tr>
+</table>
+</td></tr>
+</td></tr>
+</table>
+
+        </td>
+        </tr>
+        </table>
+
+        <hr>
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+
+        <font size="-2"><i>This document was automatically generated
+        on Mon Mar  3 11:17:06 2003 by
+        <a href="http://happydoc.sourceforge.net">HappyDoc</a> version
+        2.1</i></font>
+        
+        </body>
+        </html>
+        

@@ -1,0 +1,590 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html40/loose.dtd">
+
+<html>
+         
+  <head>
+    <title>Class: Taxi</title>
+  </head>
+
+  <body bgcolor="#ffffff">
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+        
+        <table border="0" cellpadding="5" cellspacing="0" width="100%">
+        <tr>
+            <th rowspan="2"
+                valign="top"
+                align="left"
+                width="10%"
+                bgcolor="#88bbee"><font color="#000000">Class: Taxi</font>
+            </th>
+            <th bgcolor="#88bbee"
+                width="90%"
+                align="right"><font color="#000000">./gestionnaires/Taxi.py</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<h3>Implemente un taxi</h3>
+<p>    Cette classe fournit un taxi et des methodes permettant
+    de le gerer.</p>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Methods">Methods</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+
+            <table border="0" cellspacing="2" cellpadding="2" width="100%">
+              <tr>
+            <td align="LEFT" valign="TOP">
+<a href="#__init__">__init__</a><br>
+<a href="#arc">arc</a><br>
+<a href="#estEnDeplacement">estEnDeplacement</a><br>
+<a href="#getEtat">getEtat</a><br>
+<a href="#getNbCoursesEffectuees">getNbCoursesEffectuees</a><br>
+</td>
+<td align="LEFT" valign="TOP">
+<a href="#getNbmParcourus">getNbmParcourus</a><br>
+<a href="#getNo">getNo</a><br>
+<a href="#getNoStation">getNoStation</a><br>
+<a href="#getPosition">getPosition</a><br>
+<a href="#traiterEvenement">traiterEvenement</a><br>
+</td>
+</tr>
+            </table>
+            
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="__init__"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">__init__&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+__init__ (
+        self,
+        noTaxi,
+        noStation,
+        )
+
+</pre></font>
+
+<h3>Constructeur.</h3>
+<p>        Permet de creer un objet de la classe.</p>
+<p>        noTaxi (int)-- le no du taxi</p>
+<p>        noStation (int)-- le no de la station ou le taxi se trouve</p>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="arc"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">arc&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+arc ( self,  heure=0 )
+
+</pre></font>
+
+<h3>renvoie l'arc sur lequel le taxi se trouve.</h3>
+<p>        Permet de connaitre l'arc sur laquelle le taxi se trouve.</p>
+<dl>
+<dt>        heure (int)</dt>
+<dd>l'heure courante</dd>
+<dt>        retourne (tuple(tuple(NomSommet,NomSommet), float))</dt>
+<dd>un tuple contenant 1 tuple et la distance parcourue
+           sur l'arc . Le tuple contient les sommets entre lesquels
+           le taxi se trouve.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.4</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+"Erreur Distance Incorrecte"<br>
+"Erreur position incorrecte"<br>
+Exception, ErreurHeureIncorrecte<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="estEnDeplacement"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">estEnDeplacement&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+estEnDeplacement ( self )
+
+</pre></font>
+
+<h3>Savoir si un taxi roule ou non.</h3>
+<p>        Permet de savoir si un taxi est en train de rouler ou si il
+        est en station.</p>
+<dl>
+<dt>        retourne (int)</dt>
+<dd>1 = taxi en deplacement, 0 = a l'arret</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getEtat"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getEtat&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getEtat ( self )
+
+</pre></font>
+
+<h3>renvoie l'etat du taxi sous forme de string.</h3>
+<p>        Permet de connaitre l'état du taxi.</p>
+<dl>
+<dt>        retourne string</dt>
+<dd>l'état du taxi
+            Etats possibles : <code>arrete</code>, <code>chercheClient</code>, <code>conduitClient</code>,
+                              <code>retourStation</code>.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.27</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getNbCoursesEffectuees"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getNbCoursesEffectuees&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getNbCoursesEffectuees ( self )
+
+</pre></font>
+
+<h3>renvoie le nombre de courses effectuees par le taxi.</h3>
+<p>        Permet de connaitre le nombre de courses que le taxi a effectuées.
+        C'est-à-dire le nombre de client qu'il a chargé et qu'il a amené à destination.</p>
+<dl>
+<dt>        retourne int</dt>
+<dd>le nombre de courses</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.33</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getNbmParcourus"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getNbmParcourus&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getNbmParcourus ( self )
+
+</pre></font>
+
+<h3>renvoie le nombre de mètres parcourus par le taxi.</h3>
+<p>        Permet de connaitre le nombre de mètres que le taxi a parcouru.</p>
+<dl>
+<dt>        retourne float</dt>
+<dd>le nombre de mètres parcourus</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.33</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getNo"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getNo&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getNo ( self )
+
+</pre></font>
+
+<h3>renvoie le no du taxi.</h3>
+<p>        Permet de connaitre le no que porte le taxi.</p>
+<dl>
+<dt>        retourne int</dt>
+<dd>le no du taxi.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.24</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getNoStation"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getNoStation&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getNoStation ( self )
+
+</pre></font>
+
+<h3>Renvoie le no de la station.</h3>
+<p>        Permet de connaitre le no de la station dans laquelle se trouve
+        le taxi.</p>
+<dl>
+<dt>        retourne (int)</dt>
+<dd>noStation : le no de la station</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.2</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getPosition"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getPosition&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getPosition ( self,  heure )
+
+</pre></font>
+
+<h3>Renvoie la position du taxi.</h3>
+<p>        Permet de connaitre la position (x,y) du taxi et son vecteur de
+        direction.</p>
+<dl>
+<dt>        heure (int)</dt>
+<dd>l'heure courante</dd>
+<dt>        retourne (tuple(tuple(float,float),tuple(float,float)))</dt>
+<dd>un tuple contenant 2 tuples. Le 1er donne la position
+        (x,y) du taxi et le 2e le vecteur de direction.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+"Erreur Coordonnees Incorrect"<br>
+"Erreur Distance Incorrecte"<br>
+Exception, ErreurHeureIncorrecte<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="traiterEvenement"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">traiterEvenement&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+traiterEvenement ( self,  evenement )
+
+</pre></font>
+
+<h3>Traiter l'evenement passe.</h3>
+<p>        Traite l'evenement passe en parametre et renvoie un autre
+        evenement.</p>
+<dl>
+<dt>        evenement (Evenement)</dt>
+<dd>l'evenement qu'il faut traiter</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<a href="ErreurEvenementIncorrect.html">ErreurEvenementIncorrect</a><br>
+
+</td></tr>
+</table>
+</td></tr>
+</td></tr>
+</table>
+
+        </td>
+        </tr>
+        </table>
+
+        <hr>
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+
+        <font size="-2"><i>This document was automatically generated
+        on Mon Mar  3 11:17:06 2003 by
+        <a href="http://happydoc.sourceforge.net">HappyDoc</a> version
+        2.1</i></font>
+        
+        </body>
+        </html>
+        

@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html40/loose.dtd">
+
+<html>
+         
+  <head>
+    <title>Class: ObjetGraph</title>
+  </head>
+
+  <body bgcolor="#ffffff">
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+        
+        <table border="0" cellpadding="5" cellspacing="0" width="100%">
+        <tr>
+            <th rowspan="2"
+                valign="top"
+                align="left"
+                width="10%"
+                bgcolor="#88bbee"><font color="#000000">Class: ObjetGraph</font>
+            </th>
+            <th bgcolor="#88bbee"
+                width="90%"
+                align="right"><font color="#000000">./gui/ObjetGraph.py</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<h3>Classe de base pour tout objet graphique.</h3>
+<p>    Base dont tout objet graphique doit deriver.</p>
+<p>    :version: $Revision 1.0 $
+    :author: Gregory Burri</p>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Methods">Methods</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<a href="#__init__">__init__</a><br>
+<a href="#dessiner">dessiner</a><br>
+<a href="#getHauteur">getHauteur</a><br>
+<a href="#setCouche">setCouche</a><br>
+<a href="#setCouleur">setCouleur</a><br>
+
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="__init__"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">__init__&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+__init__ (
+        self,
+        couche=0,
+        couleur=( 0.0, 0.0, 0.0 ),
+        )
+
+</pre></font>
+
+<h3>Initialisation d'un objet graphique.</h3>
+<p>        Initialise differentes donnees membres.</p>
+<p>        @return Rien : Ne retourne rien
+        @author Gregory Burri</p>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="dessiner"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">dessiner&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+dessiner ()
+
+</pre></font>
+
+<h3>Dessiner un objet (methode vituelle).</h3>
+<p>        Dessine un objet a l'aide de commandes OpenGL.</p>
+<p>        @return Rien : Ne retourne rien
+        @author Gregory Burri</p>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getHauteur"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getHauteur&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getHauteur ( self )
+
+</pre></font>
+
+<h3>Retourner la hauteur d'un objet.</h3>
+<p>        Retourne la hauteur z reel (par rapport a OpenGL)
+        d'un objet graphique.</p>
+<p>        @return float : La hauteur reel
+        @author Gregory Burri</p>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="setCouche"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">setCouche&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+setCouche ( self,  couche )
+
+</pre></font>
+
+<h3>Definir la couche d'un objet.</h3>
+<p>        Definit la couche d'un objet graphique.</p>
+<p>        @param float couche : la couche de l'objet
+        @return Rien : Ne retourne rien
+        @author Gregory Burri</p>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="setCouleur"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">setCouleur&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+setCouleur ( self,  couleur )
+
+</pre></font>
+
+<h3>Definir la couleur d'un objet.</h3>
+<p>        Definit la couleur d'un objet graphique.</p>
+<p>        @param (float, float, float) couleur : la couleur de l'objet
+        @return Rien : Ne retourne rien
+        @author Gregory Burri</p>
+</td></tr>
+</td></tr>
+</table>
+
+        </td>
+        </tr>
+        </table>
+
+        <hr>
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+
+        <font size="-2"><i>This document was automatically generated
+        on Mon Mar  3 11:17:07 2003 by
+        <a href="http://happydoc.sourceforge.net">HappyDoc</a> version
+        2.1</i></font>
+        
+        </body>
+        </html>
+        

@@ -1,0 +1,407 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html40/loose.dtd">
+
+<html>
+         
+  <head>
+    <title>Class: GestionnaireTaxis</title>
+  </head>
+
+  <body bgcolor="#ffffff">
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+        
+        <table border="0" cellpadding="5" cellspacing="0" width="100%">
+        <tr>
+            <th rowspan="2"
+                valign="top"
+                align="left"
+                width="10%"
+                bgcolor="#88bbee"><font color="#000000">Class: GestionnaireTaxis</font>
+            </th>
+            <th bgcolor="#88bbee"
+                width="90%"
+                align="right"><font color="#000000">./gestionnaires/GestionnaireTaxis.py</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<h3>Implemente un gestionnaire de Taxis.</h3>
+<p>    Cette classe fournit un gestionnaire de taxis.</p>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Base Classes">Base Classes</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Singleton<br>
+
+</td></tr>
+</table>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Methods">Methods</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<a href="#addTaxi">addTaxi</a><br>
+<a href="#delContenu">delContenu</a><br>
+<a href="#getListe">getListe</a><br>
+<a href="#getNbTaxis">getNbTaxis</a><br>
+<a href="#getTaxi">getTaxi</a><br>
+<a href="#init">init</a><br>
+<a href="#plusProcheDe">plusProcheDe</a><br>
+
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="addTaxi"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">addTaxi&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+addTaxi ( self,  noStation )
+
+</pre></font>
+
+<h3>Ajouter un Taxi.</h3>
+<p>        Permet d'ajouter un taxi au gestionnaire.</p>
+<dl>
+<dt>        noStation (int)</dt>
+<dd>Le no de la station dans laquelle le taxi se trouve.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="delContenu"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">delContenu&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+delContenu ( self )
+
+</pre></font>
+
+<h3>Efface les taxis.</h3>
+<p>        Vide le gestionnaire contenant les taxis.</p>
+
+<ul>
+<li><p>depuis - 1.3</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getListe"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getListe&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getListe ( self )
+
+</pre></font>
+
+<h3>Renvoie une liste des taxis.</h3>
+<p>        Permet de mettre les taxis dans une liste et de la renvoyer.</p>
+<dl>
+<dt>        retourne (List)</dt>
+<dd>Une liste de taxis</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.9</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getNbTaxis"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getNbTaxis&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getNbTaxis ( self )
+
+</pre></font>
+
+<h3>Nombre de taxis qui sont dans le gestionnaire.</h3>
+<p>        Renvoie le nombre de taxis du gestionnaire.</p>
+<dl>
+<dt>        retourne (int)</dt>
+<dd>Le nombre de taxis du gestionnaire.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur -</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getTaxi"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getTaxi&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getTaxi ( self,  noTaxi )
+
+</pre></font>
+
+<h3>Renvoie le taxi correspondant au no.</h3>
+<p>        Permet de renvoyer le taxi qui correspond au numero passé.</p>
+<dl>
+<dt>        noTaxi int</dt>
+<dd>le no du taxi
+        retourne Taxi -- Le taxi</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.24</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="init"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">init&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+init ( self )
+
+</pre></font>
+
+<h3>Constructeur.</h3>
+<p>        Permet de creer un objet de la classe.</p>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="plusProcheDe"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">plusProcheDe&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+plusProcheDe ( self,  client )
+
+</pre></font>
+
+<h3>(TODO : add description)</h3>
+<dl>
+<dt>         client (EvClient)</dt>
+<dd>un evenement client.</dd>
+<dt>         retourne tuple(Taxi, Chemin)</dt>
+<dd>retourne le taxi le plus
+         proche ainsi que le chemin pour aller jusqu'au client.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur -</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<a href="ErreurAucunTaxiLibre.html">ErreurAucunTaxiLibre</a><br>
+
+</td></tr>
+</table>
+</td></tr>
+</td></tr>
+</table>
+
+        </td>
+        </tr>
+        </table>
+
+        <hr>
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+
+        <font size="-2"><i>This document was automatically generated
+        on Mon Mar  3 11:17:06 2003 by
+        <a href="http://happydoc.sourceforge.net">HappyDoc</a> version
+        2.1</i></font>
+        
+        </body>
+        </html>
+        

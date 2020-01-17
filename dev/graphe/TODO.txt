@@ -1,0 +1,4 @@
+Ce qu'il reste à faire.
+ 
+- Algorithmes de recherche (Guélat) supprimer les commentaires temporaires!
+

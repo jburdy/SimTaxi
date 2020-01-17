@@ -1,0 +1,605 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html40/loose.dtd">
+
+<html>
+         
+  <head>
+    <title>Class: GestionnaireStations</title>
+  </head>
+
+  <body bgcolor="#ffffff">
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+        
+        <table border="0" cellpadding="5" cellspacing="0" width="100%">
+        <tr>
+            <th rowspan="2"
+                valign="top"
+                align="left"
+                width="10%"
+                bgcolor="#88bbee"><font color="#000000">Class: GestionnaireStations</font>
+            </th>
+            <th bgcolor="#88bbee"
+                width="90%"
+                align="right"><font color="#000000">./gestionnaires/GestionnaireStations.py</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<h3>Implemente un gestionnaire de stations.</h3>
+<p>    Cette classe fournit un gestionnaire de stations.</p>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Base Classes">Base Classes</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Singleton<br>
+
+</td></tr>
+</table>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Methods">Methods</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+
+            <table border="0" cellspacing="2" cellpadding="2" width="100%">
+              <tr>
+            <td align="LEFT" valign="TOP">
+<a href="#addStation">addStation</a><br>
+<a href="#affecterTaxi">affecterTaxi</a><br>
+<a href="#arc">arc</a><br>
+<a href="#delContenu">delContenu</a><br>
+<a href="#getListeStations">getListeStations</a><br>
+<a href="#getNbPlacesLibres">getNbPlacesLibres</a><br>
+</td>
+<td align="LEFT" valign="TOP">
+<a href="#getNbStations">getNbStations</a><br>
+<a href="#getPosition">getPosition</a><br>
+<a href="#getStation">getStation</a><br>
+<a href="#init">init</a><br>
+<a href="#plusProcheDe">plusProcheDe</a><br>
+</td>
+</tr>
+            </table>
+            
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="addStation"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">addStation&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+addStation (
+        self,
+        nbPlaces,
+        sommet1,
+        sommet2,
+        )
+
+</pre></font>
+
+<h3>Ajouter une station.</h3>
+<p>        Permet d'ajouter une station dans le gestionnaire.</p>
+<dl>
+<dt>        nbPlaces (int)</dt>
+<dd>le nombre de places de la station</dd>
+<dt>        sommet1,sommet2(tuple(nomSommet, Point))</dt>
+<dd>les sommets entre lesquels
+                                   se trouve la station</dd>
+<dt>        retourne (int)</dt>
+<dd>le no de la station ajoutee</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="affecterTaxi"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">affecterTaxi&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+affecterTaxi (
+        self,
+        noStation,
+        noTaxi,
+        )
+
+</pre></font>
+
+<h3>Affecte un taxi a la station dont le no est passe.</h3>
+<p>        Permet d'affecter un taxi a la station dont le no est passe. Sera
+        appelee a l'initialisation du programme.</p>
+<dl>
+<dt>        noStation (int)</dt>
+<dd>le no de la station a laquelle le taxi est affecte.</dd>
+<dt>        noTaxi (int)</dt>
+<dd>Le no du taxi a ajouter</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.2</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="arc"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">arc&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+arc ( self,  noStation )
+
+</pre></font>
+
+<h3>renvoie l'arc sur lequel la station se trouve.</h3>
+<p>        Permet de connaitre l'arc sur laquelle la station se trouve.</p>
+<dl>
+<dt>        noStation (int)</dt>
+<dd>le no de la station dont on veut l'arc</dd>
+<dt>        retourne (Tuple(Sommet, Sommet))</dt>
+<dd>un tuple contenant les sommets
+        entre lesquels la station se trouve.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.4</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="delContenu"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">delContenu&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+delContenu ( self )
+
+</pre></font>
+
+<h3>Efface les stations.</h3>
+<p>        Vide le gestionnaire contenant les stations.</p>
+
+<ul>
+<li><p>depuis - 1.3</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getListeStations"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getListeStations&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getListeStations ( self )
+
+</pre></font>
+
+<h3>Renvoie une liste des stations.</h3>
+<p>        Permet de mettre les stations dans une liste et de la renvoyer.</p>
+<dl>
+<dt>        retourne (List)</dt>
+<dd>Une liste de stations</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.2</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getNbPlacesLibres"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getNbPlacesLibres&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getNbPlacesLibres ( self,  noStation )
+
+</pre></font>
+
+<h3>renvoie le nb de places libres dans la station.</h3>
+<p>        Permet de connaitre le nombre de places qui sont libres dans la station
+        dont le no est passé.</p>
+<dl>
+<dt>        noStation (int)</dt>
+<dd>le no de la station dont on veut le nombre de places libres.</dd>
+<dt>        retourne (int)</dt>
+<dd>le nombre de places libres.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.7</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getNbStations"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getNbStations&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getNbStations ( self )
+
+</pre></font>
+
+<h3>Nombre de stations qui sont dans le gestionnaire.</h3>
+<p>        Renvoie le nombre de stations du gestionnaire.</p>
+<dl>
+<dt>        retourne (int)</dt>
+<dd>Le nombre de stations du gestionnaire.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getPosition"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getPosition&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getPosition ( self,  noStation )
+
+</pre></font>
+
+<h3>Donne la position d'une station.</h3>
+<p>        Permet de connaitre la position de la station, dont le no est passe,
+        sur le graphe en fonction des informations contenues dans les sommets.</p>
+<p>        noStation (int) : le no de la station dont on desire la position.</p>
+<dl>
+<dt>        retourne (Tuple(Tuple(float,float),Tuple(float,float))</dt>
+<dd>un tuple contenant 2 tuples.
+        1 avec la position (x,y) et le 2e avec vecteur d'orientation.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.4</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="getStation"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">getStation&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+getStation ( self,  noStation )
+
+</pre></font>
+
+<h3>renvoie la station correspondant au no.</h3>
+<p>        Permet d'avoir accès à la station dont le no est passé en paramètre.</p>
+<dl>
+<dt>        noStation (int)</dt>
+<dd>le no de la station.</dd>
+<dt>        retourne (int)</dt>
+<dd>la station.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.17</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="init"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">init&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+init ( self )
+
+</pre></font>
+
+<h3>Constructeur.</h3>
+<p>        Permet de creer un objet de la classe.</p>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur -  Lucien Chaboudez</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="plusProcheDe"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">plusProcheDe&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+plusProcheDe ( self,  evPoserClient )
+
+</pre></font>
+
+<h3>Renvois la station la plus proche de la position.</h3>
+<dl>
+<dt>        position (EvPoserClient)</dt>
+<dd>un évenement poser client</dd>
+<dt>        retourne (tuple(Station,Chemin))</dt>
+<dd>la station la plus proche et
+        le chemin pour s'y rendre.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Lucien Chaboudez</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<a href="ErreurAucuneStation.html">ErreurAucuneStation</a><br>
+<a href="ErreurAucuneStationAvecPlaceLibre.html">ErreurAucuneStationAvecPlaceLibre</a><br>
+<a href="../Taxi/ErreurEvenementIncorrect.html">ErreurEvenementIncorrect</a><br>
+
+</td></tr>
+</table>
+</td></tr>
+</td></tr>
+</table>
+
+        </td>
+        </tr>
+        </table>
+
+        <hr>
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+
+        <font size="-2"><i>This document was automatically generated
+        on Mon Mar  3 11:17:06 2003 by
+        <a href="http://happydoc.sourceforge.net">HappyDoc</a> version
+        2.1</i></font>
+        
+        </body>
+        </html>
+        

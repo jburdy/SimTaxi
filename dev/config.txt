@@ -1,0 +1,46 @@
+# Fichier de préférences de SimTaxi (http://SimTaxi.sf.net)
+
+################
+# Interface utilisateur
+gui             : True # utilisation ou non de l'affichage
+# ATTENTION dans le cas de la non utilisation du gui, la simulation 
+# est difficile à stopper
+
+# uniquement si gui
+pseudoContinu   : False # crée un intervalles de temps artificiel entre les év.
+
+#uniquement si pseudoContinu
+dureeSec        : 0.05  # la durée d'un sec dans la simulation
+
+
+################
+# Initialisation
+nbTaxi          : 180
+vitesseTaxiKMH  : 50
+
+ndStation       : 30
+tailleStation   : [20, 10, 10, 5] # 1x20 2x10 et les autres 5
+
+
+##########
+# Demandes
+nbCoursesJour   : 2700 # nb de clients pour 1 "journée"
+hPremiereCourse : 0    # date du 1er client
+hDerniereCourse : 3600*24 # durée en seconde d'une "journée" (d'une simulation)
+moyenneCourseKM : 0 # 8, 0 = ne pas en tenir compte
+#germeDemandes : 1
+
+
+########
+# Graphe
+
+# sep permet de séparer les dossiers
+# curdir est le dossier courant
+fichierGraphe   : curdir+sep+'graphe'+sep+'graphe.gr'
+#nbCarrefour     : 80
+#nbRue           : 140
+#diametreKM      : 12 # 20 min en temps
+#germeGraphe     : 1
+
+
+

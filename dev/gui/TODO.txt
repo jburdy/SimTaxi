@@ -1,0 +1,5 @@
+Ce qu'il reste à faire.
+
+- que l'on voit tout les temps les taxis (zoom)
+
+- possibilité d'afficher un chemin (voir classe chemin)

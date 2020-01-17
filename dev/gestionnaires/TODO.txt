@@ -1,0 +1,14 @@
+Ce qu'il reste à faire.
+
+- Classe Gestionnaire dérivant de dico et prog de test
+
+- Gestionnaire de taxis getTaxiPlusProche
+
+- Classe Gestionnaire de stations getStationPlusProche
+
+- Classe Station getPosition
+
+- Classe Taxi getPosition
+
+- Classe Taxi traiterEvenement
+

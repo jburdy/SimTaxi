@@ -1,0 +1,1372 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html40/loose.dtd">
+
+<html>
+         
+  <head>
+    <title>Class: Graphe</title>
+  </head>
+
+  <body bgcolor="#ffffff">
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+        
+        <table border="0" cellpadding="5" cellspacing="0" width="100%">
+        <tr>
+            <th rowspan="2"
+                valign="top"
+                align="left"
+                width="10%"
+                bgcolor="#88bbee"><font color="#000000">Class: Graphe</font>
+            </th>
+            <th bgcolor="#88bbee"
+                width="90%"
+                align="right"><font color="#000000">./graphe/Graphe.py</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<h3>Graphe oriente et pondere (pondere par des attributs).</h3>
+<p>    Les sommets et les arcs ont des attributs de n'importe quel type.
+    Attentio, cette classe est un singleton, c'est-a-dire qu'un seule objet
+    peut etre cree. Les suivants pointent sur le premier.</p>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Base Classes">Base Classes</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Singleton<br>
+
+</td></tr>
+</table>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Methods">Methods</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+
+            <table border="0" cellspacing="2" cellpadding="2" width="100%">
+              <tr>
+            <td align="LEFT" valign="TOP">
+<a href="#afficher">afficher</a><br>
+<a href="#arcDefini">arcDefini</a><br>
+<a href="#attributsArc">attributsArc</a><br>
+<a href="#attributsSommet">attributsSommet</a><br>
+<a href="#exporter">exporter</a><br>
+<a href="#importer">importer</a><br>
+<a href="#init">init</a><br>
+<a href="#initialiser">initialiser</a><br>
+</td>
+<td align="LEFT" valign="TOP">
+<a href="#insererArc">insererArc</a><br>
+<a href="#insererSommet">insererSommet</a><br>
+<a href="#inverserTousArcs">inverserTousArcs</a><br>
+<a href="#listeArcs">listeArcs</a><br>
+<a href="#listeSommets">listeSommets</a><br>
+<a href="#nbArcs">nbArcs</a><br>
+<a href="#nbSommets">nbSommets</a><br>
+<a href="#remplacerAttributsArc">remplacerAttributsArc</a><br>
+</td>
+<td align="LEFT" valign="TOP">
+<a href="#remplacerAttributsSommet">remplacerAttributsSommet</a><br>
+<a href="#sommetDefini">sommetDefini</a><br>
+<a href="#sommetsVoyants">sommetsVoyants</a><br>
+<a href="#sommetsVus">sommetsVus</a><br>
+<a href="#supprimerArc">supprimerArc</a><br>
+<a href="#supprimerSommet">supprimerSommet</a><br>
+</td>
+</tr>
+            </table>
+            
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="afficher"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">afficher&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+afficher ( self )
+
+</pre></font>
+
+<h3>Cette methode permet d'afficher un graphe (en String).</h3>
+<p>        Cette methode est utile uniquement pour le deboguage.</p>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="arcDefini"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">arcDefini&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+arcDefini (
+        self,
+        sommetDep,
+        sommetArr,
+        )
+
+</pre></font>
+
+<h3>Cette methode permet de savoir si un arc est defini ou pas.</h3>
+<p>        Exception levee si les sommets ne sont pas definis dans le graphe.</p>
+<dl>
+<dt>        sommetDep</dt>
+<dd>Le nom du sommet de depart de l'arc</dd>
+<dt>        sommetArr</dt>
+<dd>Le nom du sommet d'arrivee de l'arc</dd>
+<dt>        retourne (Boolean)</dt>
+<dd>Indique si l'arc est defini ou pas</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Exception, 'sommet indefini : ' + ` sommetArr `<br>
+Exception, 'sommet indefini : ' + ` sommetDep `<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="attributsArc"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">attributsArc&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+attributsArc (
+        self,
+        sommetDep,
+        sommetArr,
+        )
+
+</pre></font>
+
+<h3>Cette methode permet de connaitre les attributs d'un arc.</h3>
+<p>        Exception levee si les sommets ou l'arc ne sont pas definis dans le
+        graphe.</p>
+<dl>
+<dt>        sommetDep</dt>
+<dd>Le nom du sommet de depart de l'arc</dd>
+<dt>        sommetArr</dt>
+<dd>Le nom du sommet d'arrivee de l'arc</dd>
+<dt>        retourne</dt>
+<dd>: Les attributs de l'arc donne</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="attributsSommet"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">attributsSommet&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+attributsSommet ( self,  sommet )
+
+</pre></font>
+
+<h3>Cette methode permet de connaitre les attributs d'un sommet.</h3>
+<p>        Exception levee si le sommet n'est pas defini dans le graphe.</p>
+<dl>
+<dt>        sommet</dt>
+<dd>Le nom du sommet</dd>
+<dt>        retourne</dt>
+<dd>Les attributs du sommet donne</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="exporter"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">exporter&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+exporter ( self,  fichierExport )
+
+</pre></font>
+
+<h3>Cette methode permet d'exporter un graphe vers un fichier.</h3>
+<dl>
+<dt>        fichierExport (String)</dt>
+<dd>Le nom du fichier d'exportation</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Exception, fichierExport<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="importer"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">importer&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+importer ( self,  fichierImport )
+
+</pre></font>
+
+<h3>Cette methode permet d'importer un graphe depuis un fichier.</h3>
+<p>        Le fichier a du etre cree avec la methode &quot;exporter&quot; auparavant pour
+        que le type soit compatible. De plus, le graphe actuel sera ecrase.</p>
+<dl>
+<dt>        fichierImport (String)</dt>
+<dd>Le nom du fichier d'importation</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Exception, fichierImport<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="init"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">init&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+init ( self,  fichierImport=None )
+
+</pre></font>
+
+<h3>Cette methode sert a creer un graphe.</h3>
+<p>        On peut importer un graphe a partir d'un fichier donne.</p>
+<dl>
+<dt>        fichierImport (String)</dt>
+<dd>Le nom du fichier a importer</dd>
+<dt>        retourne (Graphe)</dt>
+<dd>Un objet Graphe</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="initialiser"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">initialiser&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+initialiser ( self )
+
+</pre></font>
+
+<h3>Cette methode permet d'initialiser le graphe.</h3>
+
+<ul>
+<li><p>depuis - 1.9</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="insererArc"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">insererArc&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+insererArc (
+        self,
+        sommetDep,
+        sommetArr,
+        attributsArc=None,
+        )
+
+</pre></font>
+
+<h3>Cette methode permet d'inserer un arc avec ses attributs.</h3>
+<p>        Exception levee si les sommets ne sont pas definis dans le graphe ou
+        si l'arc est deja defini.</p>
+<dl>
+<dt>        sommetDep</dt>
+<dd>Le nom du sommet de depart de l'arc</dd>
+<dt>        sommetArr</dt>
+<dd>Le nom du sommet d'arrivee de l'arc</dd>
+<dt>        attributsArc</dt>
+<dd>Les attributs de l'arc</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Exception, 'arc deja defini'<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="insererSommet"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">insererSommet&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+insererSommet (
+        self,
+        nomSommet,
+        attributsSommet=None,
+        )
+
+</pre></font>
+
+<h3>Cette methode permet d'inserer un sommet avec ses attributs.</h3>
+<p>        Exception levee si le sommet est deja defini dans le graphe.</p>
+<dl>
+<dt>        nomSommet</dt>
+<dd>Le nom du sommet</dd>
+<dt>        attributsSommet</dt>
+<dd>Les attributs du sommet</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Exception, 'sommet deja defini : ' + ` nomSommet `<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="inverserTousArcs"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">inverserTousArcs&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+inverserTousArcs ( self )
+
+</pre></font>
+
+<p>Cette methode permet d'ajouter tous les arcs de sens contraire a ceux
+        deja definis dans le graphe.<p>        Les nouveaux arcs ont les memes attributs que ceux de sens oppose.
+        Exception levee si un arcs a deja un semblable de sens contraire.</p>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+</p>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="listeArcs"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">listeArcs&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+listeArcs ( self,  attributs=0 )
+
+</pre></font>
+
+<h3>Cette methode donne la liste contenant tous les arcs du graphe.</h3>
+<p>        La liste contient des tuples (1 par arc) qui contiennent (dans
+        l'ordre) les noms de ces sommets de depart et d'arrivee et ses
+        attributs.
+        Par defaut, les attributs ne sont pas mis dans les tuples des arcs.</p>
+<dl>
+<dt>        attributs (Boolean)</dt>
+<dd>Les arcs avec leurs attributs ou pas</dd>
+<dt>        retourne (List)</dt>
+<dd>La liste des arcs du graphe</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="listeSommets"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">listeSommets&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+listeSommets ( self,  attributs=0 )
+
+</pre></font>
+
+<p>Cette methode donne la liste contenant tous les sommets du graphe
+        avec leurs attributs si on le souhaite.<p>        Par defaut (attributs = faux), la liste contient uniquement le nom
+        des sommets et pas leurs attributs.
+        Si attributs = vrai, la liste contiendra des tuples (1 par sommet)
+        qui contiendront (dans l'ordre) le nom du sommet et ses attributs.
+        L'ordre des sommets est identique a celui de l'insertion de ces
+        derniers.</p>
+<dl>
+<dt>        attributs (Boolean)</dt>
+<dd>Les sommets avec leurs attributs ou pas</dd>
+<dt>        retourne (List)</dt>
+<dd>La liste des sommets du graphe</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+</p>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="nbArcs"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">nbArcs&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+nbArcs ( self )
+
+</pre></font>
+
+<h3>Cette methode donne le nombre d'arcs du graphe.</h3>
+<dl>
+<dt>        retourne (Int)</dt>
+<dd>Le nombre d'arcs du graphe</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="nbSommets"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">nbSommets&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+nbSommets ( self )
+
+</pre></font>
+
+<h3>Cette methode donne le nombre de sommets du graphe.</h3>
+<dl>
+<dt>        retourne (Int)</dt>
+<dd>Le nombre de sommets du graphe</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.2</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="remplacerAttributsArc"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">remplacerAttributsArc&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+remplacerAttributsArc (
+        self,
+        sommetDep,
+        sommetArr,
+        attributsArc,
+        )
+
+</pre></font>
+
+<h3>Cette methode permet de modifier les attributs d'un arc.</h3>
+<p>        Exception levee si les sommets ou l'arc ne sont pas definis dans le
+        graphe.</p>
+<dl>
+<dt>        sommetDep</dt>
+<dd>Le nom du sommet de depart de l'arc</dd>
+<dt>        sommetArr</dt>
+<dd>Le nom du sommet d'arrivee de l'arc</dd>
+<dt>        attributsArc</dt>
+<dd>Les nouveaux attributs de l'arc</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.2</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Exception, 'arc indefini'<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="remplacerAttributsSommet"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">remplacerAttributsSommet&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+remplacerAttributsSommet (
+        self,
+        sommet,
+        attributsSommet,
+        )
+
+</pre></font>
+
+<h3>Cette methode permet de modifier les attributs d'un sommet.</h3>
+<p>        Exception levee si le sommet n'est pas defini dans le graphe.</p>
+<dl>
+<dt>        sommet</dt>
+<dd>Le nom du sommet</dd>
+<dt>        attributsSommet</dt>
+<dd>Les nouveaux attributs du sommet</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Exception, 'sommet indefini : ' + ` sommet `<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="sommetDefini"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">sommetDefini&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+sommetDefini ( self,  sommet )
+
+</pre></font>
+
+<h3>Cette methode permet de savoir si un sommet est defini ou pas.</h3>
+<dl>
+<dt>        sommet</dt>
+<dd>Le nom du sommet</dd>
+<dt>        retourne (Boolean)</dt>
+<dd>Indique si le sommet est defini ou pas</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.2</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="sommetsVoyants"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">sommetsVoyants&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+sommetsVoyants ( self,  sommet )
+
+</pre></font>
+
+<h3>Cette methode donne une liste des sommets qui voient le sommet donne.</h3>
+<p>        Exception levee si le sommet n'est pas defini dans le graphe.</p>
+<dl>
+<dt>        sommet</dt>
+<dd>Le nom du sommet</dd>
+<dt>        retourne (List)</dt>
+<dd>Liste des sommets qui voient le sommet donne</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.5</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Exception, 'sommet indefini : ' + ` sommet `<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="sommetsVus"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">sommetsVus&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+sommetsVus ( self,  sommet )
+
+</pre></font>
+
+<h3>Cette methode donne une liste des sommets vus par le sommet donne.</h3>
+<p>        Exception levee si le sommet n'est pas defini dans le graphe.</p>
+<dl>
+<dt>        sommet</dt>
+<dd>Le nom du sommet</dd>
+<dt>        retourne</dt>
+<dd>Liste : Liste des sommets vus par le sommet donne</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.5</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Exception, 'sommet indefini : ' + ` sommet `<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="supprimerArc"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">supprimerArc&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+supprimerArc (
+        self,
+        sommetDep,
+        sommetArr,
+        )
+
+</pre></font>
+
+<h3>Cette methode permet de supprimer un arc.</h3>
+<p>        Exception levee si les sommets ou l'arc ne sont pas definis dans le
+        graphe.</p>
+<dl>
+<dt>        sommetDep</dt>
+<dd>Le nom du sommet de depart de l'arc</dd>
+<dt>        sommetArr</dt>
+<dd>Le nom du sommet d'arrivee de l'arc</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.3</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Exception, 'arc indefini'<br>
+
+</td></tr>
+</table>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="supprimerSommet"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">supprimerSommet&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+supprimerSommet ( self,  sommet )
+
+</pre></font>
+
+<h3>Cette methode permet de supprimer un sommet.</h3>
+<p>        Les arcs relies au sommet sont aussi supprimes.
+        Exception levee si le sommet n'est pas defini dans le graphe.</p>
+<dl>
+<dt>        sommet</dt>
+<dd>Le nom du sommet</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.3</p></li>
+<li><p>auteur - Joel Jaquemet</p></li>
+
+</ul>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Exceptions">Exceptions</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Exception, 'sommet indefini : ' + ` sommet `<br>
+
+</td></tr>
+</table>
+</td></tr>
+</td></tr>
+</table>
+
+        </td>
+        </tr>
+        </table>
+
+        <hr>
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+
+        <font size="-2"><i>This document was automatically generated
+        on Mon Mar  3 11:17:06 2003 by
+        <a href="http://happydoc.sourceforge.net">HappyDoc</a> version
+        2.1</i></font>
+        
+        </body>
+        </html>
+        

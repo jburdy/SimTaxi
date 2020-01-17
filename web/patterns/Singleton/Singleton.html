@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html40/loose.dtd">
+
+<html>
+         
+  <head>
+    <title>Class: Singleton</title>
+  </head>
+
+  <body bgcolor="#ffffff">
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+        
+        <table border="0" cellpadding="5" cellspacing="0" width="100%">
+        <tr>
+            <th rowspan="2"
+                valign="top"
+                align="left"
+                width="10%"
+                bgcolor="#88bbee"><font color="#000000">Class: Singleton</font>
+            </th>
+            <th bgcolor="#88bbee"
+                width="90%"
+                align="right"><font color="#000000">./patterns/Singleton.py</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<h3>Base class for singleton classes.</h3>
+<p>    Any class derived from this one is a singleton. You can call its
+    constructor multiple times, you'll get only one instance.</p>
+<p>    Note that `__init__` must not be defined. Use `init` instead.
+    This is because `__init__` will always be called, thus reinitializing the
+    state of your singleton each time you try to instanciate it.
+    On the contrary, `init` will be called just one time.</p>
+<p>    To be sure that the `__init__` method won't be inadvertantly defined,
+    the singleton will check for it at first instanciation and raise an
+    `AssertionError` if it finds it.</p>
+<p>    Example:
+<pre>
+        # This class is OK
+        class A(Singleton):
+            def init(self, val):
+                self.val = val
+
+        # This class will raise AssertionError at first instanciation, because
+        # of the __init__ method.
+        class B(Singleton):
+            def __init__(self, val):
+                self.val = val
+</pre>
+</p>
+<p>    :author: Laurent Burgbacher
+    :contact: &lt;lb@alawa.ch&gt;
+    :version: $Revision: 1.2 $</p>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Base Classes">Base Classes</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+object<br>
+
+</td></tr>
+</table>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Methods">Methods</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<a href="#__new__">__new__</a><br>
+<a href="#init">init</a><br>
+
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="__new__"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">__new__&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+__new__ (
+        cls,
+        *args,
+        *kwds,
+        )
+
+</pre></font>
+
+<p>New operator of a singleton class.
+        Will return the only instance, or create it if needed.<p>        @since 1.0
+        @author Laurent Burgbacher &lt;lb@alawa.ch&gt;</p>
+</p>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="init"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">init&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+init (
+        self,
+        *args,
+        *kwds,
+        )
+
+</pre></font>
+
+<h3>Constructor of a singleton class.</h3>
+<p>        @since 1.0
+        @author Laurent Burgbacher &lt;lb@alawa.ch&gt;</p>
+</td></tr>
+</td></tr>
+</table>
+
+        </td>
+        </tr>
+        </table>
+
+        <hr>
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+
+        <font size="-2"><i>This document was automatically generated
+        on Mon Mar  3 11:17:08 2003 by
+        <a href="http://happydoc.sourceforge.net">HappyDoc</a> version
+        2.1</i></font>
+        
+        </body>
+        </html>
+        

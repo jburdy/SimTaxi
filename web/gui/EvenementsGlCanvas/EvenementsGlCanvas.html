@@ -1,0 +1,376 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html40/loose.dtd">
+
+<html>
+         
+  <head>
+    <title>Class: EvenementsGlCanvas</title>
+  </head>
+
+  <body bgcolor="#ffffff">
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+        
+        <table border="0" cellpadding="5" cellspacing="0" width="100%">
+        <tr>
+            <th rowspan="2"
+                valign="top"
+                align="left"
+                width="10%"
+                bgcolor="#88bbee"><font color="#000000">Class: EvenementsGlCanvas</font>
+            </th>
+            <th bgcolor="#88bbee"
+                width="90%"
+                align="right"><font color="#000000">./gui/EvenementsGlCanvas.py</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<h3>Gestion des evenements sur le canevas OpenGL.</h3>
+<p>    Cette classe gere les evenements provoque par la souris sur
+    le canevas OpenGL afin de pouvoir changer la vue en consequence
+    comme le zoom et le deplacement.</p>
+<p>    :version: $Revision: 1.9 $
+    :author: Gregory Burri</p>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Base Classes">Base Classes</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Vue<br>
+
+</td></tr>
+</table>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Methods">Methods</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<a href="#OnMouseDown">OnMouseDown</a><br>
+<a href="#OnMouseMotion">OnMouseMotion</a><br>
+<a href="#OnMouseUp">OnMouseUp</a><br>
+<a href="#OnSize">OnSize</a><br>
+<a href="#__init__">__init__</a><br>
+<a href="#evChangePosition">evChangePosition</a><br>
+<a href="#evChangeZoom">evChangeZoom</a><br>
+<a href="#evRafraichir">evRafraichir</a><br>
+
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="OnMouseDown"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">OnMouseDown&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+OnMouseDown ( self,  evt )
+
+</pre></font>
+
+<h3>Evenement s'actionnant lors de la pression d'un bouton de la souris.</h3>
+<p>        Lorsque un des bouton de la souris est presse
+        cette methode est appellee</p>
+<p>        @param wxMouseEvent evt : L'evenement souris
+        @return Rien : Ne retourne rien
+        @author Gregory Burri</p>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="OnMouseMotion"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">OnMouseMotion&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+OnMouseMotion ( self,  evt )
+
+</pre></font>
+
+<h3>Evenement s'actionnant lors du deplacement de la souris.</h3>
+<p>        Lorsque un des bouton de la souris est relache
+        cette methode est appellee</p>
+<p>        @param wxMouseEvent evt : L'evenement souris
+        @return Rien : Ne retourne rien
+        @author Gregory Burri</p>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="OnMouseUp"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">OnMouseUp&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+OnMouseUp ( self,  evt )
+
+</pre></font>
+
+<h3>Evenement s'actionnant lors du relachement d'un bouton de la souris.</h3>
+<p>        Lorsque un des bouton de la souris est relache
+        cette methode est appellee</p>
+<p>        @param wxMouseEvent evt : L'evenement souris
+        @return Rien : Ne retourne rien
+        @author Gregory Burri</p>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="OnSize"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">OnSize&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+OnSize ( self,  evt )
+
+</pre></font>
+
+<h3>Evenement s'actionnant lors du changement de taille du canevas.</h3>
+<p>        Lorsque la taille du canevas OpenGL est modifie
+        cette methode est appellee</p>
+<p>        @param wxPyEvent evt : L'evenement
+        @return Rien : Ne retourne rien
+        @author Gregory Burri</p>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="__init__"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">__init__&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+__init__ ( self,  attache )
+
+</pre></font>
+
+<h3>Initialisation de la classe EvenementsGlCanvas.</h3>
+<p>        Bind les evenements sur les methodes et cree le deux thread
+        (deplacement et zoom).</p>
+<p>        @param wxFrame attache : La frame a laquelle accrocher le canevas
+        @return Rien : Ne retourne rien
+        @author Gregory Burri</p>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="evChangePosition"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">evChangePosition&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+evChangePosition ( self,  evt )
+
+</pre></font>
+
+<h3>Evenement s'actionnant lors du changement de position de la vue.</h3>
+<p>        Lorsque le thread tortue desire deplacer la vue il declanche
+        l'evenement EVT_METTRE_A_JOUR_POSITION se qui va appeller cette
+        methode.</p>
+<p>        @param MettreAJourPosition evt : L'evenement
+        @return Rien : Ne retourne rien
+        @author Gregory Burri</p>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="evChangeZoom"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">evChangeZoom&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+evChangeZoom ( self,  evt )
+
+</pre></font>
+
+<h3>Evenement s'actionnant lors du changement du zoom de la vue.</h3>
+<p>        Lorsque le thread zoom desire changer le zoom de la vue il declanche
+        l'evenement EVT_METTRE_A_JOUR_ZOOM se qui va appeller cette
+        methode.</p>
+<p>        @param MettreAJourZoom evt : L'evenement
+        @return Rien : Ne retourne rien
+        @author Gregory Burri</p>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="evRafraichir"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">evRafraichir&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+evRafraichir ( self,  evt )
+
+</pre></font>
+
+</td></tr>
+</td></tr>
+</table>
+
+        </td>
+        </tr>
+        </table>
+
+        <hr>
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+
+        <font size="-2"><i>This document was automatically generated
+        on Mon Mar  3 11:17:07 2003 by
+        <a href="http://happydoc.sourceforge.net">HappyDoc</a> version
+        2.1</i></font>
+        
+        </body>
+        </html>
+        

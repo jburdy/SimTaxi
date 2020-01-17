@@ -1,0 +1,456 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html40/loose.dtd">
+
+<html>
+         
+  <head>
+    <title>Class: Central</title>
+  </head>
+
+  <body bgcolor="#ffffff">
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+        
+        <table border="0" cellpadding="5" cellspacing="0" width="100%">
+        <tr>
+            <th rowspan="2"
+                valign="top"
+                align="left"
+                width="10%"
+                bgcolor="#88bbee"><font color="#000000">Class: Central</font>
+            </th>
+            <th bgcolor="#88bbee"
+                width="90%"
+                align="right"><font color="#000000">./central/Central.py</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<h3>Implemente le central.</h3>
+<p>    Cette classe fournit un central qui traite les evenements de l'echeancier.</p>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Base Classes">Base Classes</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+Singleton<br>
+
+</td></tr>
+</table>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Methods">Methods</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<a href="#ajouterEvenement">ajouterEvenement</a><br>
+<a href="#evenement">evenement</a><br>
+<a href="#init">init</a><br>
+<a href="#initEv">initEv</a><br>
+<a href="#intervalleProchainEvement">intervalleProchainEvement</a><br>
+<a href="#modifierPolitique">modifierPolitique</a><br>
+<a href="#politique">politique</a><br>
+<a href="#supprimerEvArriverStation">supprimerEvArriverStation</a><br>
+<a href="#traiterProchainEvenement">traiterProchainEvenement</a><br>
+
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="ajouterEvenement"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">ajouterEvenement&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+ajouterEvenement ( self,  evenement )
+
+</pre></font>
+
+<h3>Ajoute un evenement dans l'echeancier du Central.</h3>
+<dl>
+<dt>        evenement (Evenement)</dt>
+<dd>l'evenement a inserer dans l'echeancier</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Alexandre D'Amico</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="evenement"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">evenement&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+evenement ( self )
+
+</pre></font>
+
+<h3>Permet de savoir s'il y a encore au moins un evenement.</h3>
+<dl>
+<dt>        retourne (Bool)</dt>
+<dd>Vrai s'il y a au moins un element</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.1</p></li>
+<li><p>auteur - Alexandre D'Amico</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="init"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">init&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+init ( self,  politique=PolitiquePlusPres.PolitiquePlusPres() )
+
+</pre></font>
+
+<h3>Constructeur.</h3>
+<p>        Permet de créer un objet de la classe Central.</p>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Alexandre D'Amico</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="initEv"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">initEv&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+initEv ( self,  listeEv )
+
+</pre></font>
+
+<h3>Initialise l'echeancier avec des evenements.</h3>
+<dl>
+<dt>        listeEv (Liste)</dt>
+<dd>les evenements pour initialiser l'echeancier</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Alexandre D'Amico</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="intervalleProchainEvement"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">intervalleProchainEvement&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+intervalleProchainEvement ( self,  mnt=0 )
+
+</pre></font>
+
+<h3>Retourne le temps auquel aura lieu le prochain evenement.</h3>
+<dl>
+<dt>        mnt (Temps)</dt>
+<dd>Le temps actuel.</dd>
+<dt>        retourne (Temps)</dt>
+<dd>L'intervalle de temps entre mnt et le prochain evenement.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.16</p></li>
+<li><p>auteur - Julien Burdy</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="modifierPolitique"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">modifierPolitique&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+modifierPolitique ( self,  politique )
+
+</pre></font>
+
+<h3>Modifie la politique de traitement des evenements.</h3>
+<p>        Modifie la politique pour le choix du taxi en fonction de la 
+        position d'un client et le choix d'une station en fonction de la
+        position du taxi.</p>
+<dl>
+<dt>        politique (Politique)</dt>
+<dd>la nouvelle politique de traitement des
+                                 evenements</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.1</p></li>
+<li><p>auteur - Alexandre D'Amico</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="politique"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">politique&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+politique ( self )
+
+</pre></font>
+
+<h3>Retourne la politique actuelle de traitement des evenements.</h3>
+<dl>
+<dt>        retourne (Politique)</dt>
+<dd>la politique actuelle</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.5</p></li>
+<li><p>auteur - Alexandre D'Amico</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="supprimerEvArriverStation"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">supprimerEvArriverStation&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+supprimerEvArriverStation ( self,  taxi )
+
+</pre></font>
+
+<h3>Supprime l'evenement de l'arrivee d'un taxi en station.</h3>
+<p>        taxi (Taxi) : le taxi qui devait arriver en station</p>
+
+<ul>
+<li><p>depuis - 1.5</p></li>
+<li><p>auteur - Alexandre D'Amico</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="traiterProchainEvenement"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">traiterProchainEvenement&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+traiterProchainEvenement ( self )
+
+</pre></font>
+
+<p>Supprimer le premier element de l'echeancier et le traiter en
+        fonction de son type. Puis le retourne.<dl>
+<dt>        retourne (Evenement)</dt>
+<dd>L'événement qui a été traité.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Alexandre D'Amico</p></li>
+
+</ul>
+</p>
+</td></tr>
+</td></tr>
+</table>
+
+        </td>
+        </tr>
+        </table>
+
+        <hr>
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+
+        <font size="-2"><i>This document was automatically generated
+        on Mon Mar  3 11:17:06 2003 by
+        <a href="http://happydoc.sourceforge.net">HappyDoc</a> version
+        2.1</i></font>
+        
+        </body>
+        </html>
+        

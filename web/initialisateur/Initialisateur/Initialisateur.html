@@ -1,0 +1,315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html40/loose.dtd">
+
+<html>
+         
+  <head>
+    <title>Class: Initialisateur</title>
+  </head>
+
+  <body bgcolor="#ffffff">
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+        
+        <table border="0" cellpadding="5" cellspacing="0" width="100%">
+        <tr>
+            <th rowspan="2"
+                valign="top"
+                align="left"
+                width="10%"
+                bgcolor="#88bbee"><font color="#000000">Class: Initialisateur</font>
+            </th>
+            <th bgcolor="#88bbee"
+                width="90%"
+                align="right"><font color="#000000">./initialisateur/Initialisateur.py</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<h3>Initialisations de SimTaxi.</h3>
+<p>    Cette classe permet de generer les courses des clients et d'initialiser
+    les taxis en les positionnant dans une station.</p>
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="Methods">Methods</a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        
+<a href="#__init__">__init__</a><br>
+<a href="#__nbAleatoire">__nbAleatoire</a><br>
+<a href="#genererCourses">genererCourses</a><br>
+<a href="#genererStations">genererStations</a><br>
+<a href="#initialiserTaxis">initialiserTaxis</a><br>
+
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="__init__"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">__init__&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+__init__ ( self )
+
+</pre></font>
+
+<h3>Constructeur.</h3>
+<p>        Permet de créer un objet de la classe.</p>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Patrice Ferrot</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="__nbAleatoire"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">__nbAleatoire&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+__nbAleatoire ( self,  gene )
+
+</pre></font>
+
+<h3>Generateur aleatoire.</h3>
+<p>        Retourne un nombre aleatoire de l'intervalle [0,1[.</p>
+<dl>
+<dt>        gene</dt>
+<dd>le generateur utilise.</dd>
+<dt>        retourne (Float)</dt>
+<dd>le nombre aleatoire genere.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Patrice Ferrot</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="genererCourses"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">genererCourses&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+genererCourses (
+        self,
+        nbCourses,
+        heurePremiereCourse,
+        heureDerniereCourse,
+        distanceMoyenne=0,
+        germe=None,
+        )
+
+</pre></font>
+
+<h3>Generateur de courses.</h3>
+<p>        Genere la totalite des courses qui seront effectuees.</p>
+<dl>
+<dt>        nbCourses</dt>
+<dd>le nombre de courses a generer</dd>
+<dt>        heurePremiereCourse</dt>
+<dd>l'heure du premier appel d'un client</dd>
+<dt>        heureDerniereCourse</dt>
+<dd>l'heure du dernier appel d'un client</dd>
+<dt>        distanceMoyenne</dt>
+<dd>la distance moyenne des courses, 0 pour
+                           des distances quelconques</dd>
+<dt>        germe</dt>
+<dd>le germe utilise pour les generations aleatoires. Si pas
+                 de germe specifie, se base sur l'heure actuelle.</dd>
+<dt>        retourne (List)</dt>
+<dd>les courses generees, liste d'evenements clients.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0</p></li>
+<li><p>auteur - Patrice Ferrot</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="genererStations"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">genererStations&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+genererStations (
+        self,
+        nbStations,
+        nbPlaces,
+        germe=None,
+        )
+
+</pre></font>
+
+<h3>Initialise les stations.</h3>
+<p>        Place le nombre voulu de stations dans le graphe.</p>
+<dl>
+<dt>        nbStations</dt>
+<dd>le nombre de taxis a placer.</dd>
+<dt>        nbPlaces</dt>
+<dd>liste indiquant le nombre de place que doivent contenir
+                    les stations. Si moins d'elements dans la liste que de
+                    stations, utilise le dernier pour toutes les suivantes,
+                    si plus d'elements dans la liste, ne tient pas compte
+                    des supplementaires.</dd>
+<dt>        germe</dt>
+<dd>le germe utilise pour les generations aleatoires. Si pas
+                 de germe specifie, se base sur l'heure actuelle.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.5
+        - auteur - Patrice Ferrot</p></li>
+
+</ul>
+
+        <tr>
+            <th bgcolor="#99ccff"
+                rowspan="2"
+                valign="top"
+                align="left"
+                width="20%"
+                >
+                <font color="#000000">
+                  <a name="initialiserTaxis"></a>&nbsp;
+                </font>
+            </th>
+            <th bgcolor="#99ccff"
+                valign="top"
+                align="left"
+                width="80%"
+                >
+                <font color="#000000">initialiserTaxis&nbsp;</font>
+            </th>
+        </tr>
+        <tr>
+        <td>
+        <font color="#000088"><pre>
+initialiserTaxis (
+        self,
+        nbTaxis,
+        germe=None,
+        )
+
+</pre></font>
+
+<h3>Initialise les taxis.</h3>
+<p>        Place le nombre voulu de taxis dans les stations.</p>
+<dl>
+<dt>        nbTaxis</dt>
+<dd>le nombre de taxis a placer.</dd>
+<dt>        germe</dt>
+<dd>le germe utilise pour les generations aleatoires. Si pas
+                 de germe specifie, se base sur l'heure actuelle.</dd>
+</dl>
+
+<ul>
+<li><p>depuis - 1.0
+        - auteur - Patrice Ferrot</p></li>
+
+</ul>
+</td></tr>
+</td></tr>
+</table>
+
+        </td>
+        </tr>
+        </table>
+
+        <hr>
+
+        <p><i><a href="../../index.html">Table of Contents</a></i></p>
+
+        <font size="-2"><i>This document was automatically generated
+        on Mon Mar  3 11:17:08 2003 by
+        <a href="http://happydoc.sourceforge.net">HappyDoc</a> version
+        2.1</i></font>
+        
+        </body>
+        </html>
+        
