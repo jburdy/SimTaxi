@@ -1,7 +1,7 @@
 #!/usr/bin/python2
 # -*- coding: utf-8 -*-
 """
-Module contenant l'�ch�ancier.
+Module contenant l'§ch§ancier.
 
 $Id: Echeancier.py,v 1.6 2003/01/08 09:24:07 vega01 Exp $
 """

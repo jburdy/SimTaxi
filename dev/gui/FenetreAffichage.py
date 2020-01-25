@@ -19,9 +19,9 @@ class FenetreAffichage(wxFrame) :
     
     def __init__(self) :
         """
-        Initialisation de la fen�tre d'affichage.
+        Initialisation de la fen§tre d'affichage.
         
-        Initialise la fen�tre d'affichage dans laquel est 
+        Initialise la fen§tre d'affichage dans laquel est 
         affiche le graphe en PpenGL.
 
         @return Rien : Ne retourne rien
@@ -37,16 +37,16 @@ class FenetreAffichage(wxFrame) :
         self.OpenglCanvas = EvenementsGlCanvas(self)
 
 
-        #evenement lors de la fermeture de la fen�tre
+        #evenement lors de la fermeture de la fen§tre
         EVT_CLOSE(self, self.invisible)
 
     
     
     def invisible(self, event) :
         """
-        Initialisation de la fen�tre d'affichage.
+        Initialisation de la fen§tre d'affichage.
         
-        Initialise la fen�tre d'affichage dans laquel est 
+        Initialise la fen§tre d'affichage dans laquel est 
         affiche le graphe en PpenGL.
 
         @param wxCloseEvent event : L'evenement de fermeture
@@ -54,4 +54,4 @@ class FenetreAffichage(wxFrame) :
         @author Gregory Burri
         """
         
-        self.Show(False) #rends invisible la fen�tre
+        self.Show(False) #rends invisible la fen§tre

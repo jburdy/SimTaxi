@@ -37,10 +37,10 @@ class Taxi(ObjetGraph) :
         
         Taxi.taille = 20 #taille des taxis
         
-        #pour afficher son num�ro
+        #pour afficher son num§ro
         self.texte = MiniNombre(11)
         
-        #les diff�rents symboles d'�tat
+        #les diff§rents symboles d'§tat
         Taxi.arrete = Etat(11, (1.0, 1.0, 1.0), 'arrete')
         Taxi.chercheClient = Etat(11, (0.4, 0.4, 1.0), 'chercheClient')
         Taxi.conduitClient = Etat(11, (1.0, 0.0, 0.0), 'conduitClient')
@@ -59,7 +59,7 @@ class Taxi(ObjetGraph) :
         @author Gregory Burri
         """
         
-        #dessine son �tat
+        #dessine son §tat
         if etat == 'arrete' :
            Taxi.arrete.dessiner((position[0]+20, position[1]+20))
         elif etat == 'chercheClient' :
@@ -69,7 +69,7 @@ class Taxi(ObjetGraph) :
         elif etat == 'retourStation' :
            Taxi.retourStation.dessiner((position[0]+20, position[1]+20))
         
-        #si le taxi n'est pas en station alors affiche son num�ro
+        #si le taxi n'est pas en station alors affiche son num§ro
         if etat != 'arrete' :
             self.texte.dessiner(str(numero),
                 (position[0]+20, position[1]+20))

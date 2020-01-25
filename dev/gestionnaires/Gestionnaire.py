@@ -44,7 +44,7 @@ class Gestionnaire(dict) :
 
         element -- L'element a ajouter
 
-        retourne (int) -- le no de l'�l�ment qui a �t� ajout�
+        retourne (int) -- le no de l'§l§ment qui a §t§ ajout§
 
         - depuis - 1.0
 

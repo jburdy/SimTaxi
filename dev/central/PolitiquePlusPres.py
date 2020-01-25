@@ -1,7 +1,7 @@
 #!/usr/bin/python2
 # -*- coding: utf-8 -*-
 """
-Module contenant la politique du plus pr�s.
+Module contenant la politique du plus pr§s.
 
 $Id: PolitiquePlusPres.py,v 1.5 2003/01/26 10:37:55 vega01 Exp $
 """
@@ -17,7 +17,7 @@ import GestionnaireStations
 
 class PolitiquePlusPres (Politique):
     """
-    Impl�mante la politique du taxi le plus pr�s et de
+    Impl§mante la politique du taxi le plus pr§s et de
     la station la plus proche.
     """
 
@@ -25,7 +25,7 @@ class PolitiquePlusPres (Politique):
     def choisirTaxi(self, client):
         """
         Retourne un taxi pour prendre en charge un client
-        d'apr�s la politique courante.
+        d'apr§s la politique courante.
 
         client (EvClient) -- Le client qui veut faire la course
 
@@ -40,9 +40,9 @@ class PolitiquePlusPres (Politique):
 
     def choisirStation(self, taxi):
         """
-        Retourne une station d'apr�s la politique courante.
+        Retourne une station d'apr§s la politique courante.
 
-        taxi (EvTaxi) -- Le taxi qui va � une station
+        taxi (EvTaxi) -- Le taxi qui va § une station
 
         retourne (Tuple(Station, Chemin)) -- La station et
 

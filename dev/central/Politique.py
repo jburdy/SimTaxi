@@ -22,14 +22,14 @@ class ErreurAbstraite(Exception):
 class Politique:
 
     """
-    Classe abstraite pour l'impl�mentation des politiques.
+    Classe abstraite pour l'impl§mentation des politiques.
     """
     
 
     def choisirTaxi(self, client):
         """
         Retourne un taxi pour prendre en charge un client 
-        d'apr�s la politique courante.
+        d'apr§s la politique courante.
 
         client (EvClient) -- Le client qui veut faire la course
 
@@ -44,9 +44,9 @@ class Politique:
 
     def choisirStation(self, taxi):
         """
-        Retourne une station d'apr�s la politique courante.
+        Retourne une station d'apr§s la politique courante.
 
-        taxi (EvTaxi) -- Le taxi qui va � une station
+        taxi (EvTaxi) -- Le taxi qui va § une station
 
         retourne (Station, Chemin) -- La station
 

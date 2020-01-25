@@ -22,14 +22,14 @@ D = 0 # Debug
 
 class ErreurEvenementIncorrect(Exception):
     """
-    Exception pour les �venements incorrects
+    Exception pour les §venements incorrects
     """
     pass
 
 
 class ErreurHeureIncorrecte(Exception):
     """
-    Exception quand une heure incorrecte est pass�e
+    Exception quand une heure incorrecte est pass§e
     """
     pass
 
@@ -116,7 +116,7 @@ class Taxi :
                     raise "Erreur Distance Incorrecte"
 
 
-            # Enregistrement des coordonn�es des sommets
+            # Enregistrement des coordonn§es des sommets
             som1X = self.__graphe.attributsSommet(sommet1).getX()
             som1Y = self.__graphe.attributsSommet(sommet1).getY()
             som2X = self.__graphe.attributsSommet(sommet2).getX()
@@ -240,7 +240,7 @@ class Taxi :
 
             # si le taxi est dans une station,
             if self.estEnDeplacement() == 0 :
-                # on dit � la station qu'on la quitte.
+                # on dit § la station qu'on la quitte.
                 lesStations.getStation(self.__noStation).quitterPlace(self.__no)
 
 
@@ -262,7 +262,7 @@ class Taxi :
             if self.__evenementCourant == None :
                 raise ErreurEvenementIncorrect
 
-            # mise � jour de la distance totale parcourue
+            # mise § jour de la distance totale parcourue
             self.__mParcourus += self.__distTrajet
 
             # Recuperation du chemin pour conduire le client
@@ -296,7 +296,7 @@ class Taxi :
             if self.__evenementCourant == None :
                 raise ErreurEvenementIncorrect
 
-            # mise � jour de la distance totale parcourue
+            # mise § jour de la distance totale parcourue
             self.__mParcourus += self.__distTrajet
 
             # Recuperation du chemin pour aller a la station
@@ -318,7 +318,7 @@ class Taxi :
             # Enregistrement de l'evenement
             self.__evenementCourant = evenement
 
-            # on r�serve une place dans la station ou on va.
+            # on r§serve une place dans la station ou on va.
             self.__evenementCourant.station().reserverPlace()
 
             self.__etat = 'retourStation'
@@ -335,7 +335,7 @@ class Taxi :
             if self.__evenementCourant == None :
                 raise ErreurEvenementIncorrect
 
-            # mise � jour de la distance totale parcourue
+            # mise § jour de la distance totale parcourue
             self.__mParcourus += self.__distTrajet
 
             # enregistrement du no de la nouvelle station dans laquelle
@@ -411,7 +411,7 @@ class Taxi :
             # recherche de la liste des sommets composants le chemin
             listeSommetsChemin = self.__cheminCourant.listeSommets()
 
-            #Si il y a eu une erreur dans l'heure pass�e, qu'elle est
+            #Si il y a eu une erreur dans l'heure pass§e, qu'elle est
             # trop grande
             if self.__heureFinEvenement != None and \
                 heure > self.__heureFinEvenement :
@@ -433,7 +433,7 @@ class Taxi :
                 # Initialisation
                 sommet2 = listeSommetsChemin[1]
 
-                # tant qu'on n'a pas d�pass� la distance max autoris�e,
+                # tant qu'on n'a pas d§pass§ la distance max autoris§e,
                 while distanceCumulee < self.__distTrajet :
 
                     #passage au sommet suivant
@@ -468,7 +468,7 @@ class Taxi :
                     # mise a jour de la distance cumulee
                     distanceCumulee += distArc
 
-                # si la distance max a �t�  d�pass�e,
+                # si la distance max a §t§  d§pass§e,
                 if distanceCumulee > self.__distTrajet:
 
                     distParcourueSurArc = distArc
@@ -524,9 +524,9 @@ class Taxi :
         """
         renvoie l'etat du taxi sous forme de string.
 
-        Permet de connaitre l'�tat du taxi.
+        Permet de connaitre l'§tat du taxi.
 
-        retourne string  -- l'�tat du taxi
+        retourne string  -- l'§tat du taxi
             Etats possibles : 'arrete', 'chercheClient', 'conduitClient',
                               'retourStation'.
 
@@ -542,8 +542,8 @@ class Taxi :
         """
         renvoie le nombre de courses effectuees par le taxi.
 
-        Permet de connaitre le nombre de courses que le taxi a effectu�es.
-        C'est-�-dire le nombre de client qu'il a charg� et qu'il a amen� � destination.
+        Permet de connaitre le nombre de courses que le taxi a effectu§es.
+        C'est-§-dire le nombre de client qu'il a charg§ et qu'il a amen§ § destination.
 
         retourne int -- le nombre de courses
 
@@ -557,11 +557,11 @@ class Taxi :
 
     def getNbmParcourus(self):
         """
-        renvoie le nombre de m�tres parcourus par le taxi.
+        renvoie le nombre de m§tres parcourus par le taxi.
 
-        Permet de connaitre le nombre de m�tres que le taxi a parcouru.
+        Permet de connaitre le nombre de m§tres que le taxi a parcouru.
 
-        retourne float -- le nombre de m�tres parcourus
+        retourne float -- le nombre de m§tres parcourus
 
         - depuis - 1.33
 

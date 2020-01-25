@@ -26,7 +26,7 @@ class Chemin:
 
         listeSommets (List) -- liste ordonnee des sommets du parcour.
 
-        listeDistances (List) -- liste des distances cummul�es pour chaque sommet
+        listeDistances (List) -- liste des distances cummul§es pour chaque sommet
 
         - depuis - 1.0
 
@@ -55,7 +55,7 @@ class Chemin:
 
     def posDepartXY(self):
         """
-        Renvoie la coordonn�e (tuple x, y) de depart du chemin.
+        Renvoie la coordonn§e (tuple x, y) de depart du chemin.
 
         retourne (Tuple(x,y))
 
@@ -89,7 +89,7 @@ class Chemin:
 
     def posArriveeXY(self):
         """
-        Renvoie la coordonn�e (tuple x, y) d'arrivee du chemin.
+        Renvoie la coordonn§e (tuple x, y) d'arrivee du chemin.
 
         retourne (Tuple(x,y))
 
@@ -192,8 +192,8 @@ class Chemin:
 
         - auteur - Lionel Guelat
         """
-        # ! cette m�thode n'a en fait pas lieu d'exister
-        # puisque des sommets peuvent �tre � double dans le chemin !
+        # ! cette m§thode n'a en fait pas lieu d'exister
+        # puisque des sommets peuvent §tre § double dans le chemin !
 
         # rechercher l'index de ces sommet
         index = 0
@@ -204,7 +204,7 @@ class Chemin:
                 d = self.__distances[index]
                 # trouve = self.__sommets[index]
             index += 1
-        # continue pour trouver le deuxi�me depuis la fin
+        # continue pour trouver le deuxi§me depuis la fin
         index = len(self.__sommets)-1
         while index >= 0:
             if self.__sommets[index] == a or self.__sommets[index] == b:
@@ -237,7 +237,7 @@ class Chemin:
                   + (self.__distances[index+1] - self.__distances[index]) / 2.0
                 # trouve = self.__sommets[index]
             index += 1
-        # cherche le deuxi�me depuis la fin
+        # cherche le deuxi§me depuis la fin
         index = self.nbSommets()-1
         while index > 0:
             if (self.__sommets[index-1] == b[0]) and (self.__sommets[index] == b[1]):

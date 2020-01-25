@@ -127,7 +127,7 @@ class Point:
         """
         Cette methode retourne la distance entre le point et le point donne.
 
-        point (Point) -- Le point donn�
+        point (Point) -- Le point donn§
 
         retourne (Float) -- La distance entre les 2 points
 

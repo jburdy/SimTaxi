@@ -27,7 +27,7 @@ class ClientAttend(Client) :
         
         - depuis - 1.0
         
-        - auteur - Gr�gory Burri
+        - auteur - Gr§gory Burri
         """
         
         Client.__init__(self, couche, couleur) #initialise le parent
@@ -47,14 +47,14 @@ class ClientAttend(Client) :
         
         - depuis - 1.0
         
-        - auteur - Gr�gory Burri
+        - auteur - Gr§gory Burri
         """
         
         #calcul de la transparence en fonction du temps
         #elle est comprise entre 0.5 et 1.0
         transparence = (sin(temps * self.vitessePulse) + 1.0)/4.0 + 0.5
         
-        #d�finit les fonctions de blending
+        #d§finit les fonctions de blending
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
         
         #definit sa couleur
@@ -63,6 +63,6 @@ class ClientAttend(Client) :
         #dessine le client
         Client.dessiner(self, position)
 
-        #revient � la fonction de blending initiale
+        #revient § la fonction de blending initiale
         glBlendFunc(GL_ONE, GL_ZERO)
         

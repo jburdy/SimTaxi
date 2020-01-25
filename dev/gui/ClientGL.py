@@ -27,7 +27,7 @@ class Client(ObjetGraph) :
         
         - depuis - 1.0
         
-        - auteur - Gr�gory Burri
+        - auteur - Gr§gory Burri
         """
         
         ObjetGraph.__init__(self, couche, couleur) #initialise le parent
@@ -43,12 +43,12 @@ class Client(ObjetGraph) :
         
         - depuis - 1.0
         
-        - auteur - Gr�gory Burri
+        - auteur - Gr§gory Burri
         """
         
         glPushMatrix() #sauvegarde la matrice de transformation
 
-        #se d�place a l'endroit ou le taxi doit se trouver
+        #se d§place a l'endroit ou le taxi doit se trouver
         glTranslatef(position[0], position[1], 0.0)
 
         #dessine le client

@@ -76,15 +76,15 @@ ID_SORTIR  = 102  #identificateur du menu "sortir"
 """
 
 
-#identificateur du menu pour afficher la fen�tre d'affichage
+#identificateur du menu pour afficher la fen§tre d'affichage
 ID_VOIR_FENETRE_AFFICHAGE = 103
 
 class FenetreControl(wxFrame):
     """
     Fenetre principale.
     
-    Fenetre principale gerant les autres fen�tres et contenant les
-    contr�les principaux.
+    Fenetre principale gerant les autres fen§tres et contenant les
+    contr§les principaux.
     
     :version: $Revision 1.0 $
     :author: Gregory Burri
@@ -92,16 +92,16 @@ class FenetreControl(wxFrame):
     
     def __init__(self):
         """
-        Initialisation de la fen�tre principale 
+        Initialisation de la fen§tre principale 
         
         @author Gregory Burri
         """
-        #initialise la fen�tre
+        #initialise la fen§tre
         wxFrame.__init__(self, None, -1,"SimTaxi - Fenetre de controle",
             wxDefaultPosition, wxSize(120, 200), 
             wxMINIMIZE_BOX | wxCAPTION | wxSYSTEM_MENU)
         
-        #cree la fen�tre d'affichage
+        #cree la fen§tre d'affichage
         self.laFenetreAffichage = FenetreAffichage()
         self.laFenetreAffichage.Show(True)
         """
@@ -122,8 +122,8 @@ class FenetreControl(wxFrame):
         self.CreateStatusBar()
         self.SetStatusText("barre d'etat")
         """
-        #le menu fichier qui va �tre racrocher a la barre de menu qui
-        #elle m�me va �tre raccorche a laframe
+        #le menu fichier qui va §tre racrocher a la barre de menu qui
+        #elle m§me va §tre raccorche a laframe
         menuFichier = wxMenu()
         """
         menuFichier.Append(ID_A_PROPOS, "&About",
@@ -132,17 +132,17 @@ class FenetreControl(wxFrame):
         menuFichier.Append(ID_SORTIR, "E&xit",
             "Terminate this program")
         """
-        #le menu fichier de gestion des fen�tres
+        #le menu fichier de gestion des fen§tres
         menuFenetre = wxMenu()
         menuFenetre.Append(ID_VOIR_FENETRE_AFFICHAGE,
-            "Afficher fenetre OpenGL", "Affiche la fen�tre Opengl")
+            "Afficher fenetre OpenGL", "Affiche la fen§tre Opengl")
         
         menuBar = wxMenuBar() #la barre de menu
         
         #accroche le menu fichier a la barre
         #menuBar.Append(menuFichier, "&File");
         
-        #on accroche la barre a la fen�tre
+        #on accroche la barre a la fen§tre
         menuBar.Append(menuFenetre, "&Window");
             
         self.SetMenuBar(menuBar) #accroche le menu a la frame
@@ -157,7 +157,7 @@ class FenetreControl(wxFrame):
         ##
             
         #EVT_COMMAND_SCROLL(self, XMLID("sliVitesse"), self.changeVitesse)
-        EVT_CLOSE(self, self.evSortir) #lorsque la fen�tre est ferme
+        EVT_CLOSE(self, self.evSortir) #lorsque la fen§tre est ferme
         ###FIN EVENEMENTS###
 
     
@@ -176,10 +176,10 @@ class FenetreControl(wxFrame):
         self.laFenetreAffichage.Show(True)
     
     def evSortir(self, event):
-        self.laFenetreAffichage.Destroy() #ferme la frame (fen�tre)
-        self.Destroy() #ferme la frame (fen�tre)
+        self.laFenetreAffichage.Destroy() #ferme la frame (fen§tre)
+        self.Destroy() #ferme la frame (fen§tre)
     
     def evMenuQuit(self, event):
-        self.Close(True) #ferme la frame (fen�tre)
+        self.Close(True) #ferme la frame (fen§tre)
         
 

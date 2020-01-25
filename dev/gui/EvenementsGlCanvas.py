@@ -50,7 +50,7 @@ class EvenementsGlCanvas(Vue) :
         #evenement declanche par le thread zoom pour mettre a jour le zoom
         EVT_METTRE_A_JOUR_ZOOM(self, self.evChangeZoom)
         
-        #evenement pour mettre � jour l'affichage (redessine la sc�ne openGL)
+        #evenement pour mettre § jour l'affichage (redessine la sc§ne openGL)
         EVT_METTRE_A_JOUR_AFFICHAGE(self, self.evRafraichir)
         
         #bind les evenements sur les methodes associees
@@ -67,7 +67,7 @@ class EvenementsGlCanvas(Vue) :
         #deplacement de la souris
         EVT_MOTION(self, self.OnMouseMotion)
         
-        #Vitesses lors du changement de la vue � l'aide de la souris
+        #Vitesses lors du changement de la vue § l'aide de la souris
         self.vitesse_deplacement_x = 0.1
         self.vitesse_deplacement_y = 0.1
         self.vitesse_zoom = 1.0

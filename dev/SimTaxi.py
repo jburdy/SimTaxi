@@ -23,11 +23,11 @@ print '\n'*3+ID+'\n'
 
 def dumpClients(liste):
     """
-    Dump (sauvegarde apr�s transformation) de la demande (liste d'�v clients).
+    Dump (sauvegarde apr§s transformation) de la demande (liste d'§v clients).
 
     Le fichier (%s) est sous forme texte.
 
-    liste -- la liste d'�v�nements clients.
+    liste -- la liste d'§v§nements clients.
 
     - depuis - 1.21
 
@@ -40,11 +40,11 @@ def dumpClients(liste):
 
 def loadClients():
     """
-    Chargement du dump de la demande (liste d'�v clients).
+    Chargement du dump de la demande (liste d'§v clients).
 
     Le fichier (%s) est sous forme texte.
     
-    retourne (list) -- liste d'�v�nements clients.
+    retourne (list) -- liste d'§v§nements clients.
 
     - depuis - 1.21
 
@@ -69,13 +69,13 @@ else:
 
     D = 1 # 1 = DEBUG
 
-    # recuperation des pr�f�rences (param�tres + configuration)
+    # recuperation des pr§f§rences (param§tres + configuration)
     gp = GestionnairePreferences('config.txt')
 
-    ##### initialisation de l'interface utilisateur, permettant � l'utilisateur
-    ##### de changer certain param�tre avant les initialisations suivantes (donc bloquant)
+    ##### initialisation de l'interface utilisateur, permettant § l'utilisateur
+    ##### de changer certain param§tre avant les initialisations suivantes (donc bloquant)
 
-    # cr�ation des objets
+    # cr§ation des objets
     graphe = GrapheXY(gp.valeurDe('fichierGraphe'))
     central = Central()
 
@@ -96,7 +96,7 @@ else:
         print len(clients), 'clients'
         #for i in clients: graphe.cheminPlusCourt(i.positions()[0],i.positions()[1])
     except:
-        print 'G�n�ration de la demande (long la 1�re fois)...'
+        print 'G§n§ration de la demande (long la 1§re fois)...'
         clients = initialisateur.genererCourses(gp.valeurDe('nbCoursesJour'),
                                                 gp.valeurDe('hPremiereCourse'),
                                                 gp.valeurDe('hDerniereCourse'),
@@ -112,7 +112,7 @@ else:
 class T(Thread):
     def run(self):
         # tant qu'il y a des evenements
-        print '==== D�but de la simulation'
+        print '==== D§but de la simulation'
         while central.evenement():
             evenement = central.traiterProchainEvenement() # renvois l'evenement traite (pour le gui)
             #if D: print str(evenement) + "\n"

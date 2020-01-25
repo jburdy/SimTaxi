@@ -19,7 +19,7 @@ from GrapheXY import GrapheXY
 
 class ErreurAucunTaxi(Exception):
     """
-    Exception lev�e quand on cherche le taxi le plus proche et
+    Exception lev§e quand on cherche le taxi le plus proche et
     qu'il n'y a aucun taxi dans la liste.
 
     """
@@ -28,7 +28,7 @@ class ErreurAucunTaxi(Exception):
 
 class ErreurAucunTaxiLibre(Exception):
     """
-    Exception lev�e quand on demande quel est le taxi le plus
+    Exception lev§e quand on demande quel est le taxi le plus
     proche et qu'il n'en reste plus aucun de libre
     """
     pass
@@ -119,7 +119,7 @@ class GestionnaireTaxis(Singleton):
         #Reference sur le graphe.
         graphe = GrapheXY()
 
-        #R�cup�ration des stations
+        #R§cup§ration des stations
         listeStations = GestionnaireStations().getListeStations()
 
         #recherche de la position du client en prenant les 2 premiers sommets
@@ -136,7 +136,7 @@ class GestionnaireTaxis(Singleton):
 
                 #arc de la 1ere station
                 posStation = stationCour.arc()
-                #r�cup�ration du no du taxi
+                #r§cup§ration du no du taxi
                 taxiPlusProche = stationCour.getTaxiSuivant()
                 #recherche du chemin le plus court jusqu'au taxi
                 cheminLePlusCourt =  graphe.cheminPlusCourt(posStation,posClient)
@@ -151,7 +151,7 @@ class GestionnaireTaxis(Singleton):
         if indexStation == -1 :
             raise ErreurAucunTaxiLibre
 
-        #suppression des stations qu'on a d�j� visit�,
+        #suppression des stations qu'on a d§j§ visit§,
         listeStations = listeStations[indexStation:]
 
 
@@ -171,11 +171,11 @@ class GestionnaireTaxis(Singleton):
                 # Si on trouve un chemin plus court,
                 if distanceCourante < distancePlusCourte :
 
-                    #r�cup�ration du no du taxi
+                    #r§cup§ration du no du taxi
                     taxiPlusProche = stationCour.getTaxiSuivant()
-                    #mise � jour du chemin
+                    #mise § jour du chemin
                     cheminLePlusCourt = cheminCourant
-                    #mise � jour de la distance
+                    #mise § jour de la distance
                     distancePlusCourte = distanceCourante
 
 
@@ -220,7 +220,7 @@ class GestionnaireTaxis(Singleton):
         """
         Renvoie le taxi correspondant au no.
 
-        Permet de renvoyer le taxi qui correspond au numero pass�.
+        Permet de renvoyer le taxi qui correspond au numero pass§.
 
         noTaxi int -- le no du taxi
         retourne Taxi -- Le taxi

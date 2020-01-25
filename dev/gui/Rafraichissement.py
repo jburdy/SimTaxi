@@ -51,13 +51,13 @@ class Rafraichissement(Singleton) :
         self.graphe = GrapheXY() #le graphe
         self.taxis = GestionnaireTaxis() #les taxis
         self.stations = GestionnaireStations() #les stations
-        self.clients = [] #liste des clients � afficher
-        self.clientsDepose = [] #liste des clients d�pos�s
+        self.clients = [] #liste des clients § afficher
+        self.clientsDepose = [] #liste des clients d§pos§s
         
         #le temps du dernier rafraichissement
         self.temps = 0;
         
-        #Met � jour la liste d'affichage pour le graphe
+        #Met § jour la liste d'affichage pour le graphe
         self.maj_liste_graphe()
         #self.maj_liste_stations()
       
@@ -71,28 +71,28 @@ class Rafraichissement(Singleton) :
            
         #si l'evenement est une demande de taxi d'un client
         if evenement.__class__.__name__ == 'EvClient' :
-            #ajoute le client � la liste des clients � afficher
+            #ajoute le client § la liste des clients § afficher
             self.clients.append(evenement)
             
         #si l'evenement est le chargement d'un client 
         elif evenement.__class__.__name__ == 'EvChargerClient' :
-            #enl�ve le client de la liste des clients � afficher
+            #enl§ve le client de la liste des clients § afficher
             #if evenement.client() in self.clients :
             self.clients.remove(evenement.client())
             
         #si l'evenement est un largage de client
         elif evenement.__class__.__name__ == 'EvPoserClient' :
-            #l'ajoute � la liste des clients d�pos�s
+            #l'ajoute § la liste des clients d§pos§s
             self.clientsDepose.append((evenement, temps))        
             
         if self.obj_evt != None :
-            self.temps = temps #m�morise le temps
-            #cr�e et declanche l'evenement de rafraichissement
+            self.temps = temps #m§morise le temps
+            #cr§e et declanche l'evenement de rafraichissement
             evt = MettreAJourAffichage()
             wxPostEvent(self.obj_evt, evt)
                 
     def maj_liste_graphe(self) :
-        liste_routes = [] #la liste des routes � affichers
+        liste_routes = [] #la liste des routes § affichers
         
         #commence la liste
         glNewList(self.listeAffichageGraphe, GL_COMPILE)
@@ -106,11 +106,11 @@ class Rafraichissement(Singleton) :
             #si une route dans allant dans l'autre sens
             #exite deja dans la liste alors
             if (fin, debut, True) in liste_routes : 
-                #notifie cette route comme n'�tant pas sens-unique
+                #notifie cette route comme n'§tant pas sens-unique
                 liste_routes[liste_routes.index((fin, debut, True))] = \
                     (fin, debut, False)
             else :
-                #sinon ajoute cette route � la liste
+                #sinon ajoute cette route § la liste
                 liste_routes.append((debut, fin, True))
          
         #affiche chaque route de la liste
@@ -146,7 +146,7 @@ class Rafraichissement(Singleton) :
         for taxi_obj in self.taxis.getListe() :
             position = taxi_obj.getPosition(self.temps)
             
-            #si le taxi se trouve � l'�cran alors l'affiche
+            #si le taxi se trouve § l'§cran alors l'affiche
             if self.obj_evt.visible(position[0], 20) :                    
                 self.taxi.dessiner(position[0], position[1],
                     taxi_obj.getEtat(), taxi_obj.getNo())
@@ -155,14 +155,14 @@ class Rafraichissement(Singleton) :
         for client_obj in self.clients :
             position = client_obj.chemin().posDepartXY();
             
-            #si le client se trouve � l'�cran alors l'affiche
+            #si le client se trouve § l'§cran alors l'affiche
             if self.obj_evt.visible(position, 10) :
                 self.client.dessiner(position, self.temps)
                     
         for client_obj in self.clientsDepose :
             position = client_obj[0].cheminStation().posDepartXY();
             
-            #si le client se trouve � l'�cran alors l'affiche
+            #si le client se trouve § l'§cran alors l'affiche
             if self.obj_evt.visible(position, 10) :
                 afficher = self.clientD.dessiner(
                     position, client_obj[1], self.temps)

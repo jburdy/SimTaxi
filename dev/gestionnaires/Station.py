@@ -12,7 +12,7 @@ __date__ = '2002-11-20'
 
 class ErreurReservation(Exception):
     """
-    Exception quand on veut r�server une place qui n'existe pas.
+    Exception quand on veut r§server une place qui n'existe pas.
 
     """
     pass
@@ -20,7 +20,7 @@ class ErreurReservation(Exception):
 
 class ErreurTaxisInconnu(Exception):
     """
-    Exception quand un taxi d�sire quitter une station dans laquelle
+    Exception quand un taxi d§sire quitter une station dans laquelle
     il ne se trouve pas.
     """
 
@@ -28,7 +28,7 @@ class ErreurTaxisInconnu(Exception):
 
 class ErreurSommetsIdentiques(Exception):
     """
-    Exception quand on cr�e une station avec 2 sommets identiques
+    Exception quand on cr§e une station avec 2 sommets identiques
     """
 
     pass
@@ -134,7 +134,7 @@ class Station :
         """
         Annuler une reservation anterieure.
 
-        Permet d'annuler une reservation faite plus t�t. Si aucune reservation
+        Permet d'annuler une reservation faite plus t§t. Si aucune reservation
         n'existe, une exception est propagee.
 
         - depuis - 1.0
@@ -243,7 +243,7 @@ class Station :
 
         Permet de connaitre le no qui a ete attribue a la station.
 
-        retourne (int) -- Le no attribu�
+        retourne (int) -- Le no attribu§
 
         - depuis - 1.2
 
@@ -310,7 +310,7 @@ class Station :
         """
         renvoie le no du 1er taxi de la liste.
 
-        Permet de connaitre le no du taxi qui est en t�te de la liste.
+        Permet de connaitre le no du taxi qui est en t§te de la liste.
 
         retourne (int) -- le no du taxi.
         - depuis - 1.14

@@ -1,7 +1,7 @@
 #!/usr/bin/python2
 # -*- coding: utf-8 -*-
 """
-Module contenant les classes �v�nements.
+Module contenant les classes §v§nements.
 
 $Id: Evenement.py,v 1.19 2003/02/09 12:17:38 vega01 Exp $
 """
@@ -47,9 +47,9 @@ class Evenement:
 
     def traiter(self):
         """
-        Traitement associe � l'evenement.
+        Traitement associe § l'evenement.
 
-        Par d�faut aucun traitement associe. Peut d�clencher l'exception
+        Par d§faut aucun traitement associe. Peut d§clencher l'exception
         Erreur_Traiter.
 
         - depuis - 1.0
@@ -71,7 +71,7 @@ class Evenement:
         
     def __repr__(self):
         """
-        Donne des infos sur l'�v�nement
+        Donne des infos sur l'§v§nement
 
         - depuis - 1.0
 
@@ -85,7 +85,7 @@ class EvClient(Evenement):
     """
     Evenement client.
 
-    Permet de savoir qu'un client a appelle un taxi est � quel moment.
+    Permet de savoir qu'un client a appelle un taxi est § quel moment.
     """
 
 
@@ -155,7 +155,7 @@ class EvClient(Evenement):
         """
         Appeler par traiter.
 
-        Choisi un taxi d'apr�s la politique.
+        Choisi un taxi d'apr§s la politique.
 
         - depuis - 1.0
 
@@ -163,7 +163,7 @@ class EvClient(Evenement):
         """
         
         graphe = GrapheXY.GrapheXY()
-        #Calcul du chemin � parcourir utiliser par le taxi
+        #Calcul du chemin § parcourir utiliser par le taxi
         self.__chemin = graphe.cheminPlusCourt(self.__positions[0], self.__positions[1])
         
         #On recupere la politique courante
@@ -177,7 +177,7 @@ class EvClient(Evenement):
 
     def __repr__(self):
         """
-        Donne des infos sur l'�v�nement
+        Donne des infos sur l'§v§nement
 
         - depuis - 1.0
 
@@ -228,7 +228,7 @@ class EvTaxi(Evenement):
 
     def __repr__(self):
         """
-        Donne des infos sur l'�v�nement
+        Donne des infos sur l'§v§nement
 
         - depuis - 1.0
 
@@ -290,7 +290,7 @@ class EvChargerClient(EvTaxi):
 
     def __repr__(self):
         """
-        Donne des infos sur l'�v�nement
+        Donne des infos sur l'§v§nement
 
         - depuis - 1.0
 
@@ -372,7 +372,7 @@ class EvPoserClient(EvChargerClient):
 
     def __repr__(self):
         """
-        Donne des infos sur l'�v�nement
+        Donne des infos sur l'§v§nement
 
         - depuis - 1.0
 
@@ -383,7 +383,7 @@ class EvPoserClient(EvChargerClient):
 
 class EvArriverStation(EvTaxi):
     """
-    A lieu quand un taxi arrive � une station.
+    A lieu quand un taxi arrive § une station.
     """
 
 
@@ -411,7 +411,7 @@ class EvArriverStation(EvTaxi):
         """
         Appeler par traiter.
 
-        Doit transmettre des infos � la station.
+        Doit transmettre des infos § la station.
 
         - depuis - 1.0
 
@@ -421,7 +421,7 @@ class EvArriverStation(EvTaxi):
 
     def __repr__(self):
         """
-        Donne des infos sur l'�v�nement
+        Donne des infos sur l'§v§nement
 
         - depuis - 1.0
 

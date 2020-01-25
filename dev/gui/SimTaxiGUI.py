@@ -22,17 +22,17 @@ class SimTaxiGUI(wxApp) :
         """
         Initialisation de l'environement graphique.
         
-        Cree la fen�tre principal (de control)
+        Cree la fen§tre principal (de control)
          
         @return Rien : Ne retourne rien
         @author Gregory Burri
         """
         
-        #la fen�tre principal
+        #la fen§tre principal
         laFenetreControl = FenetreControl()
         laFenetreControl.Show(True)
         
-        #la module de rafraichissement pour pouvoir mettre � jour
+        #la module de rafraichissement pour pouvoir mettre § jour
         #la position des taxis sur l'affichage
         self.rafraichissement = Rafraichissement()
 

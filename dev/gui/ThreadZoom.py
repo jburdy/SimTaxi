@@ -17,7 +17,7 @@ def EVT_METTRE_A_JOUR_ZOOM(win, func) :
     Procedure permettant de binder l'evenement
     wxEVT_METTRE_A_JOUR_ZOOM sur une methode.
      
-    @param wxWindow win : la fen�tre sur laquelle intervient l'evenement
+    @param wxWindow win : la fen§tre sur laquelle intervient l'evenement
     @param func : la methode a appeller
     @return Rien : Ne retourne rien
     @author Gregory Burri

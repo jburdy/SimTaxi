@@ -27,7 +27,7 @@ class Carrefour(ObjetGraph) :
         
         - depuis - 1.0
         
-        - auteur - Gr�gory Burri
+        - auteur - Gr§gory Burri
         """
         
         ObjetGraph.__init__(self, couche, couleur) #initialise le paren
@@ -43,10 +43,10 @@ class Carrefour(ObjetGraph) :
         
         - depuis - 1.0
         
-        - auteur - Gr�gory Burri
+        - auteur - Gr§gory Burri
         """
         
-        #d�finit la couleur du carrefour
+        #d§finit la couleur du carrefour
         glColor3f(self.couleur[0], self.couleur[1], self.couleur[2])
         
         glPushMatrix() #sauvegarde la matrice de transformation

@@ -33,7 +33,7 @@ class MiniNombre(ObjetGraph) :
         
         ObjetGraph.__init__(self, couche, couleur) #initialise le parent
 
-        self.initGL() #initialise diff�rents param�tre li�s � openGL
+        self.initGL() #initialise diff§rents param§tre li§s § openGL
               
     def initGL(self) :              
               

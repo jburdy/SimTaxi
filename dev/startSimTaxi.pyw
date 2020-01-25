@@ -1,17 +1,17 @@
 #!/usr/bin/python2
 # -*- coding: utf-8 -*-
 """
-Lancement de SimTaxi (multiOS) apr�s divers contr�les.
+Lancement de SimTaxi (multiOS) apr§s divers contr§les.
 
-- contr�le des d�pendances
+- contr§le des d§pendances
 
-- cr�ation de l'environement appropri�
+- cr§ation de l'environement appropri§
 
 $Id: startSimTaxi.pyw,v 1.9 2003/02/06 16:33:31 erreur Exp $
 """
 
 
-# disctionnaire des lib dont nous sommes d�pendant
+# disctionnaire des lib dont nous sommes d§pendant
 dependance = {'OpenGL':'http://pyopengl.sourceforge.net',
               #'Numeric':'http://www.pfdubois.com/numpy',
               'wx':'http://www.wxpython.org'}
@@ -27,7 +27,7 @@ def fixerPYTHONPATH():
     """
     Fixe la varibable d'environement.
 
-    Cette variable d'environement est obligatoire pour pouvoir acc�der � nos
+    Cette variable d'environement est obligatoire pour pouvoir acc§der § nos
     module contenu dans les paquetage de SimTaxi.
 
     - depuis - 1.1
@@ -42,10 +42,10 @@ def fixerPYTHONPATH():
 
 def dependanceOK(dicoDep, avertissement):
     """
-    Contr�le que les librairies dont nous avons besoin sont disponnible.
+    Contr§le que les librairies dont nous avons besoin sont disponnible.
 
     Si au moins une librairie est absente, un message d'avertissement s'affiche
-    puis les librairies manquantes sont list�e, avec leurs URL.
+    puis les librairies manquantes sont list§e, avec leurs URL.
 
     dicoDep (dict) -- le dico contenant les librairies et leurs URL
 

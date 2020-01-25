@@ -18,8 +18,8 @@ from Chemin import Chemin
 
 class ErreurEvenementIncorrect(Exception):
     """
-    Exception quand on passe un �venement incorrect
-    � la m�thode plusProcheDe()
+    Exception quand on passe un §venement incorrect
+    § la m§thode plusProcheDe()
     """
     pass
 
@@ -112,7 +112,7 @@ class GestionnaireStations(Singleton):
         """
         Renvois la station la plus proche de la position.
 
-        position (EvPoserClient) -- un �venement poser client
+        position (EvPoserClient) -- un §venement poser client
 
         retourne (tuple(Station,Chemin)) -- la station la plus proche et
         le chemin pour s'y rendre.
@@ -122,7 +122,7 @@ class GestionnaireStations(Singleton):
         - auteur - Lucien Chaboudez
         """
 
-        #Si ce n'est pas le bon �venement,
+        #Si ce n'est pas le bon §venement,
         if evPoserClient.__class__.__name__ != 'EvPoserClient' :
             raise ErreurEvenementIncorrect
 
@@ -293,7 +293,7 @@ class GestionnaireStations(Singleton):
         renvoie le nb de places libres dans la station.
 
         Permet de connaitre le nombre de places qui sont libres dans la station
-        dont le no est pass�.
+        dont le no est pass§.
 
         noStation (int) -- le no de la station dont on veut le nombre de places libres.
 
@@ -312,7 +312,7 @@ class GestionnaireStations(Singleton):
         """
         renvoie la station correspondant au no.
 
-        Permet d'avoir acc�s � la station dont le no est pass� en param�tre.
+        Permet d'avoir acc§s § la station dont le no est pass§ en param§tre.
 
         noStation (int) -- le no de la station.
 

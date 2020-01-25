@@ -38,18 +38,18 @@ class OpenGLCanvas(wxGLCanvas) :
         
         wxGLCanvas.__init__(self, parent, -1) #initialise le parent
         
-        #savoir si opengl � �t� initialis�
+        #savoir si opengl § §t§ initialis§
         self.iniGL = False
 
-        #evenement lorsque la zone a besoin d'�tre repeinte
+        #evenement lorsque la zone a besoin d'§tre repeinte
         EVT_ERASE_BACKGROUND(self, self.OnEraseBackground)
 
-        #evenement lorsque la zone doit �tre repeinte
+        #evenement lorsque la zone doit §tre repeinte
         EVT_PAINT(self, self.OnPaint)
         
     def OnEraseBackground(self, evt) :
         """
-        Appele lorsque la zone a besoin d'�tre repeinte.
+        Appele lorsque la zone a besoin d'§tre repeinte.
         
         -.
          
@@ -63,7 +63,7 @@ class OpenGLCanvas(wxGLCanvas) :
     
     def OnPaint(self, evt):
         """
-        Appele lorsque la zone doit �tre repeinte.
+        Appele lorsque la zone doit §tre repeinte.
         
         -.
          
@@ -76,7 +76,7 @@ class OpenGLCanvas(wxGLCanvas) :
             self.iniGL = True
             self.initGL()
         
-        #doit �tre construit lors de l'evenement onPaint...
+        #doit §tre construit lors de l'evenement onPaint...
         dc = wxPaintDC(self)
         
 

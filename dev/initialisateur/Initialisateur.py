@@ -28,7 +28,7 @@ class Initialisateur:
         """
         Constructeur.
 
-        Permet de cr�er un objet de la classe.
+        Permet de cr§er un objet de la classe.
 
         - depuis - 1.0
 
@@ -260,7 +260,7 @@ class Initialisateur:
             """
 
             # Pour ne pas placer deux stations au meme endroit.
-            # Les tests assurent qu'il n'y aie pas d'erreur, mais possibilit�
+            # Les tests assurent qu'il n'y aie pas d'erreur, mais possibilit§
             # de plusieurs stations au meme endroit...
             if len(listeSommets) > 1:
                 listeSommets.remove(sommet1)

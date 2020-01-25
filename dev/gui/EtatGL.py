@@ -8,10 +8,10 @@ from ObjetGraph import *
 
 class Etat(ObjetGraph) :
     """
-    Classe permettant de dessiner les �tats des taxis.
+    Classe permettant de dessiner les §tats des taxis.
     
     Classe derivant de ObjetGraph et permettant
-    de dessiner les symboles d�crivant l'�tat d'un taxi.
+    de dessiner les symboles d§crivant l'§tat d'un taxi.
     Il est possible de choisir entre 2 tailles
     de police.
     
@@ -34,23 +34,23 @@ class Etat(ObjetGraph) :
         
         ObjetGraph.__init__(self, couche, couleur) #initialise le parent
 
-        #cr�e la liste d'affichage du symbole souhait�
+        #cr§e la liste d'affichage du symbole souhait§
         self.initGL(etat)
               
     def initGL(self, etat) :              
               
-        #les symboles des �tats du taxi
+        #les symboles des §tats du taxi
         Etat.symboles = {
-            #Arret�
+            #Arret§
             'arrete' :
             (0x00, 0xf0, 0x40, 0x2f, 0xf4, 0x02, 0x0f, 0x00),
             #Cherche un client
             'chercheClient' :
             (0x08, 0x0c, 0x7e, 0x7f, 0x7e, 0x0c, 0x08, 0x00),
-            #Conduit un client (occup�)
+            #Conduit un client (occup§)
             'conduitClient' :
             (0x00, 0x3e, 0x3e, 0x3e, 0x3e, 0x1c, 0x00, 0x00),
-            #Retourne � une station
+            #Retourne § une station
             'retourStation' :
             (0x08, 0x0c, 0x7e, 0x7f, 0x7e, 0x0c, 0x08, 0x00)}
 

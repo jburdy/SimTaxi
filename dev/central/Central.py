@@ -50,7 +50,7 @@ class Central(Singleton):
         """
         Constructeur.
 
-        Permet de cr�er un objet de la classe Central.
+        Permet de cr§er un objet de la classe Central.
         
         - depuis - 1.0
         
@@ -100,7 +100,7 @@ class Central(Singleton):
         Supprimer le premier element de l'echeancier et le traiter en
         fonction de son type. Puis le retourne.
 
-        retourne (Evenement) -- L'�v�nement qui a �t� trait�.
+        retourne (Evenement) -- L'§v§nement qui a §t§ trait§.
 
         - depuis - 1.0
 
