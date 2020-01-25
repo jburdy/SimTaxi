@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.4 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-11-23"
@@ -26,7 +27,7 @@ class Client(ObjetGraph) :
         
         - depuis - 1.0
         
-        - auteur - Grégory Burri
+        - auteur - Grï¿½gory Burri
         """
         
         ObjetGraph.__init__(self, couche, couleur) #initialise le parent
@@ -42,12 +43,12 @@ class Client(ObjetGraph) :
         
         - depuis - 1.0
         
-        - auteur - Grégory Burri
+        - auteur - Grï¿½gory Burri
         """
         
         glPushMatrix() #sauvegarde la matrice de transformation
 
-        #se déplace a l'endroit ou le taxi doit se trouver
+        #se dï¿½place a l'endroit ou le taxi doit se trouver
         glTranslatef(position[0], position[1], 0.0)
 
         #dessine le client

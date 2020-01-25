@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """
 Module contenant le classe Station.
 
@@ -11,7 +12,7 @@ __date__ = '2002-11-20'
 
 class ErreurReservation(Exception):
     """
-    Exception quand on veut réserver une place qui n'existe pas.
+    Exception quand on veut rï¿½server une place qui n'existe pas.
 
     """
     pass
@@ -19,7 +20,7 @@ class ErreurReservation(Exception):
 
 class ErreurTaxisInconnu(Exception):
     """
-    Exception quand un taxi désire quitter une station dans laquelle
+    Exception quand un taxi dï¿½sire quitter une station dans laquelle
     il ne se trouve pas.
     """
 
@@ -27,7 +28,7 @@ class ErreurTaxisInconnu(Exception):
 
 class ErreurSommetsIdentiques(Exception):
     """
-    Exception quand on crée une station avec 2 sommets identiques
+    Exception quand on crï¿½e une station avec 2 sommets identiques
     """
 
     pass
@@ -133,7 +134,7 @@ class Station :
         """
         Annuler une reservation anterieure.
 
-        Permet d'annuler une reservation faite plus tôt. Si aucune reservation
+        Permet d'annuler une reservation faite plus tï¿½t. Si aucune reservation
         n'existe, une exception est propagee.
 
         - depuis - 1.0
@@ -242,7 +243,7 @@ class Station :
 
         Permet de connaitre le no qui a ete attribue a la station.
 
-        retourne (int) -- Le no attribué
+        retourne (int) -- Le no attribuï¿½
 
         - depuis - 1.2
 
@@ -309,7 +310,7 @@ class Station :
         """
         renvoie le no du 1er taxi de la liste.
 
-        Permet de connaitre le no du taxi qui est en tête de la liste.
+        Permet de connaitre le no du taxi qui est en tï¿½te de la liste.
 
         retourne (int) -- le no du taxi.
         - depuis - 1.14

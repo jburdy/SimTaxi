@@ -1,6 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """ 
-Module du gestionnaire de préférences. 
+Module du gestionnaire de prï¿½fï¿½rences. 
 
 $Id: GestionnairePreferences.py,v 1.5 2003/01/11 12:22:46 erreur Exp $
 """

@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.5 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-11-23"
@@ -18,9 +19,9 @@ class FenetreAffichage(wxFrame) :
     
     def __init__(self) :
         """
-        Initialisation de la fenêtre d'affichage.
+        Initialisation de la fenï¿½tre d'affichage.
         
-        Initialise la fenêtre d'affichage dans laquel est 
+        Initialise la fenï¿½tre d'affichage dans laquel est 
         affiche le graphe en PpenGL.
 
         @return Rien : Ne retourne rien
@@ -36,16 +37,16 @@ class FenetreAffichage(wxFrame) :
         self.OpenglCanvas = EvenementsGlCanvas(self)
 
 
-        #evenement lors de la fermeture de la fenêtre
+        #evenement lors de la fermeture de la fenï¿½tre
         EVT_CLOSE(self, self.invisible)
 
     
     
     def invisible(self, event) :
         """
-        Initialisation de la fenêtre d'affichage.
+        Initialisation de la fenï¿½tre d'affichage.
         
-        Initialise la fenêtre d'affichage dans laquel est 
+        Initialise la fenï¿½tre d'affichage dans laquel est 
         affiche le graphe en PpenGL.
 
         @param wxCloseEvent event : L'evenement de fermeture
@@ -53,4 +54,4 @@ class FenetreAffichage(wxFrame) :
         @author Gregory Burri
         """
         
-        self.Show(False) #rends invisible la fenêtre
+        self.Show(False) #rends invisible la fenï¿½tre

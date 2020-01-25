@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.9 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-12-7"
@@ -49,7 +50,7 @@ class EvenementsGlCanvas(Vue) :
         #evenement declanche par le thread zoom pour mettre a jour le zoom
         EVT_METTRE_A_JOUR_ZOOM(self, self.evChangeZoom)
         
-        #evenement pour mettre à jour l'affichage (redessine la scène openGL)
+        #evenement pour mettre ï¿½ jour l'affichage (redessine la scï¿½ne openGL)
         EVT_METTRE_A_JOUR_AFFICHAGE(self, self.evRafraichir)
         
         #bind les evenements sur les methodes associees
@@ -66,7 +67,7 @@ class EvenementsGlCanvas(Vue) :
         #deplacement de la souris
         EVT_MOTION(self, self.OnMouseMotion)
         
-        #Vitesses lors du changement de la vue à l'aide de la souris
+        #Vitesses lors du changement de la vue ï¿½ l'aide de la souris
         self.vitesse_deplacement_x = 0.1
         self.vitesse_deplacement_y = 0.1
         self.vitesse_zoom = 1.0

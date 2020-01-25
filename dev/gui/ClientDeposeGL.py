@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.2 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-11-23"
@@ -12,14 +13,14 @@ class ClientDepose(Client) :
     Classe dessinant un client.
     
     Classe derivant de ObjetGraph et permettant
-    de dessiner des clients venant d'être déposés
+    de dessiner des clients venant d'ï¿½tre dï¿½posï¿½s
     par un taxi en OpenGL.  
     """
     
     
     def __init__(self, couche = 0, couleur = (0.4, 0.4, 1.0)) :
         """
-        Initialisation d'un client venant d'être déposé.
+        Initialisation d'un client venant d'ï¿½tre dï¿½posï¿½.
         
         couche (int) -- couche sur laquelle se trouve le client
         
@@ -27,7 +28,7 @@ class ClientDepose(Client) :
         
         - depuis - 1.0
         
-        - auteur - Grégory Burri
+        - auteur - Grï¿½gory Burri
         """
         
         Client.__init__(self, couche, couleur) #initialise le parent
@@ -39,23 +40,23 @@ class ClientDepose(Client) :
         
     def dessiner(self, position, tempsLargage, temps) :
         """
-        Dessine un client qui à été déposé par un taxi.
+        Dessine un client qui ï¿½ ï¿½tï¿½ dï¿½posï¿½ par un taxi.
         
         position (tuple(float, float)) -- position
         
-        tempsLargage (float) -- temps au moment ou le client à été déposé
+        tempsLargage (float) -- temps au moment ou le client ï¿½ ï¿½tï¿½ dï¿½posï¿½
         
         temps (float) -- temps de la simulation
         
         - depuis - 1.0
         
-        - auteur - Grégory Burri
+        - auteur - Grï¿½gory Burri
         """
                 
         #calcul la transparence, elle est comprise entre 0.0 et 1.0
         transparence = 1.0 - (temps - tempsLargage) / self.tempsAffiche
         
-        #définit les fonctions de blending
+        #dï¿½finit les fonctions de blending
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
         
         #definit sa couleur
@@ -64,10 +65,10 @@ class ClientDepose(Client) :
         #dessine le client
         Client.dessiner(self, position)
         
-        #revient à la fonction de blending initiale
+        #revient ï¿½ la fonction de blending initiale
         glBlendFunc(GL_ONE, GL_ZERO)
         
-        #si le client ne de doit plus être affiché
+        #si le client ne de doit plus ï¿½tre affichï¿½
         if (temps - tempsLargage) >= self.tempsAffiche :
             return False
         else :

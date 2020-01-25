@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.11 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-11-23"
@@ -21,17 +22,17 @@ class SimTaxiGUI(wxApp) :
         """
         Initialisation de l'environement graphique.
         
-        Cree la fenêtre principal (de control)
+        Cree la fenï¿½tre principal (de control)
          
         @return Rien : Ne retourne rien
         @author Gregory Burri
         """
         
-        #la fenêtre principal
+        #la fenï¿½tre principal
         laFenetreControl = FenetreControl()
         laFenetreControl.Show(True)
         
-        #la module de rafraichissement pour pouvoir mettre à jour
+        #la module de rafraichissement pour pouvoir mettre ï¿½ jour
         #la position des taxis sur l'affichage
         self.rafraichissement = Rafraichissement()
 

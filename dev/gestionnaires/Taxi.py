@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """
 Module contenant le classe Taxi.
 
@@ -21,14 +22,14 @@ D = 0 # Debug
 
 class ErreurEvenementIncorrect(Exception):
     """
-    Exception pour les évenements incorrects
+    Exception pour les ï¿½venements incorrects
     """
     pass
 
 
 class ErreurHeureIncorrecte(Exception):
     """
-    Exception quand une heure incorrecte est passée
+    Exception quand une heure incorrecte est passï¿½e
     """
     pass
 
@@ -115,7 +116,7 @@ class Taxi :
                     raise "Erreur Distance Incorrecte"
 
 
-            # Enregistrement des coordonnées des sommets
+            # Enregistrement des coordonnï¿½es des sommets
             som1X = self.__graphe.attributsSommet(sommet1).getX()
             som1Y = self.__graphe.attributsSommet(sommet1).getY()
             som2X = self.__graphe.attributsSommet(sommet2).getX()
@@ -239,7 +240,7 @@ class Taxi :
 
             # si le taxi est dans une station,
             if self.estEnDeplacement() == 0 :
-                # on dit à la station qu'on la quitte.
+                # on dit ï¿½ la station qu'on la quitte.
                 lesStations.getStation(self.__noStation).quitterPlace(self.__no)
 
 
@@ -261,7 +262,7 @@ class Taxi :
             if self.__evenementCourant == None :
                 raise ErreurEvenementIncorrect
 
-            # mise à jour de la distance totale parcourue
+            # mise ï¿½ jour de la distance totale parcourue
             self.__mParcourus += self.__distTrajet
 
             # Recuperation du chemin pour conduire le client
@@ -295,7 +296,7 @@ class Taxi :
             if self.__evenementCourant == None :
                 raise ErreurEvenementIncorrect
 
-            # mise à jour de la distance totale parcourue
+            # mise ï¿½ jour de la distance totale parcourue
             self.__mParcourus += self.__distTrajet
 
             # Recuperation du chemin pour aller a la station
@@ -317,7 +318,7 @@ class Taxi :
             # Enregistrement de l'evenement
             self.__evenementCourant = evenement
 
-            # on réserve une place dans la station ou on va.
+            # on rï¿½serve une place dans la station ou on va.
             self.__evenementCourant.station().reserverPlace()
 
             self.__etat = 'retourStation'
@@ -334,7 +335,7 @@ class Taxi :
             if self.__evenementCourant == None :
                 raise ErreurEvenementIncorrect
 
-            # mise à jour de la distance totale parcourue
+            # mise ï¿½ jour de la distance totale parcourue
             self.__mParcourus += self.__distTrajet
 
             # enregistrement du no de la nouvelle station dans laquelle
@@ -410,7 +411,7 @@ class Taxi :
             # recherche de la liste des sommets composants le chemin
             listeSommetsChemin = self.__cheminCourant.listeSommets()
 
-            #Si il y a eu une erreur dans l'heure passée, qu'elle est
+            #Si il y a eu une erreur dans l'heure passï¿½e, qu'elle est
             # trop grande
             if self.__heureFinEvenement != None and \
                 heure > self.__heureFinEvenement :
@@ -432,7 +433,7 @@ class Taxi :
                 # Initialisation
                 sommet2 = listeSommetsChemin[1]
 
-                # tant qu'on n'a pas dépassé la distance max autorisée,
+                # tant qu'on n'a pas dï¿½passï¿½ la distance max autorisï¿½e,
                 while distanceCumulee < self.__distTrajet :
 
                     #passage au sommet suivant
@@ -467,7 +468,7 @@ class Taxi :
                     # mise a jour de la distance cumulee
                     distanceCumulee += distArc
 
-                # si la distance max a été  dépassée,
+                # si la distance max a ï¿½tï¿½  dï¿½passï¿½e,
                 if distanceCumulee > self.__distTrajet:
 
                     distParcourueSurArc = distArc
@@ -523,9 +524,9 @@ class Taxi :
         """
         renvoie l'etat du taxi sous forme de string.
 
-        Permet de connaitre l'état du taxi.
+        Permet de connaitre l'ï¿½tat du taxi.
 
-        retourne string  -- l'état du taxi
+        retourne string  -- l'ï¿½tat du taxi
             Etats possibles : 'arrete', 'chercheClient', 'conduitClient',
                               'retourStation'.
 
@@ -541,8 +542,8 @@ class Taxi :
         """
         renvoie le nombre de courses effectuees par le taxi.
 
-        Permet de connaitre le nombre de courses que le taxi a effectuées.
-        C'est-à-dire le nombre de client qu'il a chargé et qu'il a amené à destination.
+        Permet de connaitre le nombre de courses que le taxi a effectuï¿½es.
+        C'est-ï¿½-dire le nombre de client qu'il a chargï¿½ et qu'il a amenï¿½ ï¿½ destination.
 
         retourne int -- le nombre de courses
 
@@ -556,11 +557,11 @@ class Taxi :
 
     def getNbmParcourus(self):
         """
-        renvoie le nombre de mètres parcourus par le taxi.
+        renvoie le nombre de mï¿½tres parcourus par le taxi.
 
-        Permet de connaitre le nombre de mètres que le taxi a parcouru.
+        Permet de connaitre le nombre de mï¿½tres que le taxi a parcouru.
 
-        retourne float -- le nombre de mètres parcourus
+        retourne float -- le nombre de mï¿½tres parcourus
 
         - depuis - 1.33
 

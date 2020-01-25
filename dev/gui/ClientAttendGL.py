@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.2 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-11-23"
@@ -26,7 +27,7 @@ class ClientAttend(Client) :
         
         - depuis - 1.0
         
-        - auteur - Grégory Burri
+        - auteur - Grï¿½gory Burri
         """
         
         Client.__init__(self, couche, couleur) #initialise le parent
@@ -46,14 +47,14 @@ class ClientAttend(Client) :
         
         - depuis - 1.0
         
-        - auteur - Grégory Burri
+        - auteur - Grï¿½gory Burri
         """
         
         #calcul de la transparence en fonction du temps
         #elle est comprise entre 0.5 et 1.0
         transparence = (sin(temps * self.vitessePulse) + 1.0)/4.0 + 0.5
         
-        #définit les fonctions de blending
+        #dï¿½finit les fonctions de blending
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
         
         #definit sa couleur
@@ -62,6 +63,6 @@ class ClientAttend(Client) :
         #dessine le client
         Client.dessiner(self, position)
 
-        #revient à la fonction de blending initiale
+        #revient ï¿½ la fonction de blending initiale
         glBlendFunc(GL_ONE, GL_ZERO)
         

@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.18 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-11-23"
@@ -16,7 +17,7 @@ class AffichageOpenGL(OpenGLCanvas):
     Classe dessinant dans le canevas opengl.
     
     Gestion de l'affichage OpenGL, cette classe va se charger
-    de redessiner toute la scène. Elle ne fournit pas les outils
+    de redessiner toute la scï¿½ne. Elle ne fournit pas les outils
     pour la gestion de la vue, elle est donc quasiment inutilisable
     toute seule.
     """
@@ -30,7 +31,7 @@ class AffichageOpenGL(OpenGLCanvas):
         
         - depuis - 1.0
         
-        - auteur - Grégory Burri
+        - auteur - Grï¿½gory Burri
         """
         OpenGLCanvas.__init__(self, attache)
         self.texte = TexteAbsolu() #l'affichage du temps  
@@ -38,31 +39,31 @@ class AffichageOpenGL(OpenGLCanvas):
     
     def initGL(self) :
         """
-        Initialisation de différents paramètre OpenGL.
+        Initialisation de diffï¿½rents paramï¿½tre OpenGL.
         
-        Le canvas OpenGL doit être crée pour pouvoir effectué des
+        Le canvas OpenGL doit ï¿½tre crï¿½e pour pouvoir effectuï¿½ des
         commandes OpenGL c'est pour cela qu'on ne peut pas mettre le
-        contenu de cette méthode dans le '__init__'
+        contenu de cette mï¿½thode dans le '__init__'
         
         - depuis - 1.0
         
-        - auteur - Grégory Burri
+        - auteur - Grï¿½gory Burri
         """
         #definit ce canevas comme celui de dessin courant
         self.SetCurrent()
 
-        glEnable(GL_CULL_FACE) #active l'effacement des faces cachées
-        glFrontFace(GL_CW) #définit la face visible
+        glEnable(GL_CULL_FACE) #active l'effacement des faces cachï¿½es
+        glFrontFace(GL_CW) #dï¿½finit la face visible
         glCullFace(GL_FRONT) #on cache certaines faces (les faces devants)
         
         glEnable(GL_DEPTH_TEST) #active le Z-Buffer
         
-        #l'objet permettant de rafraichir la scène,
+        #l'objet permettant de rafraichir la scï¿½ne,
         #il fait la liaison avec les autres partie de SimTaxi
         self.rafraichissement = Rafraichissement()
         
-        #passe une référence de l'affichage au rafraichissement
-        #(ceci pour qu'il puisse générer un événement destiné au canvas)
+        #passe une rï¿½fï¿½rence de l'affichage au rafraichissement
+        #(ceci pour qu'il puisse gï¿½nï¿½rer un ï¿½vï¿½nement destinï¿½ au canvas)
         self.rafraichissement.set_obj_evt(self)
         self.repositionner()
         self.evRedessiner()
@@ -74,10 +75,10 @@ class AffichageOpenGL(OpenGLCanvas):
         
         - depuis - 1.0
         
-        - auteur - Grégory Burri
+        - auteur - Grï¿½gory Burri
         """
 
-        #Affiche les différents composants
+        #Affiche les diffï¿½rents composants
         self.rafraichissement.afficherGraphe()
         self.rafraichissement.afficherTaxis()
         self.rafraichissement.afficherStations()

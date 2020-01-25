@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """
 Module d'initialisation.
 
@@ -27,7 +28,7 @@ class Initialisateur:
         """
         Constructeur.
 
-        Permet de créer un objet de la classe.
+        Permet de crï¿½er un objet de la classe.
 
         - depuis - 1.0
 
@@ -259,7 +260,7 @@ class Initialisateur:
             """
 
             # Pour ne pas placer deux stations au meme endroit.
-            # Les tests assurent qu'il n'y aie pas d'erreur, mais possibilité
+            # Les tests assurent qu'il n'y aie pas d'erreur, mais possibilitï¿½
             # de plusieurs stations au meme endroit...
             if len(listeSommets) > 1:
                 listeSommets.remove(sommet1)

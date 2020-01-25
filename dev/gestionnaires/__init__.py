@@ -1,5 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """
-Paquetage contenant les modules gestionnaires (Taxi, Station, Préférences, etc...)
+Paquetage contenant les modules gestionnaires (Taxi, Station, Prï¿½fï¿½rences, etc...)
 """
 

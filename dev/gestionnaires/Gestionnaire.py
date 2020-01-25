@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """
 Module de base des gestionnaires.
 
@@ -43,7 +44,7 @@ class Gestionnaire(dict) :
 
         element -- L'element a ajouter
 
-        retourne (int) -- le no de l'élément qui a été ajouté
+        retourne (int) -- le no de l'ï¿½lï¿½ment qui a ï¿½tï¿½ ajoutï¿½
 
         - depuis - 1.0
 

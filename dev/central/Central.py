@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """
 Module contenant la classe du central.
 
@@ -49,7 +50,7 @@ class Central(Singleton):
         """
         Constructeur.
 
-        Permet de créer un objet de la classe Central.
+        Permet de crï¿½er un objet de la classe Central.
         
         - depuis - 1.0
         
@@ -99,7 +100,7 @@ class Central(Singleton):
         Supprimer le premier element de l'echeancier et le traiter en
         fonction de son type. Puis le retourne.
 
-        retourne (Evenement) -- L'événement qui a été traité.
+        retourne (Evenement) -- L'ï¿½vï¿½nement qui a ï¿½tï¿½ traitï¿½.
 
         - depuis - 1.0
 

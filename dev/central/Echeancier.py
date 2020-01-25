@@ -1,6 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """
-Module contenant l'échéancier.
+Module contenant l'ï¿½chï¿½ancier.
 
 $Id: Echeancier.py,v 1.6 2003/01/08 09:24:07 vega01 Exp $
 """

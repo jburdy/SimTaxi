@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.9 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-11-23"
@@ -75,15 +76,15 @@ ID_SORTIR  = 102  #identificateur du menu "sortir"
 """
 
 
-#identificateur du menu pour afficher la fenêtre d'affichage
+#identificateur du menu pour afficher la fenï¿½tre d'affichage
 ID_VOIR_FENETRE_AFFICHAGE = 103
 
 class FenetreControl(wxFrame):
     """
     Fenetre principale.
     
-    Fenetre principale gerant les autres fenêtres et contenant les
-    contrôles principaux.
+    Fenetre principale gerant les autres fenï¿½tres et contenant les
+    contrï¿½les principaux.
     
     :version: $Revision 1.0 $
     :author: Gregory Burri
@@ -91,16 +92,16 @@ class FenetreControl(wxFrame):
     
     def __init__(self):
         """
-        Initialisation de la fenêtre principale 
+        Initialisation de la fenï¿½tre principale 
         
         @author Gregory Burri
         """
-        #initialise la fenêtre
+        #initialise la fenï¿½tre
         wxFrame.__init__(self, None, -1,"SimTaxi - Fenetre de controle",
             wxDefaultPosition, wxSize(120, 200), 
             wxMINIMIZE_BOX | wxCAPTION | wxSYSTEM_MENU)
         
-        #cree la fenêtre d'affichage
+        #cree la fenï¿½tre d'affichage
         self.laFenetreAffichage = FenetreAffichage()
         self.laFenetreAffichage.Show(True)
         """
@@ -121,8 +122,8 @@ class FenetreControl(wxFrame):
         self.CreateStatusBar()
         self.SetStatusText("barre d'etat")
         """
-        #le menu fichier qui va être racrocher a la barre de menu qui
-        #elle même va être raccorche a laframe
+        #le menu fichier qui va ï¿½tre racrocher a la barre de menu qui
+        #elle mï¿½me va ï¿½tre raccorche a laframe
         menuFichier = wxMenu()
         """
         menuFichier.Append(ID_A_PROPOS, "&About",
@@ -131,17 +132,17 @@ class FenetreControl(wxFrame):
         menuFichier.Append(ID_SORTIR, "E&xit",
             "Terminate this program")
         """
-        #le menu fichier de gestion des fenêtres
+        #le menu fichier de gestion des fenï¿½tres
         menuFenetre = wxMenu()
         menuFenetre.Append(ID_VOIR_FENETRE_AFFICHAGE,
-            "Afficher fenetre OpenGL", "Affiche la fenêtre Opengl")
+            "Afficher fenetre OpenGL", "Affiche la fenï¿½tre Opengl")
         
         menuBar = wxMenuBar() #la barre de menu
         
         #accroche le menu fichier a la barre
         #menuBar.Append(menuFichier, "&File");
         
-        #on accroche la barre a la fenêtre
+        #on accroche la barre a la fenï¿½tre
         menuBar.Append(menuFenetre, "&Window");
             
         self.SetMenuBar(menuBar) #accroche le menu a la frame
@@ -156,7 +157,7 @@ class FenetreControl(wxFrame):
         ##
             
         #EVT_COMMAND_SCROLL(self, XMLID("sliVitesse"), self.changeVitesse)
-        EVT_CLOSE(self, self.evSortir) #lorsque la fenêtre est ferme
+        EVT_CLOSE(self, self.evSortir) #lorsque la fenï¿½tre est ferme
         ###FIN EVENEMENTS###
 
     
@@ -175,10 +176,10 @@ class FenetreControl(wxFrame):
         self.laFenetreAffichage.Show(True)
     
     def evSortir(self, event):
-        self.laFenetreAffichage.Destroy() #ferme la frame (fenêtre)
-        self.Destroy() #ferme la frame (fenêtre)
+        self.laFenetreAffichage.Destroy() #ferme la frame (fenï¿½tre)
+        self.Destroy() #ferme la frame (fenï¿½tre)
     
     def evMenuQuit(self, event):
-        self.Close(True) #ferme la frame (fenêtre)
+        self.Close(True) #ferme la frame (fenï¿½tre)
         
 

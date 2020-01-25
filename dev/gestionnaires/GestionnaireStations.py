@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """
 Module du gestionnaire des stations.
 
@@ -17,8 +18,8 @@ from Chemin import Chemin
 
 class ErreurEvenementIncorrect(Exception):
     """
-    Exception quand on passe un évenement incorrect
-    à la méthode plusProcheDe()
+    Exception quand on passe un ï¿½venement incorrect
+    ï¿½ la mï¿½thode plusProcheDe()
     """
     pass
 
@@ -111,7 +112,7 @@ class GestionnaireStations(Singleton):
         """
         Renvois la station la plus proche de la position.
 
-        position (EvPoserClient) -- un évenement poser client
+        position (EvPoserClient) -- un ï¿½venement poser client
 
         retourne (tuple(Station,Chemin)) -- la station la plus proche et
         le chemin pour s'y rendre.
@@ -121,7 +122,7 @@ class GestionnaireStations(Singleton):
         - auteur - Lucien Chaboudez
         """
 
-        #Si ce n'est pas le bon évenement,
+        #Si ce n'est pas le bon ï¿½venement,
         if evPoserClient.__class__.__name__ != 'EvPoserClient' :
             raise ErreurEvenementIncorrect
 
@@ -292,7 +293,7 @@ class GestionnaireStations(Singleton):
         renvoie le nb de places libres dans la station.
 
         Permet de connaitre le nombre de places qui sont libres dans la station
-        dont le no est passé.
+        dont le no est passï¿½.
 
         noStation (int) -- le no de la station dont on veut le nombre de places libres.
 
@@ -311,7 +312,7 @@ class GestionnaireStations(Singleton):
         """
         renvoie la station correspondant au no.
 
-        Permet d'avoir accès à la station dont le no est passé en paramètre.
+        Permet d'avoir accï¿½s ï¿½ la station dont le no est passï¿½ en paramï¿½tre.
 
         noStation (int) -- le no de la station.
 

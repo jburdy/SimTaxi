@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """
 Module contenant la classe abstraite des politiques.
 
@@ -21,14 +22,14 @@ class ErreurAbstraite(Exception):
 class Politique:
 
     """
-    Classe abstraite pour l'implémentation des politiques.
+    Classe abstraite pour l'implï¿½mentation des politiques.
     """
     
 
     def choisirTaxi(self, client):
         """
         Retourne un taxi pour prendre en charge un client 
-        d'après la politique courante.
+        d'aprï¿½s la politique courante.
 
         client (EvClient) -- Le client qui veut faire la course
 
@@ -43,9 +44,9 @@ class Politique:
 
     def choisirStation(self, taxi):
         """
-        Retourne une station d'après la politique courante.
+        Retourne une station d'aprï¿½s la politique courante.
 
-        taxi (EvTaxi) -- Le taxi qui va à une station
+        taxi (EvTaxi) -- Le taxi qui va ï¿½ une station
 
         retourne (Station, Chemin) -- La station
 

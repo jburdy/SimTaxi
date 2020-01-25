@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
 #$Id: test_taxi.py,v 1.14 2003/01/22 17:18:11 erreur Exp $
 
 import Central, GestionnairePreferences, GrapheXY, GestionnaireTaxis, GestionnaireStations, Taxi, Evenement, random, PolitiquePlusPres
@@ -45,12 +45,12 @@ def unChemin():
 
 
 print "Creation des stations ..."
-# création de stations
+# crï¿½ation de stations
 stations.addStation(nbTax,graphe.listeSommets(1)[0], graphe.listeSommets(1)[1])
 
 
 print "Creation des %d taxis ..." % nbTax
-#création des taxis, remplissage des stations
+#crï¿½ation des taxis, remplissage des stations
 for i in range(nbTax): taxis.addTaxi(1)
 
 
@@ -58,7 +58,7 @@ for i in range(nbTax): taxis.addTaxi(1)
 
 print "Creation des %d evenements ..." % nbTax
 lesEvCli = []
-#création des évenements
+#crï¿½ation des ï¿½venements
 for i in range(nbTax):
     lesEvCli.append(Evenement.EvClient(0, unChemin()))
     if (i)%10 == 0: print int(float(i)/nbTax*100), '%'

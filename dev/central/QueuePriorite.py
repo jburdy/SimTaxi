@@ -1,6 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """
-Module contenant une queue de priorité.
+Module contenant une queue de prioritï¿½.
 
 $Id: QueuePriorite.py,v 1.8 2003/01/08 09:15:27 vega01 Exp $
 """

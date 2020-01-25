@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.5 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-12-7"
@@ -16,7 +17,7 @@ def EVT_METTRE_A_JOUR_ZOOM(win, func) :
     Procedure permettant de binder l'evenement
     wxEVT_METTRE_A_JOUR_ZOOM sur une methode.
      
-    @param wxWindow win : la fenêtre sur laquelle intervient l'evenement
+    @param wxWindow win : la fenï¿½tre sur laquelle intervient l'evenement
     @param func : la methode a appeller
     @return Rien : Ne retourne rien
     @author Gregory Burri

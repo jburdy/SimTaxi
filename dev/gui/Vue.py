@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.17 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-12-7"
@@ -51,8 +52,8 @@ class Vue(AffichageOpenGL) :
         self.grille3 = Grille(3, (0.05, 0.05, 0.4), 1000.0) #pas de 1000m     
         
         self.taxis = GestionnaireTaxis() #les taxis
-        self.suivreTaxi = 0 #indique le taxi à suivre (0 si aucun)
-        self.vitesseSuivi = 0.058 #vitesse à laquelle la vue suit un taxi
+        self.suivreTaxi = 0 #indique le taxi ï¿½ suivre (0 si aucun)
+        self.vitesseSuivi = 0.058 #vitesse ï¿½ laquelle la vue suit un taxi
         
         #la limite (trait epais entourant la zone de liberte)
         #self.limite = Limite(4)
@@ -87,15 +88,15 @@ class Vue(AffichageOpenGL) :
         self.point2 = (taille.width / 2.0 / self.zoom + self.position[0],
                   taille.height / 2.0 / self.zoom + self.position[1])  
         
-        #si le zoom est plus grand que 0.8 alors dessine la grille n°1
+        #si le zoom est plus grand que 0.8 alors dessine la grille nï¿½1
         if self.zoom > 0.8 :
             self.grille1.dessiner(self.point1, self.point2)     
             
-        #si le zoom est plus grand que 0.2 alors dessine la grille n°2
+        #si le zoom est plus grand que 0.2 alors dessine la grille nï¿½2
         if self.zoom > 0.2 :                           
             self.grille2.dessiner(self.point1, self.point2)
             
-        self.grille3.dessiner(self.point1, self.point2) #dessine la grille n°3
+        self.grille3.dessiner(self.point1, self.point2) #dessine la grille nï¿½3
                           
         #dessine la limite
         #self.limite.dessiner(self.positionMax, self.positionMin)

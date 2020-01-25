@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """
 Module contenant la classe Point.
 
@@ -126,7 +127,7 @@ class Point:
         """
         Cette methode retourne la distance entre le point et le point donne.
 
-        point (Point) -- Le point donné
+        point (Point) -- Le point donnï¿½
 
         retourne (Float) -- La distance entre les 2 points
 

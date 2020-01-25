@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.10 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-11-23"
@@ -36,10 +37,10 @@ class Taxi(ObjetGraph) :
         
         Taxi.taille = 20 #taille des taxis
         
-        #pour afficher son numéro
+        #pour afficher son numï¿½ro
         self.texte = MiniNombre(11)
         
-        #les différents symboles d'état
+        #les diffï¿½rents symboles d'ï¿½tat
         Taxi.arrete = Etat(11, (1.0, 1.0, 1.0), 'arrete')
         Taxi.chercheClient = Etat(11, (0.4, 0.4, 1.0), 'chercheClient')
         Taxi.conduitClient = Etat(11, (1.0, 0.0, 0.0), 'conduitClient')
@@ -58,7 +59,7 @@ class Taxi(ObjetGraph) :
         @author Gregory Burri
         """
         
-        #dessine son état
+        #dessine son ï¿½tat
         if etat == 'arrete' :
            Taxi.arrete.dessiner((position[0]+20, position[1]+20))
         elif etat == 'chercheClient' :
@@ -68,7 +69,7 @@ class Taxi(ObjetGraph) :
         elif etat == 'retourStation' :
            Taxi.retourStation.dessiner((position[0]+20, position[1]+20))
         
-        #si le taxi n'est pas en station alors affiche son numéro
+        #si le taxi n'est pas en station alors affiche son numï¿½ro
         if etat != 'arrete' :
             self.texte.dessiner(str(numero),
                 (position[0]+20, position[1]+20))

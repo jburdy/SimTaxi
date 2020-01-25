@@ -1,5 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """
-Paquetage contenant les modules du central, des événements, des politiques et l'échéancier.
+Paquetage contenant les modules du central, des ï¿½vï¿½nements, des politiques et l'ï¿½chï¿½ancier.
 """
 

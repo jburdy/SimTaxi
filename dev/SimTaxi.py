@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """
 Programme principal.
 
@@ -22,11 +23,11 @@ print '\n'*3+ID+'\n'
 
 def dumpClients(liste):
     """
-    Dump (sauvegarde après transformation) de la demande (liste d'év clients).
+    Dump (sauvegarde aprï¿½s transformation) de la demande (liste d'ï¿½v clients).
 
     Le fichier (%s) est sous forme texte.
 
-    liste -- la liste d'événements clients.
+    liste -- la liste d'ï¿½vï¿½nements clients.
 
     - depuis - 1.21
 
@@ -39,11 +40,11 @@ def dumpClients(liste):
 
 def loadClients():
     """
-    Chargement du dump de la demande (liste d'év clients).
+    Chargement du dump de la demande (liste d'ï¿½v clients).
 
     Le fichier (%s) est sous forme texte.
     
-    retourne (list) -- liste d'événements clients.
+    retourne (list) -- liste d'ï¿½vï¿½nements clients.
 
     - depuis - 1.21
 
@@ -68,13 +69,13 @@ else:
 
     D = 1 # 1 = DEBUG
 
-    # recuperation des préférences (paramètres + configuration)
+    # recuperation des prï¿½fï¿½rences (paramï¿½tres + configuration)
     gp = GestionnairePreferences('config.txt')
 
-    ##### initialisation de l'interface utilisateur, permettant à l'utilisateur
-    ##### de changer certain paramètre avant les initialisations suivantes (donc bloquant)
+    ##### initialisation de l'interface utilisateur, permettant ï¿½ l'utilisateur
+    ##### de changer certain paramï¿½tre avant les initialisations suivantes (donc bloquant)
 
-    # création des objets
+    # crï¿½ation des objets
     graphe = GrapheXY(gp.valeurDe('fichierGraphe'))
     central = Central()
 
@@ -95,7 +96,7 @@ else:
         print len(clients), 'clients'
         #for i in clients: graphe.cheminPlusCourt(i.positions()[0],i.positions()[1])
     except:
-        print 'Génération de la demande (long la 1ère fois)...'
+        print 'Gï¿½nï¿½ration de la demande (long la 1ï¿½re fois)...'
         clients = initialisateur.genererCourses(gp.valeurDe('nbCoursesJour'),
                                                 gp.valeurDe('hPremiereCourse'),
                                                 gp.valeurDe('hDerniereCourse'),
@@ -111,7 +112,7 @@ else:
 class T(Thread):
     def run(self):
         # tant qu'il y a des evenements
-        print '==== Début de la simulation'
+        print '==== Dï¿½but de la simulation'
         while central.evenement():
             evenement = central.traiterProchainEvenement() # renvois l'evenement traite (pour le gui)
             #if D: print str(evenement) + "\n"

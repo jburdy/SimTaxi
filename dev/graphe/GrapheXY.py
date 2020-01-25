@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 """
 Module contenant la classe GrapheXY.
 
@@ -38,25 +39,25 @@ class GrapheXY(Graphe):
 
         - depuis - 1.0
 
-        - auteur - Lionel Guélat
+        - auteur - Lionel Guï¿½lat
         """
         # constructeur parent
         Graphe.init(self, fichierImport)
         
         import pickle
         try:
-            print 'Chargement des chemins déjà calculés...'
+            print 'Chargement des chemins dï¿½jï¿½ calculï¿½s...'
             self.__chemins = pickle.load(file(fichierChemins))
             self.__nbCheminsLoad = len(self.__chemins)
             print self.__nbCheminsLoad, 'arbres existants.'
         except : 
             self.__nbCheminsLoad = 0
-            self.__chemins = {} # pour stoquer les chemins calculés de chaque sommet
+            self.__chemins = {} # pour stoquer les chemins calculï¿½s de chaque sommet
 
 
     def dump(self):
         """
-        Dump (sauvegarde après transformation) de la structure contenant
+        Dump (sauvegarde aprï¿½s transformation) de la structure contenant
         les arbres de chemins les plus courts. Le dump est fait uniquement
         s'il y a de nouveaux arbres.
 
@@ -156,7 +157,7 @@ class GrapheXY(Graphe):
         """
         Algo du chemin le plus court
 
-        arcDepart -- Arc de départ (tuple de sommets)
+        arcDepart -- Arc de dï¿½part (tuple de sommets)
 
         arcFin -- Arc de fin (tuple de sommets)
 
@@ -178,32 +179,32 @@ class GrapheXY(Graphe):
                      , [0, self.attributsArc(arcDepart[0], arcDepart[1]) \
                        , self.attributsArc(arcDepart[1], arcFin[1])])
 
-            # les deux sommets à relier
+            # les deux sommets ï¿½ relier
             depart = arcDepart[1]
             fin = arcFin[0]
 
-            # ATTENTION si des arcs ont été supprimés du graphe!!
+            # ATTENTION si des arcs ont ï¿½tï¿½ supprimï¿½s du graphe!!
 
-            # voir si ce sommet de départ a déjà été demandé
+            # voir si ce sommet de dï¿½part a dï¿½jï¿½ ï¿½tï¿½ demandï¿½
             if depart in self.__chemins.keys():
 
-                # récupérer les éléments calculés précédemment
+                # rï¿½cupï¿½rer les ï¿½lï¿½ments calculï¿½s prï¿½cï¿½demment
                 parents = self.__chemins[depart][0]
                 priorites = self.__chemins[depart][1]
 
-            # sinon chercher le chemin demandé
+            # sinon chercher le chemin demandï¿½
             else:
 
-                # liste des sommets visités
+                # liste des sommets visitï¿½s
                 visites = {}
 
-                # liste des priorités
+                # liste des prioritï¿½s
                 priorites = {}
 
                 for sommet in self.listeSommets():
                     # marquer tous les sommets comme non visites
                     visites[sommet] = False;
-                    # initialiser les priorités
+                    # initialiser les prioritï¿½s
                     priorites[sommet] = infini
 
                 # liste des sommets parents
@@ -214,7 +215,7 @@ class GrapheXY(Graphe):
                 def comp(a, b):
                     return priorites[a] < priorites[b]
 
-                # la liste des sommets triés par priorité
+                # la liste des sommets triï¿½s par prioritï¿½
                 liste = QueuePriorite(comp)
 
                 # recherche le chemin depuis la fin
@@ -231,17 +232,17 @@ class GrapheXY(Graphe):
                         if not visites[voisin]:
                             # voir s'il est mieux de passer par extrait
                             if self.attributsArc(extrait, voisin) + priorites[extrait] < priorites[voisin]:
-                                # modifier la priorité
+                                # modifier la prioritï¿½
                                 priorites[voisin] = self.attributsArc(extrait, voisin) + priorites[extrait]
                                 # enregistrer le sommet qui permet de l'atteindre
                                 parents[voisin] = extrait
-                                # ajouter à la liste
+                                # ajouter ï¿½ la liste
                                 liste.deposer(voisin)
 
                 # stoquer l'arbre des chemins de ce sommet
                 self.__chemins[depart] = (parents, priorites)
 
-            # verifier si le chemin désiré existe
+            # verifier si le chemin dï¿½sirï¿½ existe
             if not fin in parents.keys():
                raise Exception, 'Pas de chemin entre ces deux sommets'
 
@@ -270,7 +271,7 @@ class GrapheXY(Graphe):
 
 
         ##################################################
-        # recherche la meilleure des quatre possibilités
+        # recherche la meilleure des quatre possibilitï¿½s
 
         a = CPC((arcDepart[0], arcDepart[1]), (arcFin[0], arcFin[1]))
         d = a.distTotalSommets()
@@ -321,7 +322,7 @@ class GrapheXY(Graphe):
         nbLignes = int(nbSommets**0.5)
         if nbLignes**2 < nbSommets: nbLignes = nbLignes + 1
 
-        # controle du nombre d'arcs donné
+        # controle du nombre d'arcs donnï¿½
         if 2 * (nbSommets - 1) > nbArcs:
             raise Exception, "Nombre d'arcs trop petit: " + `nbArcs`
         if nbArcs > -4 * (nbLignes**2 + nbLignes -  2 * nbSommets):

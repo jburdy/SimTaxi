@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python2
+# -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.7 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-11-23"
@@ -26,7 +27,7 @@ class Carrefour(ObjetGraph) :
         
         - depuis - 1.0
         
-        - auteur - Grégory Burri
+        - auteur - Grï¿½gory Burri
         """
         
         ObjetGraph.__init__(self, couche, couleur) #initialise le paren
@@ -42,10 +43,10 @@ class Carrefour(ObjetGraph) :
         
         - depuis - 1.0
         
-        - auteur - Grégory Burri
+        - auteur - Grï¿½gory Burri
         """
         
-        #définit la couleur du carrefour
+        #dï¿½finit la couleur du carrefour
         glColor3f(self.couleur[0], self.couleur[1], self.couleur[2])
         
         glPushMatrix() #sauvegarde la matrice de transformation
