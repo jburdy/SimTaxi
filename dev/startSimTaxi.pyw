@@ -37,7 +37,7 @@ def fixerPYTHONPATH():
     from os import listdir,curdir #, sep, pathsep, , putenv, getenv
     from os.path import abspath, isdir
     from sys import path
-    map( lambda x: path.insert(0, abspath(x)), filter(lambda x: isdir(x), listdir(curdir)))
+    list(map( lambda x: path.insert(0, abspath(x)), [x for x in listdir(curdir) if isdir(x)]))
 
 
 def dependanceOK(dicoDep, avertissement):
@@ -63,8 +63,8 @@ def dependanceOK(dicoDep, avertissement):
         try: exec('import ' + i) # essaye d'importer la lib
         except:
             # affiche ce qu'il manque
-            if depOK: print avertissement
-            print i, dicoDep[i]
+            if depOK: print(avertissement)
+            print(i, dicoDep[i])
             depOK = False
     return depOK
 
@@ -75,7 +75,7 @@ if dependanceOK(dependance, avertissement):
     #import SimTaxiGUI # provisoire, lancement de l'ancien affichage
     import SimTaxi
     SimTaxi.main()
-else: raw_input()
+else: input()
 
 
 
