@@ -1,11 +1,11 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.5 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-12-7"
 
 from wxPython.wx import *
-import thread
+import _thread
 import time
 
 #un nouveau type d'evenement
@@ -117,7 +117,7 @@ class ThreadZoom :
         
         self.deltaY = 0.0 #met a 0 le delta de deplacement
         self.keepGoing = self.running = True
-        thread.start_new_thread(self.run, ())  #start le thread
+        _thread.start_new_thread(self.run, ())  #start le thread
         
     
 

@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Lancement de SimTaxi (multiOS) apr§s divers contr§les.

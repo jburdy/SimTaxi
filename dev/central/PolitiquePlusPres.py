@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Module contenant la politique du plus pr§s.
@@ -11,7 +11,7 @@ __date__ = '2002-12-22'
 
 
 
-from Politique import Politique
+from .Politique import Politique
 import GestionnaireTaxis
 import GestionnaireStations
 

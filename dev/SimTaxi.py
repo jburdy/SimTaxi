@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Programme principal.
@@ -18,7 +18,7 @@ sys.stderr = file('ERREURS.log', 'a')#.write('\n'*5+ID)
 
 fichierClients = 'dumpClients'
 
-print '\n'*3+ID+'\n'
+print('\n'*3+ID+'\n')
 
 
 def dumpClients(liste):
@@ -62,9 +62,9 @@ def loadClients():
 
 
 if __name__ == '__main__':
-    print """Utilisez startSimTaxi.pyw pour lancer le programme 
-(a lancer depuis la console pour voir le log)"""
-    raw_input()
+    print("""Utilisez startSimTaxi.pyw pour lancer le programme 
+(a lancer depuis la console pour voir le log)""")
+    input()
 else:
 
     D = 1 # 1 = DEBUG
@@ -82,21 +82,21 @@ else:
     initialisateur = Initialisateur()
 
     # mise ne place des taxis/stations
-    print 'Initialisation stations...'
+    print('Initialisation stations...')
     initialisateur.genererStations(gp.valeurDe('ndStation'),gp.valeurDe('tailleStation'))
-    print 'Initialisation taxis...'
+    print('Initialisation taxis...')
     initialisateur.initialiserTaxis(gp.valeurDe('nbTaxi'))
 
 
     # generation des courses et initialisation du central
     try: 
-        print 'Recup de la demande...'
+        print('Recup de la demande...')
         clients = loadClients()
         if len(clients) != gp.valeurDe('nbCoursesJour'): raise
-        print len(clients), 'clients'
+        print(len(clients), 'clients')
         #for i in clients: graphe.cheminPlusCourt(i.positions()[0],i.positions()[1])
     except:
-        print 'G§n§ration de la demande (long la 1§re fois)...'
+        print('G§n§ration de la demande (long la 1§re fois)...')
         clients = initialisateur.genererCourses(gp.valeurDe('nbCoursesJour'),
                                                 gp.valeurDe('hPremiereCourse'),
                                                 gp.valeurDe('hDerniereCourse'),
@@ -112,12 +112,12 @@ else:
 class T(Thread):
     def run(self):
         # tant qu'il y a des evenements
-        print '==== D§but de la simulation'
+        print('==== D§but de la simulation')
         while central.evenement():
             evenement = central.traiterProchainEvenement() # renvois l'evenement traite (pour le gui)
             #if D: print str(evenement) + "\n"
             temps = evenement.temps() # saisie du temps de l'evenement
-            print (temps/(3600.0*24.0))*100.0, '%'
+            print((temps/(3600.0*24.0))*100.0, '%')
             #if D: print '=== temps :', temps
             if gp.valeurDe('gui'): gui.rafraichir(temps, evenement) # le gui raffraichi et renvois vrai s'il veut stopper
 
@@ -129,7 +129,7 @@ class T(Thread):
                 #if D: print '=== tempsInter :', temps
                 if gp.valeurDe('gui'): gui.rafraichir(temps, None)
                 sleep(gp.valeurDe('dureeSec'))
-        print '==== FIN'
+        print('==== FIN')
         graphe.dump()
 
 def main():

@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Module contenant l'§ch§ancier.
@@ -9,7 +9,7 @@ __version__ = '$Revision: 1.6 $'
 __author__ = 'EI5A, eivd, SimTaxi (Groupe Burdy)'
 __date__ = '2002-12-01'
 
-from QueuePriorite import *
+from .QueuePriorite import *
 
 
 class Echeancier(QueuePriorite):
@@ -71,45 +71,45 @@ if __name__ == '__main__' :
     x.initEcheancier([1000, 2, 500])
 
     if x.vide():
-        print "vide"
+        print("vide")
     else:
-        print "pas vide"
+        print("pas vide")
 
-    print "insertion 3"
+    print("insertion 3")
     x.deposer(3)
 
-    print "insertion 1"
+    print("insertion 1")
     x.deposer(1)
 
-    print "insertion 20"
+    print("insertion 20")
     x.deposer(20)
     
     if x.vide():
-        print "vide"
+        print("vide")
     else:
-        print "pas vide"
+        print("pas vide")
 
-    print "suppression"
+    print("suppression")
     a = x.prelever()
-    print a
+    print(a)
 
-    print "suppression"
+    print("suppression")
     a = x.prelever()
-    print a
+    print(a)
 
-    print "suppression"
+    print("suppression")
     a = x.prelever()
-    print a
+    print(a)
 
-    print "suppression"
+    print("suppression")
     a = x.prelever()
-    print a    
+    print(a)    
     
-    print "suppression"
+    print("suppression")
     a = x.prelever()
-    print a
+    print(a)
 
-    print "suppression"
+    print("suppression")
     a = x.prelever()
-    print a
+    print(a)
 

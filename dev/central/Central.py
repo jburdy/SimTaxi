@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Module contenant la classe du central.
@@ -9,12 +9,12 @@ __version__ = '$Revision: 1.17 $'
 __author__ = 'EI5A, eivd, SimTaxi (Groupe Burdy)'
 __date__ = '2002-12-01'
 
-from Echeancier import *
+from .Echeancier import *
 from GestionnaireTaxis import *
 from GestionnaireStations import *
-from Evenement import *
+from .Evenement import *
 from Singleton import *
-import PolitiquePlusPres
+from . import PolitiquePlusPres
 
 
 # pour les tests
@@ -155,7 +155,7 @@ class Central(Singleton):
         """
         for i in self._echeancier:
         # recherche de l'evenement a supprimer
-            if (i.im_class == EvArriverStation and i.taxi() == taxi):
+            if (i.__self__.__class__ == EvArriverStation and i.taxi() == taxi):
             # c'est un evenemet d'arrivee en station et il concerne ce taxi
                 self._echeancier.remove(i)  # supression de l'evenement
                 # annulation de la reservation du taxi
@@ -201,7 +201,7 @@ if __name__ == '__main__' :
     def traiter():
         global a
         a = a + 1
-        print a
+        print(a)
 
     unEvenement1 = Evenement(10, traiter)
     unEvenement2 = Evenement(20, traiter)

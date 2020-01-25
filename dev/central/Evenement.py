@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Module contenant les classes §v§nements.
@@ -11,7 +11,7 @@ __date__ = '2002-12-01'
 
 from Taxi import *
 import GrapheXY
-import Central
+from . import Central
 
 class ErreurTraiter(Exception):
     """
@@ -434,26 +434,26 @@ class EvArriverStation(EvTaxi):
 if __name__ == '__main__':
 
     def traiter():
-        print "OK"
+        print("OK")
 
     unEvenement = Evenement(10, traiter)
 
-    print "Evenement :"
-    print "Temps : " + str(unEvenement.temps())
+    print("Evenement :")
+    print("Temps : " + str(unEvenement.temps()))
     unEvenement.traiter()
-    print "-------------------------------------"
+    print("-------------------------------------")
 
 
-    print "Client :"
+    print("Client :")
     unClient = EvClient(19, ['D', 1, 2, 3, 4, 5, 6, 'A'])
 
     unClient.temps()
-    print "Chemin : " + str(unClient.chemin())
-    print "Temps : " + str(unClient.temps())
-    print "-------------------------------------"
+    print("Chemin : " + str(unClient.chemin()))
+    print("Temps : " + str(unClient.temps()))
+    print("-------------------------------------")
 
     temps = EvClient(1, ['2', ['c']]).temps()
-    print temps
+    print(temps)
 
     unTaxi = Taxi(1, 1)
 

@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.9 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
@@ -10,7 +10,7 @@ from wxPython.wx import *
 from wxPython.xrc import *
 import os
 
-from FenetreAffichage import *
+from .FenetreAffichage import *
     
 
 """

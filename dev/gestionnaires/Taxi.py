@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Module contenant le classe Taxi.
@@ -11,8 +11,8 @@ __date__ = '2002-11-20'
 
 
 import Central
-from GestionnaireStations import GestionnaireStations
-from GestionnairePreferences import GestionnairePreferences
+from .GestionnaireStations import GestionnaireStations
+from .GestionnairePreferences import GestionnairePreferences
 from GrapheXY import GrapheXY
 from math import sqrt
 from Evenement import EvChargerClient, EvPoserClient, EvArriverStation
@@ -102,7 +102,7 @@ class Taxi :
             if self.__heureFinEvenement != None and \
                 heure > self.__heureFinEvenement :
                 # on propage une exception
-                raise Exception , ErreurHeureIncorrecte
+                raise Exception(ErreurHeureIncorrecte)
 
 
             #recherche de l'arc sur lequel le taxi se trouve
@@ -110,9 +110,9 @@ class Taxi :
 
             if D :
                 if distanceParcourueSurArc > self.__cheminCourant.distEntreSommets(sommet1,sommet2) :
-                    print "Sommets : ", sommet1, sommet2
-                    print "Dist entre sommets : " , self.__cheminCourant.distEntreSommets(sommet1,sommet2)
-                    print "Dist parcourue sur arc : " , distanceParcourueSurArc
+                    print("Sommets : ", sommet1, sommet2)
+                    print("Dist entre sommets : " , self.__cheminCourant.distEntreSommets(sommet1,sommet2))
+                    print("Dist parcourue sur arc : " , distanceParcourueSurArc)
                     raise "Erreur Distance Incorrecte"
 
 
@@ -146,16 +146,16 @@ class Taxi :
                    ((posY < som1Y) and (posY < som2Y)) or \
                    ((posY > som1Y) and (posY > som2Y)):
 
-                    print "PosX : ", posX
-                    print "s1X : ", som1X, " s2X : ", som2X
-                    print "vectX : ", vectX
+                    print("PosX : ", posX)
+                    print("s1X : ", som1X, " s2X : ", som2X)
+                    print("vectX : ", vectX)
 
-                    print "PosY : ", posY
-                    print "s1Y : ", som1Y, " s2Y : ", som2Y
-                    print "vectY : ",vectY
+                    print("PosY : ", posY)
+                    print("s1Y : ", som1Y, " s2Y : ", som2Y)
+                    print("vectY : ",vectY)
 
-                    print "Dist : ",distanceParcourueSurArc
-                    print "Long arc : ",longArc
+                    print("Dist : ",distanceParcourueSurArc)
+                    print("Long arc : ",longArc)
                     raise "Erreur Coordonnees Incorrect"
 
 
@@ -234,7 +234,7 @@ class Taxi :
             #Creation du nouvel evenement
             newEvenement = EvChargerClient(self.__heureFinEvenement,self,evenement)
 
-            if D : print 'Charger client au temps : ' , self.__heureFinEvenement
+            if D : print('Charger client au temps : ' , self.__heureFinEvenement)
             #Ajout de l'evenement dans la centrale
             leCentral.ajouterEvenement(newEvenement)
 
@@ -278,7 +278,7 @@ class Taxi :
             newEvenement = EvPoserClient(self.__heureFinEvenement,self,evenement)
 
 
-            if D : print 'Poser client au temps : ' , self.__heureFinEvenement
+            if D : print('Poser client au temps : ' , self.__heureFinEvenement)
 
             #Ajout de l'evenement dans la centrale
             leCentral.ajouterEvenement(newEvenement)
@@ -415,7 +415,7 @@ class Taxi :
             # trop grande
             if self.__heureFinEvenement != None and \
                 heure > self.__heureFinEvenement :
-                raise Exception , ErreurHeureIncorrecte
+                raise Exception(ErreurHeureIncorrecte)
 
 
 
@@ -444,13 +444,13 @@ class Taxi :
 
                     if D :
                         if posDansListe > len(listeSommetsChemin)-1 :
-                            print "Taxi no : ", self.__no
-                            print "Pos dans liste ", posDansListe
-                            print "Sommet1 cour : ", sommet1
-                            print "Sommet2 cour : ", sommet2
-                            print "Dist cum : ", distanceCumulee
-                            print "Dist parcourue : ", distanceParcourue
-                            print "dist chemin : ", self.__cheminCourant.distTotalPos()
+                            print("Taxi no : ", self.__no)
+                            print("Pos dans liste ", posDansListe)
+                            print("Sommet1 cour : ", sommet1)
+                            print("Sommet2 cour : ", sommet2)
+                            print("Dist cum : ", distanceCumulee)
+                            print("Dist parcourue : ", distanceParcourue)
+                            print("dist chemin : ", self.__cheminCourant.distTotalPos())
                             raise "Erreur position incorrecte"
 
                     #passage au sommet suivant
@@ -486,9 +486,9 @@ class Taxi :
 
             if D :
                 if distParcourueSurArc > self.__cheminCourant.distEntreSommets(sommet1,sommet2) :
-                    print "Sommets : ", sommet1, sommet2
-                    print "Dist entre sommets : " , self.__cheminCourant.distEntreSommets(sommet1,sommet2)
-                    print "Dist parcourue sur arc : " , distParcourueSurArc
+                    print("Sommets : ", sommet1, sommet2)
+                    print("Dist entre sommets : " , self.__cheminCourant.distEntreSommets(sommet1,sommet2))
+                    print("Dist parcourue sur arc : " , distParcourueSurArc)
                     raise "Erreur Distance Incorrecte"
 
             # retour de la position
@@ -581,11 +581,11 @@ if __name__ == '__main__' :
 
     if T.estEnDeplacement == 1 :
 
-        print 'Se deplace'
+        print('Se deplace')
 
     else :
 
-        print 'Est a l\'arret'
+        print('Est a l\'arret')
 
 
-    print 'LE TEST S\'EST DEROULE AVEC SUCCES'
+    print('LE TEST S\'EST DEROULE AVEC SUCCES')

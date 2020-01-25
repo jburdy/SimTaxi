@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Module du gestionnaire des taxis.
@@ -10,9 +10,9 @@ __author__ = 'EI5a, eivd, SimTaxi (Groupe Burdy)'
 __date__ = '2002-11-20'
 
 from Singleton import Singleton
-import Taxi
-from Gestionnaire import Gestionnaire
-from GestionnaireStations import GestionnaireStations
+from . import Taxi
+from .Gestionnaire import Gestionnaire
+from .GestionnaireStations import GestionnaireStations
 from GrapheXY import GrapheXY
 
 
@@ -213,7 +213,7 @@ class GestionnaireTaxis(Singleton):
         """
 
         # retour de la liste
-        return self.__gestionnaire.values()
+        return list(self.__gestionnaire.values())
 
 
     def getTaxi(self, noTaxi):
@@ -236,7 +236,7 @@ if __name__ == '__main__' :
 
 
     from os import sep, pardir
-    from GestionnairePreferences import GestionnairePreferences
+    from .GestionnairePreferences import GestionnairePreferences
 
     gs = GestionnaireStations()
     gt = GestionnaireTaxis()
@@ -247,9 +247,9 @@ if __name__ == '__main__' :
 
     gt.addTaxi(1)
 
-    print gt.getTaxi(1)
+    print(gt.getTaxi(1))
 
-    print 'Nombre de stations : ' + str(gs.getNbStations())
-    print 'Nombre de taxis    : ' + str(gt.getNbTaxis())
+    print('Nombre de stations : ' + str(gs.getNbStations()))
+    print('Nombre de taxis    : ' + str(gt.getNbTaxis()))
 
-    print 'LE TEST S\'EST DEROULE AVEC SUCCES'
+    print('LE TEST S\'EST DEROULE AVEC SUCCES')

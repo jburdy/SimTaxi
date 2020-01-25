@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """ 
 Module du gestionnaire de pr§f§rences. 
@@ -65,16 +65,16 @@ class GestionnairePreferences(Singleton.Singleton):
         except: raise nomFichier
 
         # suppression des commentaires
-        contenu = map(lambda x: x.split('#')[0], contenu)
+        contenu = [x.split('#')[0] for x in contenu]
         # suppression des tab, des fin de lignes et des espaces
-        contenu = map(lambda x: x.replace('\n', '').replace('\t', '')\
-                                                   .replace(' ', ''), contenu)
+        contenu = [x.replace('\n', '').replace('\t', '')\
+                                                   .replace(' ', '') for x in contenu]
         # suppression des lignes vides
-        contenu = filter(lambda x: len(x)>0, contenu)
+        contenu = [x for x in contenu if len(x)>0]
         # separation du nom des options de leurs valeurs
-        contenu = map(lambda x: x.split(':'), contenu)
+        contenu = [x.split(':') for x in contenu]
         # ajout des options dans le dictionnaire
-        map(lambda x: self.__dico.update({x[0]:eval(x[1])}), contenu)
+        list(map(lambda x: self.__dico.update({x[0]:eval(x[1])}), contenu))
 
 
     
@@ -107,7 +107,7 @@ class GestionnairePreferences(Singleton.Singleton):
 
         - auteur - Julien Burdy
         """
-        return self.__dico.has_key(option)
+        return option in self.__dico
 
 
     
@@ -157,32 +157,32 @@ class GestionnairePreferences(Singleton.Singleton):
 
         - auteur - Julien Burdy
         """
-        return self.__dico.keys()
+        return list(self.__dico.keys())
 
 
 
 # seulement pour tester cette classe
 if __name__ == '__main__':
     
-    print "Creation importation fichier"
+    print("Creation importation fichier")
     maConf = GestionnairePreferences('../config.txt')
-    print "Listing du fichier"
+    print("Listing du fichier")
     for i in maConf.listeOptions():
         t = maConf.valeurDe(i)
-        print i
-        print type(t), '\t' , t
-        print
+        print(i)
+        print(type(t), '\t' , t)
+        print()
 
     try: maConf.valeurDe('rien')
-    except: print 'test exception "option non definie" OK'
-    print "Ajout d'une nouvelle option"
+    except: print('test exception "option non definie" OK')
+    print("Ajout d'une nouvelle option")
     maConf.ajouterOption('newOption', 999)
-    print "Consultation de cette option"
+    print("Consultation de cette option")
     assert maConf.valeurDe('newOption')==999, 'erreur ajout/consult'
-    print "Mise a jour de cette option"
+    print("Mise a jour de cette option")
     maConf.mettreAJour('newOption', 777)
-    print "Consultation de cette option"
+    print("Consultation de cette option")
     assert maConf.valeurDe('newOption')==777, 'erreur mise a jour/consult'
-    print "Tout est OK..."
+    print("Tout est OK...")
 
 

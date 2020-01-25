@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Module d'initialisation.
@@ -311,7 +311,7 @@ class Initialisateur:
 
         # Le nombre de stations et leur liste.
         nbStations = gestStations.getNbStations()
-        listeStations = range(1, nbStations + 1)
+        listeStations = list(range(1, nbStations + 1))
 
         # Pour tous les taxis demandes.
         for i in range(nbTaxis):

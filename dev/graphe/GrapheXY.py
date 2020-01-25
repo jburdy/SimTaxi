@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Module contenant la classe GrapheXY.
@@ -10,10 +10,10 @@ __author__ = 'EI5a, eivd, SimTaxi (Groupe Burdy)'
 __date__ = '2002-11-10'
 
 
-from Graphe import *
-from Point import *
+from .Graphe import *
+from .Point import *
 from QueuePriorite import *
-from Chemin import *
+from .Chemin import *
 from random import *
 
 # les exceptions
@@ -46,10 +46,10 @@ class GrapheXY(Graphe):
         
         import pickle
         try:
-            print 'Chargement des chemins d§j§ calcul§s...'
+            print('Chargement des chemins d§j§ calcul§s...')
             self.__chemins = pickle.load(file(fichierChemins))
             self.__nbCheminsLoad = len(self.__chemins)
-            print self.__nbCheminsLoad, 'arbres existants.'
+            print(self.__nbCheminsLoad, 'arbres existants.')
         except : 
             self.__nbCheminsLoad = 0
             self.__chemins = {} # pour stoquer les chemins calcul§s de chaque sommet
@@ -69,10 +69,10 @@ class GrapheXY(Graphe):
         """ % fichierChemins
         import pickle
         if self.__nbCheminsLoad < len(self.__chemins):
-            print 'Dump des chemins (%d nouveaux arbres)' % (len(self.__chemins) - self.__nbCheminsLoad)
+            print('Dump des chemins (%d nouveaux arbres)' % (len(self.__chemins) - self.__nbCheminsLoad))
             pickle.dump(self.__chemins, file(fichierChemins,'w'), True)
             self.__nbCheminsLoad = len(self.__chemins)
-            print 'Dump OK'
+            print('Dump OK')
 
 
     def insererSommet(self, nomSommet, point):
@@ -186,7 +186,7 @@ class GrapheXY(Graphe):
             # ATTENTION si des arcs ont §t§ supprim§s du graphe!!
 
             # voir si ce sommet de d§part a d§j§ §t§ demand§
-            if depart in self.__chemins.keys():
+            if depart in list(self.__chemins.keys()):
 
                 # r§cup§rer les §l§ments calcul§s pr§c§demment
                 parents = self.__chemins[depart][0]
@@ -243,8 +243,8 @@ class GrapheXY(Graphe):
                 self.__chemins[depart] = (parents, priorites)
 
             # verifier si le chemin d§sir§ existe
-            if not fin in parents.keys():
-               raise Exception, 'Pas de chemin entre ces deux sommets'
+            if not fin in list(parents.keys()):
+               raise Exception('Pas de chemin entre ces deux sommets')
 
             # construire le chemin
             sommetsChemin = []
@@ -315,8 +315,8 @@ class GrapheXY(Graphe):
         - auteur - Joel Jaquemet
         """
         # controle des parametres
-        if nbSommets < 8: raise Exception, 'Nombre de sommets trop petit: ' + `nbSommets`
-        if distanceMax <= 0: raise Exception, 'Distance max. invalide: ' + `distanceMax`
+        if nbSommets < 8: raise Exception('Nombre de sommets trop petit: ' + repr(nbSommets))
+        if distanceMax <= 0: raise Exception('Distance max. invalide: ' + repr(distanceMax))
 
         # calculer le nb de lignes (et de colonnes)
         nbLignes = int(nbSommets**0.5)
@@ -324,9 +324,9 @@ class GrapheXY(Graphe):
 
         # controle du nombre d'arcs donn§
         if 2 * (nbSommets - 1) > nbArcs:
-            raise Exception, "Nombre d'arcs trop petit: " + `nbArcs`
+            raise Exception("Nombre d'arcs trop petit: " + repr(nbArcs))
         if nbArcs > -4 * (nbLignes**2 + nbLignes -  2 * nbSommets):
-            raise Exception, "Nombre d'arcs trop grand: " + `nbArcs`
+            raise Exception("Nombre d'arcs trop grand: " + repr(nbArcs))
 
         # initialisation de la fonction aleatoire
         rand = Random(germe)
@@ -462,9 +462,9 @@ if __name__ == '__main__':
     a = GrapheXY()
     p = Point(15)
     try: a.insererSommet('a')
-    except: print 'OK'
+    except: print('OK')
     try: a.insererSommet('a', (15.0,16))
-    except: print erreurTypePoint
+    except: print(erreurTypePoint)
     a.insererSommet('a', p)
     p.setXY(2, -3)
     a.insererSommet('b', p)
@@ -472,23 +472,23 @@ if __name__ == '__main__':
     a.insererSommet('c', p)
     a.insererArc('a', 'c')
     a.insererArc('b', 'c')
-    print a.listeArcs(1)
+    print(a.listeArcs(1))
 
     a.inverserTousArcs()
-    print a.listeArcs(1)
-    print a.attributsArc('b', 'c')
+    print(a.listeArcs(1))
+    print(a.attributsArc('b', 'c'))
     p.setXY(3.21, 12.4)
     a.remplacerAttributsSommet('a', p)
-    print a.listeArcs(1)
-    print a.attributsSommet('a').getX()
+    print(a.listeArcs(1))
+    print(a.attributsSommet('a').getX())
     a.remplacerAttributsArc('a', 'c', 6)
-    print a.attributsArc('a', 'c')
-    print a.attributsArc('c', 'a')
+    print(a.attributsArc('a', 'c'))
+    print(a.attributsArc('c', 'a'))
 
-    print 'OK'
+    print('OK')
 
-    print ''
-    print 'CHEMINS:'
+    print('')
+    print('CHEMINS:')
 
     a.init()
     p = Point(0.0, 0.0)
@@ -519,41 +519,41 @@ if __name__ == '__main__':
     a.insererArc('c', 'z')
     a.insererArc('d', 'z')
     a.insererArc('z', '>')
-    print a.listeArcs()
+    print(a.listeArcs())
 
     chemin = a.cheminPlusCourt(('<', 's'), ('z', '>'))
-    print chemin.listeSommets()
-    print chemin.distTotalSommets()
-    print chemin.distTotalPos()
+    print(chemin.listeSommets())
+    print(chemin.distTotalSommets())
+    print(chemin.distTotalPos())
     try:
         a.cheminPlusCourt(('a', 's'), ('<', 'a'))
     except Exception:
-        print 'pas de chemin: OK\n'
+        print('pas de chemin: OK\n')
 
     # generation du graphe
     a.genererGraphe(15, 35, 12000, 59)
     a.exporter('graphe_test.gr')
 
-    print 'Generation OK\n'
+    print('Generation OK\n')
 
     # recuperation du graphe
     a.importer('graphe_test.gr')
     a.afficher()
 
-    print 'nb sommets: '
-    print a.nbSommets()
-    print a.nbArcs()
+    print('nb sommets: ')
+    print(a.nbSommets())
+    print(a.nbArcs())
 
-    print 'Recuperation OK\n'
+    print('Recuperation OK\n')
 
     # constructeur
     c = GrapheXY('graphe_text.gr')
     c.afficher()
 
-    print 'nb sommets: '
-    print c.nbSommets()
-    print c.nbArcs()
+    print('nb sommets: ')
+    print(c.nbSommets())
+    print(c.nbArcs())
 
-    print 'Constructeur OK\n'
+    print('Constructeur OK\n')
 
 

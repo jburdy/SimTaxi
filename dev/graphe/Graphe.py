@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Module contenant la classe Graphe.
@@ -75,7 +75,7 @@ class Graphe(Singleton):
             fichier = open(fichierImport, 'r') # ouvrir le fichier
         except:
             # le fichier n'a pas pu etre ouvert
-            raise Exception, fichierImport
+            raise Exception(fichierImport)
         else:
             self.initialiser() # pour effacer le graphe actuel
             # mettre a jour le graphe avec celui du fichier
@@ -100,7 +100,7 @@ class Graphe(Singleton):
             fichier = open(fichierExport, 'w') # creer le fichier
         except:
             # le fichier n'a pas pu etre creer
-            raise Exception, fichierExport
+            raise Exception(fichierExport)
         else:
             # enregistrer le graphe dans le fichier
             pickle.dump(self.__dico, fichier)
@@ -124,7 +124,7 @@ class Graphe(Singleton):
         """
         # controle du sommet donne
         if self.sommetDefini(nomSommet):
-            raise Exception, 'sommet deja defini : ' + `nomSommet`
+            raise Exception('sommet deja defini : ' + repr(nomSommet))
 
         # inserer le sommet (on met a jour le dico qui represente le graphe)
         self.__dico.update({nomSommet: [attributsSommet, {}]})
@@ -150,7 +150,7 @@ class Graphe(Singleton):
         """
         # controle que l'arc ne soit pas deja defini
         if self.arcDefini(sommetDep, sommetArr):
-            raise Exception, 'arc deja defini'
+            raise Exception('arc deja defini')
 
         # inserer l'arc (on met a jour le dico du sommet de depart)
         self.__dico[sommetDep][1].update({sommetArr: attributsArc})
@@ -172,7 +172,7 @@ class Graphe(Singleton):
         """
         # controle du sommet donne
         if not self.sommetDefini(sommet):
-            raise Exception, 'sommet indefini : ' + `sommet`
+            raise Exception('sommet indefini : ' + repr(sommet))
 
         # supprimer les arcs arrivant au sommet
         for arc in self.listeArcs():
@@ -199,7 +199,7 @@ class Graphe(Singleton):
         """
         # controle que l'arc soit deja defini
         if not self.arcDefini(sommetDep, sommetArr):
-            raise Exception, 'arc indefini'
+            raise Exception('arc indefini')
 
         # supprimer l'arc (on met a jour le dico du sommet de depart)
         del self.__dico[sommetDep][1][sommetArr]
@@ -222,7 +222,7 @@ class Graphe(Singleton):
         """
         # controle du sommet donne
         if not self.sommetDefini(sommet):
-            raise Exception, 'sommet indefini : ' + `sommet`
+            raise Exception('sommet indefini : ' + repr(sommet))
 
         # mettre les nouveaux attributs du sommet
         self.__dico[sommet][0] = attributsSommet
@@ -248,7 +248,7 @@ class Graphe(Singleton):
         """
         # controle que l'arc soit deja defini
         if not self.arcDefini(sommetDep, sommetArr):
-            raise Exception, 'arc indefini'
+            raise Exception('arc indefini')
 
         # mettre les nouveaux attributs de l'arc
         self.__dico[sommetDep][1][sommetArr] = attributsArc
@@ -395,7 +395,7 @@ class Graphe(Singleton):
             return liste
         
         else: # retourner la liste des sommets sans attributs
-            return self.__dico.keys()
+            return list(self.__dico.keys())
 
 
     
@@ -445,10 +445,10 @@ class Graphe(Singleton):
         """
         # controle du sommet donne
         if not self.sommetDefini(sommet):
-            raise Exception, 'sommet indefini : ' + `sommet`
+            raise Exception('sommet indefini : ' + repr(sommet))
 
         # la liste des voisins vus depuis le sommet
-        return self.__dico[sommet][1].keys()
+        return list(self.__dico[sommet][1].keys())
 
 
     
@@ -468,7 +468,7 @@ class Graphe(Singleton):
         """
         # controle du sommet donne
         if not self.sommetDefini(sommet):
-            raise Exception, 'sommet indefini : ' + `sommet`
+            raise Exception('sommet indefini : ' + repr(sommet))
 
         # la liste des sommets qui voient le sommet donne
         voyants = []
@@ -491,7 +491,7 @@ class Graphe(Singleton):
         - auteur - Joel Jaquemet
         """
         # retourner si le sommet est defini ou pas
-        return self.__dico.has_key(sommet)
+        return sommet in self.__dico
 
         
     
@@ -513,12 +513,12 @@ class Graphe(Singleton):
         """
         # controle des sommets donnes
         if not self.sommetDefini(sommetDep):
-            raise Exception, 'sommet indefini : ' + `sommetDep`
+            raise Exception('sommet indefini : ' + repr(sommetDep))
         if not self.sommetDefini(sommetArr):
-            raise Exception, 'sommet indefini : ' + `sommetArr`
+            raise Exception('sommet indefini : ' + repr(sommetArr))
 
         # retourner si l'arc est defini ou pas
-        return self.__dico[sommetDep][1].has_key(sommetArr)
+        return sommetArr in self.__dico[sommetDep][1]
 
         
     
@@ -533,9 +533,9 @@ class Graphe(Singleton):
         - auteur - Joel Jaquemet
         """
         # parcourir et afficher chaque structure des sommets du graphe
-        liste = self.__dico.items()
+        liste = list(self.__dico.items())
         liste.sort()
-        for i in liste: print i
+        for i in liste: print(i)
 
 
 # seulement pour tester cette classe
@@ -550,25 +550,25 @@ if __name__ == '__main__':
     g.insererArc('b', 'c', 13)
     g.inverserTousArcs()
     g.afficher()
-    print g.attributsArc('a','c')
-    print g.nbArcs()
-    print g.nbSommets()
-    print g.listeSommets(4)
-    print g.listeArcs()
-    print g.sommetDefini('k');
+    print(g.attributsArc('a','c'))
+    print(g.nbArcs())
+    print(g.nbSommets())
+    print(g.listeSommets(4))
+    print(g.listeArcs())
+    print(g.sommetDefini('k'));
     g.exporter('test.txt')
-    print g.sommetsVus('a')
-    print g.sommetsVoyants('c')
+    print(g.sommetsVus('a'))
+    print(g.sommetsVoyants('c'))
     g.supprimerSommet('a')
     g.afficher()
-    print 'OK'
+    print('OK')
 
     a = Graphe('test.txt')
     a.afficher()
     try: a.remplacerAttributsSommet('a', ('er',15))
-    except Exception: print 'OK'
-    print a.attributsSommet('b')
-    print a.attributsSommet('t')
+    except Exception: print('OK')
+    print(a.attributsSommet('b'))
+    print(a.attributsSommet('t'))
     a.remplacerAttributsArc('c', 'b', 'Salut')
-    print a.attributsArc('c', 'b')
-    print 'OK'
+    print(a.attributsArc('c', 'b'))
+    print('OK')

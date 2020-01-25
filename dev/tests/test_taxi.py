@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 #$Id: test_taxi.py,v 1.14 2003/01/22 17:18:11 erreur Exp $
 
 import Central, GestionnairePreferences, GrapheXY, GestionnaireTaxis, GestionnaireStations, Taxi, Evenement, random, PolitiquePlusPres
@@ -35,44 +35,44 @@ rand = random.Random()
 
 # renvois un chemin quelconque
 def unChemin():
-    for i in xrange(100):
+    for i in range(100):
         try :
             return graphe.cheminPlusCourt(arcs[rand.randrange(len(arcs))],
                                           arcs[rand.randrange(len(arcs))])
         except:
-            print "erreur: recherche d'un autre chemin", i
+            print("erreur: recherche d'un autre chemin", i)
 
 
 
-print "Creation des stations ..."
+print("Creation des stations ...")
 # cr§ation de stations
 stations.addStation(nbTax,graphe.listeSommets(1)[0], graphe.listeSommets(1)[1])
 
 
-print "Creation des %d taxis ..." % nbTax
+print("Creation des %d taxis ..." % nbTax)
 #cr§ation des taxis, remplissage des stations
 for i in range(nbTax): taxis.addTaxi(1)
 
 
 
 
-print "Creation des %d evenements ..." % nbTax
+print("Creation des %d evenements ..." % nbTax)
 lesEvCli = []
 #cr§ation des §venements
 for i in range(nbTax):
     lesEvCli.append(Evenement.EvClient(0, unChemin()))
-    if (i)%10 == 0: print int(float(i)/nbTax*100), '%'
+    if (i)%10 == 0: print(int(float(i)/nbTax*100), '%')
 
 
-print "Traitement des %d evenements ..." % nbTax
+print("Traitement des %d evenements ..." % nbTax)
 i = 0
 for ev in lesEvCli :
     ev.traiter()
-    if i%10 == 0: print int(float(i)/nbTax*100), '%'
+    if i%10 == 0: print(int(float(i)/nbTax*100), '%')
     i += 1
 
 
-print "Demarrage de l'interface ..."
+print("Demarrage de l'interface ...")
 gui = SimTaxiGUI.SimTaxiGUI(0)
 
 class T(Thread):

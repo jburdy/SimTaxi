@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 
 import random
 import GrapheXY
@@ -21,8 +21,8 @@ while 1:
 
     tempsChemin = time()-t
     tempsTotal += tempsChemin
-    if not i%20: print 'temps chemin courant - temps moyen - nb sommet du chemin (CTRL+C pour finir)'
-    print tempsChemin, '-', tempsTotal/float(i), '-', chemin.nbSommets()
+    if not i%20: print('temps chemin courant - temps moyen - nb sommet du chemin (CTRL+C pour finir)')
+    print(tempsChemin, '-', tempsTotal/float(i), '-', chemin.nbSommets())
     i += 1
 
 

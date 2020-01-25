@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Module contenant le classe Station.
@@ -329,21 +329,21 @@ if __name__ == '__main__' :
 
     S = Station(10,1,'s1','s2')
 
-    print 'Nb places libres : ' + str(S.getNbPlacesLibres())
-    print 'Nb Places Tot    : ' + str(S.getNbPlacesTot())
+    print('Nb places libres : ' + str(S.getNbPlacesLibres()))
+    print('Nb Places Tot    : ' + str(S.getNbPlacesTot()))
 
-    print '\nReservation de 1 place '
+    print('\nReservation de 1 place ')
     S.reserverPlace()
 
-    print '\nNb places libres : ' + str(S.getNbPlacesLibres())
-    print 'Nb Places Tot    : ' + str(S.getNbPlacesTot() )
+    print('\nNb places libres : ' + str(S.getNbPlacesLibres()))
+    print('Nb Places Tot    : ' + str(S.getNbPlacesTot() ))
 
-    print '\nAnnulation de la reservation'
+    print('\nAnnulation de la reservation')
     S.annulerReservation()
 
-    print '\nNb places libres : ' + str(S.getNbPlacesLibres())
-    print 'Nb Places Tot    : ' + str(S.getNbPlacesTot() )
+    print('\nNb places libres : ' + str(S.getNbPlacesLibres()))
+    print('Nb Places Tot    : ' + str(S.getNbPlacesTot() ))
 
-    print '\nNo de station : ' + str(S.getNo())
+    print('\nNo de station : ' + str(S.getNo()))
 
-    print '\nLE TEST S\'EST DEROULE AVEC SUCCES'
+    print('\nLE TEST S\'EST DEROULE AVEC SUCCES')

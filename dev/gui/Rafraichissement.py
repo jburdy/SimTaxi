@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.17 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
@@ -11,15 +11,15 @@ from GestionnaireStations import *
 from GestionnaireTaxis import *
 
 #modules de dessin
-from TaxiGL import *
-from RouteGL import *
-from CarrefourGL import *
-from StationGL import *
-from ClientAttendGL import *
-from ClientDeposeGL import *
+from .TaxiGL import *
+from .RouteGL import *
+from .CarrefourGL import *
+from .StationGL import *
+from .ClientAttendGL import *
+from .ClientDeposeGL import *
 
 #evenement pour rafraichir l'affichage
-from Evenement_rafraichir_affichage import *
+from .Evenement_rafraichir_affichage import *
 
 class Rafraichissement(Singleton) :
 

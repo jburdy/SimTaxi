@@ -1,10 +1,10 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.5 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-11-23"
 
-from importGL import * #module d'importation de OpenGL
+from .importGL import * #module d'importation de OpenGL
 
 class ObjetGraph :
     """

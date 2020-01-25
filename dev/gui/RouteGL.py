@@ -1,10 +1,10 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.8 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-12-7"
 
-from ObjetGraph import * #super classe
+from .ObjetGraph import * #super classe
 
 from math import *
 

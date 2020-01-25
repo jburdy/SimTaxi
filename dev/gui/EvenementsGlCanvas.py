@@ -1,14 +1,14 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.9 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-12-7"
 
-from Vue import *
-from ThreadTortue import * #pour le deplacement a l'aide de la souris
-from ThreadZoom import * #pour le zoom a l'aide de la souris
+from .Vue import *
+from .ThreadTortue import * #pour le deplacement a l'aide de la souris
+from .ThreadZoom import * #pour le zoom a l'aide de la souris
 
-from Evenement_rafraichir_affichage import *
+from .Evenement_rafraichir_affichage import *
 
 class EvenementsGlCanvas(Vue) :
     """

@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Module du gestionnaire des stations.
@@ -10,8 +10,8 @@ __author__ = 'EI5a, eivd, SimTaxi (Groupe Burdy)'
 __date__ = '2002-11-20'
 
 from Singleton import Singleton
-from Station import Station
-from Gestionnaire import Gestionnaire
+from .Station import Station
+from .Gestionnaire import Gestionnaire
 from GrapheXY import GrapheXY
 from Chemin import Chemin
 
@@ -127,7 +127,7 @@ class GestionnaireStations(Singleton):
             raise ErreurEvenementIncorrect
 
         # Creation d'une liste de taxis.
-        listeStations = self.__gestionnaire.values()
+        listeStations = list(self.__gestionnaire.values())
 
         # si il n'y pas de stations,
         if len(listeStations) == 0 :
@@ -208,7 +208,7 @@ class GestionnaireStations(Singleton):
         - auteur - Lucien Chaboudez
         """
         # retour de la liste
-        return self.__gestionnaire.values()
+        return list(self.__gestionnaire.values())
 
 
 
@@ -341,6 +341,6 @@ if __name__=='__main__':
 
     for s in l :
 
-        print s.getNbPlacesLibres()
+        print(s.getNbPlacesLibres())
 
-    print 'LE TEST S\'EST DEROULE AVEC SUCCES'    
+    print('LE TEST S\'EST DEROULE AVEC SUCCES')    

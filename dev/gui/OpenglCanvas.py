@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.7 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
@@ -13,7 +13,7 @@ try:
 except ImportError:
     haveGLCanvas = False
 
-from importGL import *
+from .importGL import *
     
 class OpenGLCanvas(wxGLCanvas) :
     """

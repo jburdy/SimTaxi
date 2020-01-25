@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Module contenant la classe Chemin.
@@ -33,7 +33,7 @@ class Chemin:
         - auteur - Julien Burdy
         """
 
-        from GrapheXY import GrapheXY
+        from .GrapheXY import GrapheXY
         self.__graphe = GrapheXY()
         self.__sommets = listeSommets
         self.__distances = listeDistances
@@ -213,7 +213,7 @@ class Chemin:
                 return abs(self.__distances[index] - d)
             index -= 1
 
-        raise Exception, "un sommet au moins n'est pas dans le chemin"
+        raise Exception("un sommet au moins n'est pas dans le chemin")
 
 
     def distEntrePos(self, a, b):
@@ -245,7 +245,7 @@ class Chemin:
                   - (self.__distances[index] - self.__distances[index-1]) / 2.0 \
                   - d
             index -= 1
-        raise Exception, "un arc au moins n'est pas dans le chemin"
+        raise Exception("un arc au moins n'est pas dans le chemin")
 
     def __repr__(self):
 
@@ -253,7 +253,7 @@ class Chemin:
 
 # seulement pour tester cette classe
 if __name__ == '__main__':
-    from GrapheXY import GrapheXY
+    from .GrapheXY import GrapheXY
     from os import sep, pardir
 
     graphe = GrapheXY(pardir+sep+'graphe'+sep+'graphe.gr')
@@ -262,7 +262,7 @@ if __name__ == '__main__':
     c = Chemin(l, [0.0,1.0,2.0,4.0,7.0,10.0])
     assert c.posDepart() == (1,2)
     assert c.posArrivee() == (5,6)
-    print c.posDepartXY()
+    print(c.posDepartXY())
     assert c.nbSommets() == 6
     assert c.nbArcs() == 5
     assert c.distTotalSommets() == 10.0

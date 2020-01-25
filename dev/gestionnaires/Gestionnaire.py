@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Module de base des gestionnaires.
@@ -82,7 +82,7 @@ if __name__ == "__main__" :
 
     for i in gest :
 
-        print i + ' - ' + gest.get(i)
+        print(i + ' - ' + gest.get(i))
 
-    print gest
+    print(gest)
 

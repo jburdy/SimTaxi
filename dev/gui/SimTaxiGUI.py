@@ -1,11 +1,11 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 __version__ = "$Revision: 1.11 $"
 __author__ = "EI5a, eivd, SimTaxi (Groupe Burdy)"
 __date__ = "2002-11-23"
 
 from wxPython.wx import *
-from FenetreControl import *
+from .FenetreControl import *
 
 class SimTaxiGUI(wxApp) :
     """
