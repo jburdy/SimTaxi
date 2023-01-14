@@ -1,4 +1,4 @@
-# Fichier de pr§f§rences de SimTaxi (http://SimTaxi.sf.net)
+# Fichier de préférences de SimTaxi (http://SimTaxi.sf.net)
 
 ################
 # Interface utilisateur

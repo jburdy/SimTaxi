@@ -86,7 +86,7 @@ class T(Thread):
 if __name__ == '__main__':
 
     D = 1  # 1 = DEBUG
-    # recuperation des pr§f§rences (param§tres + configuration)
+    # recuperation des préférences (param§tres + configuration)
     gp = GestionnairePreferences('config.txt')
 
     # initialisation de l'interface utilisateur, permettant § l'utilisateur
