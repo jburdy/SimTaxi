@@ -65,7 +65,7 @@ class T(Thread):
             evenement = cntrl.traiterProchainEvenement()  # renvois l'evenement traite (pour le gui)
             # if D: print str(evenement) + "\n"
             temps = evenement.temps()  # saisie du temps de l'evenement
-            print((temps/(3600.0*24.0))*100.0, '%')
+            #print((temps/(3600.0*24.0))*100.0, '%')
             # if D: print '=== temps :', temps
             # if gp.valeurDe('gui'): gui.rafraichir(temps, evenement) # le gui raffraichi et renvois vrai s'il veut stopper
 

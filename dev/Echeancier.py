@@ -25,7 +25,6 @@ class Echeancier(QueuePriorite):
         - auteur - Alexandre D'Amico
         """
         # tri des evenement dans l'ordre chronologique
-        print(listeEv)
         self._queue = sorted(listeEv, key=lambda x: x._temps)  # FIX2023
         # self._queue = listeEv
         # self._queue.sort(self._foncComp)
