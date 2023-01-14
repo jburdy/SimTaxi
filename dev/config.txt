@@ -2,7 +2,7 @@
 
 ################
 # Interface utilisateur
-gui             : True # utilisation ou non de l'affichage
+gui             : False # utilisation ou non de l'affichage
 # ATTENTION dans le cas de la non utilisation du gui, la simulation 
 # est difficile § stopper
 
