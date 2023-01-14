@@ -191,7 +191,7 @@ class Taxi:
             self.__cheminCourant = evenement.cheminClient()
 
             # Recherche de la distance pour aller chercher le client
-            self.__distTrajet = self.__cheminCourant.distTotalPos()
+            self.__distTrajet = self.__cheminCourant.dist_total_pos()
 
             # Calcul de l'heure a laquelle le client sera charge
             self.__heureFinEvenement = heure + ((self.__distTrajet * 3.6) / self.__vitesse)
@@ -233,7 +233,7 @@ class Taxi:
             self.__cheminCourant = self.__evenementCourant.chemin()
 
             # Recherche de la distance pour conduire le client
-            self.__distTrajet = self.__cheminCourant.distTotalPos()
+            self.__distTrajet = self.__cheminCourant.dist_total_pos()
 
             # Calcul de l'heure a laquelle le client sera depose
             self.__heureFinEvenement = heure + ((self.__distTrajet * 3.6) / self.__vitesse)
@@ -268,7 +268,7 @@ class Taxi:
             self.__cheminCourant = evenement.cheminStation()
 
             # Recherche de la distance pour aller a la station
-            self.__distTrajet = self.__cheminCourant.distTotalPos()
+            self.__distTrajet = self.__cheminCourant.dist_total_pos()
 
             # Calcul de l'heure a laquelle le client sera depose
             self.__heureFinEvenement = heure + ((self.__distTrajet * 3.6) / self.__vitesse)
@@ -350,7 +350,7 @@ class Taxi:
             # si il n'y a pas d'heure,
             if heure == 0:
                 # on retourne le dernier arc du chemin courant.
-                return (self.__cheminCourant.posArrivee(), 0)
+                return (self.__cheminCourant.pos_arrivee(), 0)
 
             distanceParcourue = (heure - self.__evenementCourant.temps()) \
                 * (self.__vitesse / 3.6)

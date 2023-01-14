@@ -97,7 +97,7 @@ class GestionnaireTaxis(Singleton):
 
         # recherche de la position du client en prenant les 2 premiers sommets
         # du chemin qu'il faudra prendre pour le conduire a destination
-        posClient = client.chemin().posDepart()
+        posClient = client.chemin().pos_depart()
 
         indexStation = -1
 
@@ -114,7 +114,7 @@ class GestionnaireTaxis(Singleton):
                 # recherche du chemin le plus court jusqu'au taxi
                 cheminLePlusCourt = graphe.cheminPlusCourt(posStation, posClient)
                 # calcul de la taille du chemin
-                distancePlusCourte = cheminLePlusCourt.distTotalPos()
+                distancePlusCourte = cheminLePlusCourt.dist_total_pos()
 
                 # recherche de la position de la station dans la liste
                 indexStation = listeStations.index(stationCour)
@@ -138,7 +138,7 @@ class GestionnaireTaxis(Singleton):
 
                 # recherche du chemin le plus court jusqu'au taxi
                 cheminCourant = graphe.cheminPlusCourt(posStation, posClient)
-                distanceCourante = cheminCourant.distTotalPos()
+                distanceCourante = cheminCourant.dist_total_pos()
 
                 # Si on trouve un chemin plus court,
                 if distanceCourante < distancePlusCourte:

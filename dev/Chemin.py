@@ -18,7 +18,7 @@ class Chemin:
     a disposition.
     """
 
-    def __init__(self, listeSommets, listeDistances):
+    def __init__(self, liste_sommets, liste_distances):
         """
         Creation du chemin.
         listeSommets (List) -- liste ordonnee des sommets du parcour.
@@ -28,10 +28,10 @@ class Chemin:
         """
         from GrapheXY import GrapheXY
         self.__graphe = GrapheXY()
-        self.__sommets = listeSommets
-        self.__distances = listeDistances
+        self.__sommets = liste_sommets
+        self.__distances = liste_distances
 
-    def posDepart(self):
+    def pos_depart(self):
         """
         Renvoie la position (tuple de 2 sommets) de depart du chemin.
         retourne (Tuple(sommetA, sommetB)) -- un tuple position
@@ -40,23 +40,23 @@ class Chemin:
         """
         return (self.__sommets[0], self.__sommets[1])
 
-    def posDepartXY(self):
+    def pos_depart_xy(self):
         """
         Renvoie la coordonn§e (tuple x, y) de depart du chemin.
         retourne (Tuple(x,y))
         - depuis - 1.6
         - auteur - Julien Burdy
         """
-        sA, sB = self.posDepart()
+        s_a, s_b = self.pos_depart()
 
-        sAx = self.__graphe.attributsSommet(sA).getX()
-        sAy = self.__graphe.attributsSommet(sA).getY()
-        sBx = self.__graphe.attributsSommet(sB).getX()
-        sBy = self.__graphe.attributsSommet(sB).getY()
+        s_a_x = self.__graphe.attributsSommet(s_a).getX()
+        s_a_y = self.__graphe.attributsSommet(s_a).getY()
+        s_b_x = self.__graphe.attributsSommet(s_b).getX()
+        s_b_y = self.__graphe.attributsSommet(s_b).getY()
 
-        return (sAx / 2.0 + sBx / 2.0, sAy / 2.0 + sBy / 2.0)
+        return (s_a_x / 2.0 + s_b_x / 2.0, s_a_y / 2.0 + s_b_y / 2.0)
 
-    def posArrivee(self):
+    def pos_arrivee(self):
         """
         Renvoie la position (tuple de 2 sommets) d'arrivee du chemin.
         retourne (Tuple(sommetA, sommetB)) -- un tuple position
@@ -65,23 +65,22 @@ class Chemin:
         """
         return (self.__sommets[-2], self.__sommets[-1])
 
-    def posArriveeXY(self):
+    def pos_arrivee_xy(self):
         """
         Renvoie la coordonn§e (tuple x, y) d'arrivee du chemin.
         retourne (Tuple(x,y))
         - depuis - 1.6
         - auteur - Julien Burdy
         """
-        sA, sB = self.posArrivee()
+        s_a, s_b = self.pos_arrivee()
+        s_a_x = self.__graphe.attributsSommet(s_a).getX()
+        s_a_y = self.__graphe.attributsSommet(s_a).getY()
+        s_b_x = self.__graphe.attributsSommet(s_b).getX()
+        s_b_y = self.__graphe.attributsSommet(s_b).getY()
 
-        sAx = self.__graphe.attributsSommet(sA).getX()
-        sAy = self.__graphe.attributsSommet(sA).getY()
-        sBx = self.__graphe.attributsSommet(sB).getX()
-        sBy = self.__graphe.attributsSommet(sB).getY()
+        return (s_a_x / 2.0 + s_b_x / 2.0, s_a_y / 2.0 + s_b_y / 2.0)
 
-        return (sAx / 2.0 + sBx / 2.0, sAy / 2.0 + sBy / 2.0)
-
-    def listeSommets(self):
+    def liste_sommets(self):
         """
         Renvoie la liste ordonnee des sommets.
         retourne (List) -- la liste [0:nbSommet-1]
@@ -90,7 +89,7 @@ class Chemin:
         """
         return self.__sommets
 
-    def nbSommets(self):
+    def nb_sommets(self):
         """
         Renvoie le nombre de sommets parcourus par le chemin.
         retourne (Int) -- le nombre de sommets
@@ -99,16 +98,16 @@ class Chemin:
         """
         return len(self.__sommets)
 
-    def nbArcs(self):
+    def nb_arcs(self):
         """
         Renvoie le nombre d'arcs parcourus par le chemin.
         retourne (Int) -- le nombre d'arcs
         - depuis - 1.0
         - auteur - Julien Burdy
         """
-        return self.nbSommets()-1
+        return self.nb_sommets()-1
 
-    def distTotalSommets(self):
+    def dist_total_sommets(self):
         """
         Renvoie la distance totale entre le 1er sommet et le dernier.
         retourne (Float) -- la distance
@@ -117,7 +116,7 @@ class Chemin:
         """
         return self.__distances[-1]
 
-    def distTotalPos(self):
+    def dist_total_pos(self):
         """
         Renvoie la distance totale entre la 1ere position et la derniere.
         retourne (Float) -- la distance
@@ -128,7 +127,7 @@ class Chemin:
             - (self.__distances[-1] - self.__distances[-2]) / 2.0 \
             - (self.__distances[1] - self.__distances[0]) / 2.0
 
-    def distEntreSommets(self, a, b):
+    def dist_entre_sommets(self, a, b):
         """
         Renvoie la distance entre le sommet a et le sommet b.
         a, b -- les deux sommets
@@ -143,7 +142,7 @@ class Chemin:
         index = 0
         d = -1
         # recherche un des deux sommets
-        while d < 0 and index < self.nbSommets():
+        while d < 0 and index < self.nb_sommets():
             if self.__sommets[index] == a or self.__sommets[index] == b:
                 d = self.__distances[index]
                 # trouve = self.__sommets[index]
@@ -159,7 +158,7 @@ class Chemin:
 
         raise Exception("un sommet au moins n'est pas dans le chemin")
 
-    def distEntrePos(self, a, b):
+    def dist_entre_pos(self, a, b):
         """
         Renvoie la distance entre la position a et la position b.
         a, b -- les deux arcs (tuple de sommets)
@@ -170,14 +169,14 @@ class Chemin:
         # trouver le premier arc
         index = 0
         d = -1
-        while (d < 0) and (index+1 < self.nbSommets()):
+        while (d < 0) and (index+1 < self.nb_sommets()):
             if (self.__sommets[index] == a[0]) and (self.__sommets[index+1] == a[1]):
                 d = self.__distances[index] \
                     + (self.__distances[index+1] - self.__distances[index]) / 2.0
                 # trouve = self.__sommets[index]
             index += 1
         # cherche le deuxi§me depuis la fin
-        index = self.nbSommets()-1
+        index = self.nb_sommets()-1
         while index > 0:
             if (self.__sommets[index-1] == b[0]) and (self.__sommets[index] == b[1]):
                 return self.__distances[index] \
@@ -188,7 +187,7 @@ class Chemin:
 
     def __repr__(self):
 
-        return str(self.nbArcs())+' arcs'
+        return str(self.nb_arcs())+' arcs'
 
 
 # seulement pour tester cette classe
@@ -201,13 +200,13 @@ if __name__ == '__main__':
 
     l = [1, 2, 3, 4, 5, 6]
     c = Chemin(l, [0.0, 1.0, 2.0, 4.0, 7.0, 10.0])
-    assert c.posDepart() == (1, 2)
-    assert c.posArrivee() == (5, 6)
-    print(c.posDepartXY())
-    assert c.nbSommets() == 6
-    assert c.nbArcs() == 5
-    assert c.distTotalSommets() == 10.0
-    assert c.distTotalPos() == 8.0
-    assert c.distEntreSommets(2, 5) == 6.0
-    assert c.distEntrePos((2, 3), (3, 4)) == 1.5
-    assert c.distEntrePos((l[0], l[1]), (l[-2], l[-1])) == c.distTotalPos()
+    assert c.pos_depart() == (1, 2)
+    assert c.pos_arrivee() == (5, 6)
+    print(c.pos_depart_xy())
+    assert c.nb_sommets() == 6
+    assert c.nb_arcs() == 5
+    assert c.dist_total_sommets() == 10.0
+    assert c.dist_total_pos() == 8.0
+    assert c.dist_entre_sommets(2, 5) == 6.0
+    assert c.dist_entre_pos((2, 3), (3, 4)) == 1.5
+    assert c.dist_entre_pos((l[0], l[1]), (l[-2], l[-1])) == c.dist_total_pos()

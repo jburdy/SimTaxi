@@ -9,8 +9,8 @@ __version__ = '$Revision: 1.24 $'
 __author__ = 'EI5a, eivd, SimTaxi (Groupe Burdy)'
 __date__ = '2002-11-10'
 
-from random import *
 
+from random import Random
 from Chemin import Chemin
 from Graphe import Graphe
 from Point import Point
@@ -239,23 +239,23 @@ class GrapheXY(Graphe):
         # recherche la meilleure des quatre possibilit§s
 
         a = CPC((arcDepart[0], arcDepart[1]), (arcFin[0], arcFin[1]))
-        d = a.distTotalSommets()
+        d = a.dist_total_sommets()
 
         if self.arcDefini(arcDepart[1], arcDepart[0]):
             b = CPC((arcDepart[1], arcDepart[0]), (arcFin[0], arcFin[1]))
-            if b.distTotalSommets() < d:
+            if b.dist_total_sommets() < d:
                 a = b
-                d = a.distTotalSommets()
+                d = a.dist_total_sommets()
 
         if self.arcDefini(arcFin[1], arcFin[0]):
             b = CPC((arcDepart[0], arcDepart[1]), (arcFin[1], arcFin[0]))
-            if b.distTotalSommets() < d:
+            if b.dist_total_sommets() < d:
                 a = b
-                d = a.distTotalSommets()
+                d = a.dist_total_sommets()
 
             if self.arcDefini(arcDepart[1], arcDepart[0]):
                 b = CPC((arcDepart[1], arcDepart[0]), (arcFin[1], arcFin[0]))
-                if b.distTotalSommets() < d:
+                if b.dist_total_sommets() < d:
                     a = b
 
         return a
@@ -487,9 +487,9 @@ if __name__ == '__main__':
     print(a.listeArcs())
 
     chemin = a.cheminPlusCourt(('<', 's'), ('z', '>'))
-    print(chemin.listeSommets())
-    print(chemin.distTotalSommets())
-    print(chemin.distTotalPos())
+    print(chemin.liste_sommets())
+    print(chemin.dist_total_sommets())
+    print(chemin.dist_total_pos())
     try:
         a.cheminPlusCourt(('a', 's'), ('<', 'a'))
     except Exception:

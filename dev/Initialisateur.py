@@ -113,7 +113,7 @@ class Initialisateur:
                 (sommetDepart1, sommetDepart2),
                 (sommetArrivee1, sommetArrivee2))
             coursesTemp.append((cheminCourse,))
-            distanceCourse = coursesTemp[i][0].distTotalPos()
+            distanceCourse = coursesTemp[i][0].dist_total_pos()
 
             # S'il faut supprimer cette derniere course pour adapter
             # la moyenne.
@@ -156,7 +156,7 @@ class Initialisateur:
 
         # Creer une liste d'evenements clients.
         while len(coursesTemp) > 0:
-            pseudoChemin = (coursesTemp[0][1].posDepart(), coursesTemp[0][1].posArrivee())
+            pseudoChemin = (coursesTemp[0][1].pos_depart(), coursesTemp[0][1].pos_arrivee())
             self.__courses.append(EvClient(coursesTemp[0][0],
                                   pseudoChemin))
             coursesTemp.remove(coursesTemp[0])

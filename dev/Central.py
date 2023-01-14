@@ -20,7 +20,7 @@ from PolitiquePlusPres import PolitiquePlusPres
 from Singleton import Singleton
 
 
-def foncComp(evenement1, evenement2):
+def fonc_comp(evenement1, evenement2):
     """
     Fonction de comparaison des evenements pour l'echeancier.
     evenement1, evenement2 (Evenement) -- les evenements a comparer
@@ -50,7 +50,7 @@ class Central(Singleton):
         # INITIALISATIONS
 
         # initialisation de l'echeancier avec sa fonction de comparaison
-        self._echeancier = Echeancier(foncComp)
+        self._echeancier = Echeancier(fonc_comp)
 
         # creation des gestionnaires
         self._gestionnaireTaxis = GestionnaireTaxis()
@@ -59,14 +59,14 @@ class Central(Singleton):
         # creation de la politique
         self._politique = politique
 
-    def initEv(self, listeEv):
+    def initEv(self, liste_ev):
         """
         Initialise l'echeancier avec des evenements.
         listeEv (Liste) -- les evenements pour initialiser l'echeancier
         - depuis - 1.0
         - auteur - Alexandre D'Amico
         """
-        self._echeancier.initEcheancier(listeEv)
+        self._echeancier.initEcheancier(liste_ev)
 
     def ajouterEvenement(self, evenement):
         """

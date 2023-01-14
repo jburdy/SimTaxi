@@ -136,7 +136,7 @@ class GestionnaireStations(Singleton):
         cheminLePlusCourt = graphe.cheminPlusCourt(position, arc)
 
         # Recherche de la taille du chemin
-        distancePlusCourte = cheminLePlusCourt.distTotalPos()
+        distancePlusCourte = cheminLePlusCourt.dist_total_pos()
 
         # Suppression de la station
         listeStations = listeStations[posStation:]
@@ -152,7 +152,7 @@ class GestionnaireStations(Singleton):
 
                 # recherche du chemin le + court jusqu'a la station courante.
                 cheminCourant = graphe.cheminPlusCourt(position, arc)
-                distanceCourante = cheminCourant.distTotalPos()
+                distanceCourante = cheminCourant.dist_total_pos()
 
                 # Si le chemin courant est plus court,
                 if distanceCourante < distancePlusCourte:
