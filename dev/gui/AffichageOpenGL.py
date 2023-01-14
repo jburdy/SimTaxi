@@ -63,7 +63,7 @@ class AffichageOpenGL(OpenGLCanvas):
         self.rafraichissement = Rafraichissement()
         
         #passe une r§f§rence de l'affichage au rafraichissement
-        #(ceci pour qu'il puisse g§n§rer un §v§nement destin§ au canvas)
+        #(ceci pour qu'il puisse g§n§rer un événement destin§ au canvas)
         self.rafraichissement.set_obj_evt(self)
         self.repositionner()
         self.evRedessiner()

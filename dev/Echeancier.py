@@ -20,11 +20,8 @@ class Echeancier(QueuePriorite):
     def initEcheancier(self, listeEv):
         """
         Initialise la liste d'evenements.
-
         listeEv (List) -- la liste des evenements a inserer dans l'echeancier
-
         - depuis - 1.0
-
         - auteur - Alexandre D'Amico
         """
         # tri des evenement dans l'ordre chronologique
@@ -36,11 +33,8 @@ class Echeancier(QueuePriorite):
     def tempsProchainEv(self):
         """
         Retourne le temps auquel aura lieu le prochain evenement.
-
         retourne (Temps) -- le temps auquel aura lieu le prochain evenement
-
         - depuis - 1.4
-
         - auteur - Alexandre D'Amico
         """
         if not self.vide():
@@ -55,13 +49,9 @@ if __name__ == '__main__':
 
     def foncComp(e1, e2):
         """
-        Fonction de comparaison des evenements, pour l'insertion dans
-        l'echeancier.
-
+        Fonction de comparaison des evenements, pour l'insertion dans l'echeancier.
         e1, e2 -- les elements a comparer
-
         - depuis - 1.0
-
         - auteur - Alexandre D'Amico
         """
         return e1 < e2

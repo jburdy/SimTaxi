@@ -16,35 +16,26 @@ from Politique import Politique
 
 class PolitiquePlusPres (Politique):
     """
-    Impl§mante la politique du taxi le plus pr§s et de
+    Implémante la politique du taxi le plus près et de
     la station la plus proche.
     """
 
     def choisirTaxi(self, client):
         """
-        Retourne un taxi pour prendre en charge un client
-        d'apr§s la politique courante.
-
+        Retourne un taxi pour prendre en charge un client d'après la politique courante.
         client (EvClient) -- Le client qui veut faire la course
-
         retourne (Tuple(Taxi, Chemin)) -- Le taxi qui va prendre en charge la course
-
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         return GestionnaireTaxis().plusProcheDe(client)
 
     def choisirStation(self, taxi):
         """
-        Retourne une station d'apr§s la politique courante.
-
+        Retourne une station d'après la politique courante.
         taxi (EvTaxi) -- Le taxi qui va § une station
-
         retourne (Tuple(Station, Chemin)) -- La station et
-
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         return GestionnaireStations().plusProcheDe(taxi)

@@ -9,7 +9,6 @@ __version__ = '$Revision: 1.28 $'
 __author__ = 'EI5a, eivd, SimTaxi (Groupe Burdy)'
 __date__ = '2002-11-20'
 
-from Gestionnaire import Gestionnaire
 from GestionnaireStations import GestionnaireStations
 from GrapheXY import GrapheXY
 from Singleton import Singleton
@@ -20,7 +19,6 @@ class ErreurAucunTaxi(Exception):
     """
     Exception lev§e quand on cherche le taxi le plus proche et
     qu'il n'y a aucun taxi dans la liste.
-
     """
     pass
 
@@ -36,33 +34,25 @@ class ErreurAucunTaxiLibre(Exception):
 class GestionnaireTaxis(Singleton):
     """
     Implemente un gestionnaire de Taxis.
-
     Cette classe fournit un gestionnaire de taxis.
     """
 
     def init(self):
         """
         Constructeur.
-
         Permet de creer un objet de la classe.
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
         # Creation du gestionnaire
-        self.__gestionnaire = Gestionnaire()
+        self.__gestionnaire = {}
 
     def addTaxi(self, noStation):
         """
         Ajouter un Taxi.
-
         Permet d'ajouter un taxi au gestionnaire.
-
         noStation (int) -- Le no de la station dans laquelle le taxi se trouve.
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
         lesStations = GestionnaireStations()
@@ -74,7 +64,8 @@ class GestionnaireTaxis(Singleton):
         newTaxi = Taxi(no, noStation)
 
         # Ajout du taxi dans le gestionnaire
-        self.__gestionnaire.addElement(no, newTaxi)
+
+        self.__gestionnaire[no] = newTaxi
 
         # Ajout du taxi dans la station
         lesStations.affecterTaxi(noStation, no)
@@ -82,29 +73,20 @@ class GestionnaireTaxis(Singleton):
     def getNbTaxis(self):
         """
         Nombre de taxis qui sont dans le gestionnaire.
-
         Renvoie le nombre de taxis du gestionnaire.
-
         retourne (int) -- Le nombre de taxis du gestionnaire.
-
         - depuis - 1.0
-
         - auteur -
         """
         # Renvoie le nombre d'elements
-        return self.__gestionnaire.nbElements
+        return len(self.__gestionnaire)
 
     def plusProcheDe(self, client):
         """
-        (TODO : add description)
-
          client (EvClient) -- un evenement client.
-
          retourne tuple(Taxi, Chemin) -- retourne le taxi le plus
          proche ainsi que le chemin pour aller jusqu'au client.
-
         - depuis - 1.0
-
         - auteur -
         """
         # Reference sur le graphe.
@@ -176,11 +158,8 @@ class GestionnaireTaxis(Singleton):
     def delContenu(self):
         """
         Efface les taxis.
-
         Vide le gestionnaire contenant les taxis.
-
         - depuis - 1.3
-
         - auteur - Lucien Chaboudez
         """
 
@@ -189,13 +168,9 @@ class GestionnaireTaxis(Singleton):
     def getListe(self):
         """
         Renvoie une liste des taxis.
-
         Permet de mettre les taxis dans une liste et de la renvoyer.
-
         retourne (List) -- Une liste de taxis
-
         - depuis - 1.9
-
         - auteur - Lucien Chaboudez
         """
 
@@ -205,17 +180,13 @@ class GestionnaireTaxis(Singleton):
     def getTaxi(self, noTaxi):
         """
         Renvoie le taxi correspondant au no.
-
         Permet de renvoyer le taxi qui correspond au numero pass§.
-
         noTaxi int -- le no du taxi
         retourne Taxi -- Le taxi
-
         - depuis - 1.24
-
         - auteur - Lucien Chaboudez
         """
-        return self.__gestionnaire[str(noTaxi)]
+        return self.__gestionnaire[noTaxi]
 
 
 if __name__ == '__main__':

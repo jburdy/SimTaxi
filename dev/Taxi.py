@@ -34,7 +34,6 @@ class ErreurHeureIncorrecte(Exception):
 class Taxi:
     """
     Implemente un taxi
-
     Cette classe fournit un taxi et des methodes permettant
     de le gerer.
     """
@@ -42,15 +41,10 @@ class Taxi:
     def __init__(self, noTaxi, noStation):
         """
         Constructeur.
-
         Permet de creer un objet de la classe.
-
         noTaxi (int)-- le no du taxi
-
         noStation (int)-- le no de la station ou le taxi se trouve
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
         # reference sur le graphe
@@ -74,18 +68,13 @@ class Taxi:
     def getPosition(self, heure):
         """
         Renvoie la position du taxi.
-
         Permet de connaitre la position (x,y) du taxi et son vecteur de
         direction.
-
         heure (int) -- l'heure courante
-
         retourne (tuple(tuple(float,float),tuple(float,float))) --
         un tuple contenant 2 tuples. Le 1er donne la position
         (x,y) du taxi et le 2e le vecteur de direction.
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
         # si le taxi roule,
@@ -105,7 +94,7 @@ class Taxi:
                     print("Sommets : ", sommet1, sommet2)
                     print("Dist entre sommets : ", self.__cheminCourant.distEntreSommets(sommet1, sommet2))
                     print("Dist parcourue sur arc : ", distanceParcourueSurArc)
-                    raise "Erreur Distance Incorrecte"
+                    raise Exception("Erreur Distance Incorrecte")
 
             # Enregistrement des coordonn§es des sommets
             som1X = self.__graphe.attributsSommet(sommet1).getX()
@@ -146,7 +135,7 @@ class Taxi:
 
                     print("Dist : ", distanceParcourueSurArc)
                     print("Long arc : ", longArc)
-                    raise "Erreur Coordonnees Incorrect"
+                    raise Exception("Erreur Coordonnees Incorrect")
 
             # retour de la position
             return ((posX, posY), (vectX, vectY))
@@ -162,14 +151,10 @@ class Taxi:
     def estEnDeplacement(self):
         """
         Savoir si un taxi roule ou non.
-
         Permet de savoir si un taxi est en train de rouler ou si il
         est en station.
-
         retourne (int) -- 1 = taxi en deplacement, 0 = a l'arret
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
         if self.__evenementCourant == None:
@@ -181,14 +166,10 @@ class Taxi:
     def traiterEvenement(self, evenement):
         """
         Traiter l'evenement passe.
-
         Traite l'evenement passe en parametre et renvoie un autre
         evenement.
-
         evenement (Evenement) -- l'evenement qu'il faut traiter
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
         from Central import Central  # FIX2023 Circular Imports
@@ -344,14 +325,10 @@ class Taxi:
     def getNoStation(self):
         """
         Renvoie le no de la station.
-
         Permet de connaitre le no de la station dans laquelle se trouve
         le taxi.
-
         retourne (int) -- noStation : le no de la station
-
         - depuis - 1.2
-
         - auteur - Lucien Chaboudez
         """
         return self.__noStation
@@ -359,21 +336,15 @@ class Taxi:
     def arc(self, heure=0):
         """
         renvoie l'arc sur lequel le taxi se trouve.
-
         Permet de connaitre l'arc sur laquelle le taxi se trouve.
-
         heure (int) -- l'heure courante
-
         retourne (tuple(tuple(NomSommet,NomSommet), float))
         -- un tuple contenant 1 tuple et la distance parcourue
            sur l'arc . Le tuple contient les sommets entre lesquels
            le taxi se trouve.
-
         - depuis - 1.4
-
         - auteur - Lucien Chaboudez
         """
-
         if self.estEnDeplacement():
 
             # si il n'y a pas d'heure,
@@ -424,7 +395,7 @@ class Taxi:
                             print("Dist cum : ", distanceCumulee)
                             print("Dist parcourue : ", distanceParcourue)
                             print("dist chemin : ", self.__cheminCourant.distTotalPos())
-                            raise "Erreur position incorrecte"
+                            raise Exception("Erreur position incorrecte")
 
                     # passage au sommet suivant
                     sommet2 = listeSommetsChemin[posDansListe]
@@ -461,7 +432,7 @@ class Taxi:
                     print("Sommets : ", sommet1, sommet2)
                     print("Dist entre sommets : ", self.__cheminCourant.distEntreSommets(sommet1, sommet2))
                     print("Dist parcourue sur arc : ", distParcourueSurArc)
-                    raise "Erreur Distance Incorrecte"
+                    raise Exception("Erreur Distance Incorrecte")
 
             # retour de la position
             return ((sommet1, sommet2), distParcourueSurArc)
@@ -477,13 +448,9 @@ class Taxi:
     def getNo(self):
         """
         renvoie le no du taxi.
-
         Permet de connaitre le no que porte le taxi.
-
         retourne int  -- le no du taxi.
-
         - depuis - 1.24
-
         - auteur - Lucien Chaboudez
         """
         return self.__no
@@ -491,15 +458,11 @@ class Taxi:
     def getEtat(self):
         """
         renvoie l'etat du taxi sous forme de string.
-
         Permet de connaitre l'§tat du taxi.
-
         retourne string  -- l'§tat du taxi
             Etats possibles : 'arrete', 'chercheClient', 'conduitClient',
                               'retourStation'.
-
         - depuis - 1.27
-
         - auteur - Lucien Chaboudez
         """
         return self.__etat
@@ -507,14 +470,10 @@ class Taxi:
     def getNbCoursesEffectuees(self):
         """
         renvoie le nombre de courses effectuees par le taxi.
-
         Permet de connaitre le nombre de courses que le taxi a effectu§es.
         C'est-§-dire le nombre de client qu'il a charg§ et qu'il a amen§ § destination.
-
         retourne int -- le nombre de courses
-
         - depuis - 1.33
-
         - auteur - Lucien Chaboudez
         """
         return self.__nbCoursesEffectuees
@@ -522,13 +481,9 @@ class Taxi:
     def getNbmParcourus(self):
         """
         renvoie le nombre de m§tres parcourus par le taxi.
-
         Permet de connaitre le nombre de m§tres que le taxi a parcouru.
-
         retourne float -- le nombre de m§tres parcourus
-
         - depuis - 1.33
-
         - auteur - Lucien Chaboudez
         """
         return self.__mParcourus

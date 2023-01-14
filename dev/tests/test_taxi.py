@@ -45,12 +45,12 @@ def unChemin():
 
 
 print("Creation des stations ...")
-# cr§ation de stations
+# création de stations
 stations.addStation(nbTax,graphe.listeSommets(1)[0], graphe.listeSommets(1)[1])
 
 
 print("Creation des %d taxis ..." % nbTax)
-#cr§ation des taxis, remplissage des stations
+#création des taxis, remplissage des stations
 for i in range(nbTax): taxis.addTaxi(1)
 
 
@@ -58,7 +58,7 @@ for i in range(nbTax): taxis.addTaxi(1)
 
 print("Creation des %d evenements ..." % nbTax)
 lesEvCli = []
-#cr§ation des §venements
+#création des §venements
 for i in range(nbTax):
     lesEvCli.append(Evenement.EvClient(0, unChemin()))
     if (i)%10 == 0: print(int(float(i)/nbTax*100), '%')

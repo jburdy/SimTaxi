@@ -9,7 +9,6 @@ __version__ = '$Revision: 1.19 $'
 __author__ = 'EI5a, eivd, SimTaxi (Groupe Burdy)'
 __date__ = '2002-11-20'
 
-from Gestionnaire import Gestionnaire
 from GrapheXY import GrapheXY
 from Singleton import Singleton
 from Station import Station
@@ -42,38 +41,27 @@ class ErreurAucuneStationAvecPlaceLibre(Exception):
 class GestionnaireStations(Singleton):
     """
     Implemente un gestionnaire de stations.
-
     Cette classe fournit un gestionnaire de stations.
     """
 
     def init(self):
         """
         Constructeur.
-
         Permet de creer un objet de la classe.
-
         - depuis - 1.0
-
         - auteur -  Lucien Chaboudez
         """
         # Creation du gestionnaire
-        self.__gestionnaire = Gestionnaire()
+        self.__gestionnaire = {}
 
     def addStation(self, nbPlaces, sommet1, sommet2):
         """
         Ajouter une station.
-
         Permet d'ajouter une station dans le gestionnaire.
-
         nbPlaces (int) -- le nombre de places de la station
-
-        sommet1,sommet2(tuple(nomSommet, Point)) -- les sommets entre lesquels
-                                   se trouve la station
-
+        sommet1,sommet2(tuple(nomSommet, Point)) -- les sommets entre lesquels se trouve la station
         retourne (int) -- le no de la station ajoutee
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
         # Recherche du no de la nouvelle station
@@ -83,34 +71,27 @@ class GestionnaireStations(Singleton):
         newStation = Station(nbPlaces, no, sommet1, sommet2)
 
         # Ajout de la station dans le gestionnaire
-        return self.__gestionnaire.addElement(no, newStation)
+        self.__gestionnaire[no] = newStation
+        return no
 
     def getNbStations(self):
         """
         Nombre de stations qui sont dans le gestionnaire.
-
         Renvoie le nombre de stations du gestionnaire.
-
         retourne (int) -- Le nombre de stations du gestionnaire.
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
         # Renvoie le nombre d'elements
-        return self.__gestionnaire.nbElements
+        return len(self.__gestionnaire)
 
     def plusProcheDe(self, evPoserClient):
         """
         Renvois la station la plus proche de la position.
-
         position (EvPoserClient) -- un §venement poser client
-
         retourne (tuple(Station,Chemin)) -- la station la plus proche et
         le chemin pour s'y rendre.
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
 
@@ -187,13 +168,9 @@ class GestionnaireStations(Singleton):
     def getListeStations(self):
         """
         Renvoie une liste des stations.
-
         Permet de mettre les stations dans une liste et de la renvoyer.
-
         retourne (List) -- Une liste de stations
-
         - depuis - 1.2
-
         - auteur - Lucien Chaboudez
         """
         # retour de la liste
@@ -202,29 +179,21 @@ class GestionnaireStations(Singleton):
     def affecterTaxi(self, noStation, noTaxi):
         """
         Affecte un taxi a la station dont le no est passe.
-
         Permet d'affecter un taxi a la station dont le no est passe. Sera
         appelee a l'initialisation du programme.
-
         noStation (int) -- le no de la station a laquelle le taxi est affecte.
-
         noTaxi (int) -- Le no du taxi a ajouter
-
         - depuis - 1.2
-
         - auteur - Lucien Chaboudez
         """
         # Ajout du taxi a la station
-        self.__gestionnaire[str(noStation)].affecterTaxi(noTaxi)
+        self.__gestionnaire[noStation].affecterTaxi(noTaxi)
 
     def delContenu(self):
         """
         Efface les stations.
-
         Vide le gestionnaire contenant les stations.
-
         - depuis - 1.3
-
         - auteur - Lucien Chaboudez
         """
         self.__gestionnaire.delContenu()
@@ -232,18 +201,13 @@ class GestionnaireStations(Singleton):
     def getPosition(self, noStation):
         """
         Donne la position d'une station.
-
         Permet de connaitre la position de la station, dont le no est passe,
         sur le graphe en fonction des informations contenues dans les sommets.
-
         noStation (int) : le no de la station dont on desire la position.
-
         retourne (Tuple(Tuple(float,float),Tuple(float,float)) --
         un tuple contenant 2 tuples.
         1 avec la position (x,y) et le 2e avec vecteur d'orientation.
-
         - depuis - 1.4
-
         - auteur - Lucien Chaboudez
         """
         # appelle de la fonction getPosition de la station correspondante.
@@ -252,16 +216,11 @@ class GestionnaireStations(Singleton):
     def arc(self, noStation):
         """
         renvoie l'arc sur lequel la station se trouve.
-
         Permet de connaitre l'arc sur laquelle la station se trouve.
-
         noStation (int) -- le no de la station dont on veut l'arc
-
         retourne (Tuple(Sommet, Sommet)) -- un tuple contenant les sommets
         entre lesquels la station se trouve.
-
         - depuis - 1.4
-
         - auteur - Lucien Chaboudez
         """
 
@@ -271,38 +230,28 @@ class GestionnaireStations(Singleton):
     def getNbPlacesLibres(self, noStation):
         """
         renvoie le nb de places libres dans la station.
-
         Permet de connaitre le nombre de places qui sont libres dans la station
         dont le no est pass§.
-
         noStation (int) -- le no de la station dont on veut le nombre de places libres.
-
         retourne (int) -- le nombre de places libres.
-
         - depuis - 1.7
-
         - auteur - Lucien Chaboudez
         """
 
         # appel de la fonction getNbPlacesLibres de la station correspondante
-        return self.__gestionnaire[str(noStation)].getNbPlacesLibres()
+        return self.__gestionnaire[noStation].getNbPlacesLibres()
 
     def getStation(self, noStation):
         """
         renvoie la station correspondant au no.
-
         Permet d'avoir acc§s § la station dont le no est pass§ en param§tre.
-
         noStation (int) -- le no de la station.
-
         retourne (int) -- la station.
-
         - depuis - 1.17
-
         - auteur - Lucien Chaboudez
         """
         # retour de la station
-        return self.__gestionnaire[str(noStation)]
+        return self.__gestionnaire[noStation]
 
 
 if __name__ == '__main__':

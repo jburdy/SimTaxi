@@ -9,7 +9,6 @@ __version__ = '$Revision: 1.24 $'
 __author__ = 'EI5a, eivd, SimTaxi (Groupe Burdy)'
 __date__ = '2002-11-10'
 
-
 from random import *
 
 from Chemin import Chemin
@@ -25,22 +24,16 @@ fichierChemins = 'dumpChemins'
 class GrapheXY(Graphe):
     """
     Graphe oriente et pondere (pondere par des attributs).
-
     Les sommets et les arcs ont des attributs de n'importe quel type.
     """
 
     def init(self, fichierImport=None):
         """
         Cette methode sert a creer un graphe.
-
         On peut importer un graphe a partir d'un fichier donne.
-
         fichierImport (String) -- Le nom du fichier a importer
-
         retourne (Graphe) -- Un objet Graphe
-
         - depuis - 1.0
-
         - auteur - Lionel Guélat
         """
         # constructeur parent
@@ -58,16 +51,13 @@ class GrapheXY(Graphe):
 
     def dump(self):
         """
-        Dump (sauvegarde apr§s transformation) de la structure contenant
+        Dump (sauvegarde après transformation) de la structure contenant
         les arbres de chemins les plus courts. Le dump est fait uniquement
         s'il y a de nouveaux arbres.
-
         Le fichier (%s) est sous forme binaire.
-
         - depuis - 1.20
-
         - auteur - Julien Burdy
-        """ % fichierChemins
+        """
         import pickle
         if self.__nbCheminsLoad < len(self.__chemins):
             print('Dump des chemins (%d nouveaux arbres)' % (len(self.__chemins) - self.__nbCheminsLoad))
@@ -78,22 +68,17 @@ class GrapheXY(Graphe):
     def insererSommet(self, nomSommet, point):
         """
         Cette methode permet d'inserer un sommet avec son point.
-
         Exception levee si le point n'est pas un objet Point.
-
         nomSommet -- Le nom du sommet
-
         Point point -- Le point du sommet
-
         - depuis - 1.2
-
         - auteur - Joel Jaquemet
         """
         # controle du type Point
         try:
             point.getX()
         except:
-            raise erreurTypePoint
+            raise Exception(erreurTypePoint)
 
         # inserer le sommet avec son point
         Graphe.insererSommet(self, nomSommet, point.copy())
@@ -101,16 +86,11 @@ class GrapheXY(Graphe):
     def insererArc(self, sommetDep, sommetArr):
         """
         Cette methode permet d'inserer un arc dont on calcule sa longueur.
-
         Exception levee si les sommets ne sont pas definis dans le graphe ou
         si l'arc est deja defini.
-
         sommetDep -- Le nom du sommet de depart de l'arc
-
         sommetArr -- Le nom du sommet d'arrivee de l'arc
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         # insertion de l'arc avec sa longueur calculee
@@ -121,23 +101,18 @@ class GrapheXY(Graphe):
     def remplacerAttributsSommet(self, sommet, point):
         """
         Cette methode permet de modifier le point d'un sommet.
-
         On recalcule la logueur des arcs relies au sommet.
         Exception levee si le point n'est pas un objet Point.
-
         sommet -- Le nom du sommet
-
         point (Point) -- Le nouveau point du sommet
-
         - depuis - 1.2
-
         - auteur - Joel Jaquemet
         """
         # controle du type Point
         try:
             point.getX()
         except:
-            raise erreurTypePoint
+            raise Exception(erreurTypePoint)
 
         # modifier le point du sommet
         Graphe.Graphe.remplacerAttributsSommet(self, sommet, point.copy())
@@ -155,15 +130,10 @@ class GrapheXY(Graphe):
     def cheminPlusCourt(self, arcDepart, arcFin):
         """
         Algo du chemin le plus court
-
         arcDepart -- Arc de d§part (tuple de sommets)
-
         arcFin -- Arc de fin (tuple de sommets)
-
         retourne (Chemin) -- Le chemin le plus court
-
         - depuis - 1.5
-
         - auteur - Lionel Guelat
         """
         infini = 999999999999999
@@ -293,19 +263,12 @@ class GrapheXY(Graphe):
     def genererGraphe(self, nbSommets, nbArcs, distanceMax, germe=None):
         """
         Cette methode permet de generer un graphe.
-
         Exception levee si le graphe ne peut pas etre connexe.
-
         nbSommets (Int) -- Le nombre de sommets
-
         nbArcs (Int) -- Le nombre d'arcs
-
         distanceMax (Float) -- La distance maximale entre 2 sommets
-
         germe (Int) -- Le germe de la fonction aleatoire
-
         - depuis - 1.8
-
         - auteur - Joel Jaquemet
         """
         # controle des parametres

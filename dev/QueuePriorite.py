@@ -33,14 +33,9 @@ class QueuePriorite:
     def __init__(self, foncComp):
         """
         Constructeur.
-
         Cree une Queue vide.
-
-        foncComp (Function) -- fonction de comparaison, accepte 2 parametres 
-                               et retourne 0, 1 ou -1
-
+        foncComp (Function) -- fonction de comparaison, accepte 2 parametres et retourne 0, 1 ou -1
         - depuis - 1.0
-
         - auteur - Alexandre D'Amico
         """
         self._queue = []
@@ -49,13 +44,9 @@ class QueuePriorite:
     def deposer(self, element):
         """
         Deposer l'element avec la priorite voulue au bon endroit de la queue.
-
         Leve l'exception ErreurQueuePleine si la queue est pleine.
-
         element -- element a inserer dans la queue
-
         - depuis - 1.0
-
         - auteur - Alexandre D'Amico
         """
         try:
@@ -78,15 +69,10 @@ class QueuePriorite:
 
     def prelever(self):
         """
-        Prelever l'element le plus prioritaire de la queue (premier element
-        de la queue).
-
+        Prelever l'element le plus prioritaire de la queue (premier element de la queue).
         Leve l'exception ErreurQueueVide si la queue est vide.
-
         retourne -- l'element de tete de la queue
-
         - depuis - 1.0
-
         - auteur - Alexandre D'Amico
         """
         if not self.vide():
@@ -101,11 +87,8 @@ class QueuePriorite:
     def vide(self):
         """
         Savoir si la Queue est vide.
-
         retourne entier -- 1 si la Queue est vide, 0 sinon
-
         - depuis - 1.0
-
         - auteur - Alexandre D'Amico        
         """
         return not self._queue

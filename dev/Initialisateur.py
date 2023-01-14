@@ -21,7 +21,6 @@ from GrapheXY import GrapheXY
 class Initialisateur:
     """
     Initialisations de SimTaxi.
-
     Cette classe permet de generer les courses des clients et d'initialiser
     les taxis en les positionnant dans une station.
     """
@@ -29,11 +28,8 @@ class Initialisateur:
     def __init__(self):
         """
         Constructeur.
-
         Permet de cr§er un objet de la classe.
-
         - depuis - 1.0
-
         - auteur - Patrice Ferrot
         """
         # Les courses qui vont etre generees, sous forme de
@@ -46,25 +42,16 @@ class Initialisateur:
                        heureDerniereCourse, distanceMoyenne=0, germe=None):
         """
         Generateur de courses.
-
         Genere la totalite des courses qui seront effectuees.
-
         nbCourses -- le nombre de courses a generer
-
         heurePremiereCourse -- l'heure du premier appel d'un client
-
         heureDerniereCourse -- l'heure du dernier appel d'un client
-
         distanceMoyenne -- la distance moyenne des courses, 0 pour
                            des distances quelconques
-
         germe -- le germe utilise pour les generations aleatoires. Si pas
                  de germe specifie, se base sur l'heure actuelle.
-
         retourne (List) -- les courses generees, liste d'evenements clients.
-
         - depuis - 1.0
-
         - auteur - Patrice Ferrot
         """
         # Si pas de course a generer.
@@ -180,20 +167,15 @@ class Initialisateur:
     def genererStations(self, nbStations, nbPlaces, germe=None):
         """
         Initialise les stations.
-
         Place le nombre voulu de stations dans le graphe.
-
         nbStations -- le nombre de taxis a placer.
-
         nbPlaces -- liste indiquant le nombre de place que doivent contenir
                     les stations. Si moins d'elements dans la liste que de
                     stations, utilise le dernier pour toutes les suivantes,
                     si plus d'elements dans la liste, ne tient pas compte
                     des supplementaires.
-
         germe -- le germe utilise pour les generations aleatoires. Si pas
                  de germe specifie, se base sur l'heure actuelle.
-
         - depuis - 1.5
         - auteur - Patrice Ferrot
         """
@@ -281,14 +263,10 @@ class Initialisateur:
     def initialiserTaxis(self, nbTaxis, germe=None):
         """
         Initialise les taxis.
-
         Place le nombre voulu de taxis dans les stations.
-
         nbTaxis -- le nombre de taxis a placer.
-
         germe -- le germe utilise pour les generations aleatoires. Si pas
                  de germe specifie, se base sur l'heure actuelle.
-
         - depuis - 1.0
         - auteur - Patrice Ferrot
         """
@@ -330,18 +308,12 @@ class Initialisateur:
     def __nbAleatoire(self, gene):
         """
         Generateur aleatoire.
-
         Retourne un nombre aleatoire de l'intervalle [0,1[.
-
         gene -- le generateur utilise.
-
         retourne (Float) -- le nombre aleatoire genere.
-
         - depuis - 1.0
-
         - auteur - Patrice Ferrot
         """
-
         nb = gene.random()
         if nb == 1.0:
             nb = nb - 0.01

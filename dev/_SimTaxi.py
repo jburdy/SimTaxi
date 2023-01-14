@@ -26,16 +26,12 @@ print('\n'*3+ID+'\n')
 
 def dumpClients(liste):
     """
-    Dump (sauvegarde apr§s transformation) de la demande (liste d'§v clients).
-
+    Dump (sauvegarde après transformation) de la demande (liste d'év. clients).
     Le fichier (%s) est sous forme texte.
-
-    liste -- la liste d'§v§nements clients.
-
+    liste -- la liste d'événements clients.
     - depuis - 1.21
-
     - auteur - Julien Burdy
-    """ % fichierClients
+    """
     f = open(fichierClients, 'w')
     for i in liste:
         f.write(str(i.temps())+';'+str(i.positions())+'\n')
@@ -44,16 +40,12 @@ def dumpClients(liste):
 
 def loadClients():
     """
-    Chargement du dump de la demande (liste d'§v clients).
-
+    Chargement du dump de la demande (liste d'év. clients).
     Le fichier (%s) est sous forme texte.
-
-    retourne (list) -- liste d'§v§nements clients.
-
+    retourne (list) -- liste d'événements clients.
     - depuis - 1.21
-
     - auteur - Julien Burdy
-    """ % fichierClients
+    """
     from string import split
 
     from Evenement import EvClient
@@ -79,8 +71,10 @@ class T(Thread):
 
             # si le prochain evenement est trop loin dans le temps, on continue de raffraichir avant
             # de traiter ce prochain evenement
-            while gp.valeurDe('pseudoContinu') and cntrl.evenement() and cntrl.intervalleProchainEvement(temps) > 1 \
-                    and gp.valeurDe('gui'):
+            while gp.valeurDe('gui') and \
+                    cntrl.evenement() and \
+                    cntrl.intervalleProchainEvement(temps) > 1 and \
+                    gp.valeurDe('pseudoContinu'):
                 temps += 1
                 # if D: print '=== tempsInter :', temps
                 # if gp.valeurDe('gui'): gui.rafraichir(temps, None)
@@ -97,7 +91,7 @@ if __name__ == '__main__':
 
     # initialisation de l'interface utilisateur, permettant § l'utilisateur
     # de changer certain param§tre avant les initialisations suivantes (donc bloquant)
-    # cr§ation des objets
+    # création des objets
     grph = GrapheXY()
     grph.init()
     grph.initialiser()
@@ -136,7 +130,8 @@ if __name__ == '__main__':
 
     # def main():
     t = T()
-    if gp.valeurDe('gui'): t.setDaemon(True)
+    if gp.valeurDe('gui'):
+        t.setDaemon(True)
     t.start()
     # if gp.valeurDe('gui'): gui.start()
     grph.dump()

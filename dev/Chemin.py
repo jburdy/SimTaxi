@@ -21,13 +21,9 @@ class Chemin:
     def __init__(self, listeSommets, listeDistances):
         """
         Creation du chemin.
-
         listeSommets (List) -- liste ordonnee des sommets du parcour.
-
         listeDistances (List) -- liste des distances cummul§es pour chaque sommet
-
         - depuis - 1.0
-
         - auteur - Julien Burdy
         """
         from GrapheXY import GrapheXY
@@ -38,11 +34,8 @@ class Chemin:
     def posDepart(self):
         """
         Renvoie la position (tuple de 2 sommets) de depart du chemin.
-
         retourne (Tuple(sommetA, sommetB)) -- un tuple position
-
         - depuis - 1.0
-
         - auteur - Julien Burdy
         """
         return (self.__sommets[0], self.__sommets[1])
@@ -50,11 +43,8 @@ class Chemin:
     def posDepartXY(self):
         """
         Renvoie la coordonn§e (tuple x, y) de depart du chemin.
-
         retourne (Tuple(x,y))
-
         - depuis - 1.6
-
         - auteur - Julien Burdy
         """
         sA, sB = self.posDepart()
@@ -69,11 +59,8 @@ class Chemin:
     def posArrivee(self):
         """
         Renvoie la position (tuple de 2 sommets) d'arrivee du chemin.
-
         retourne (Tuple(sommetA, sommetB)) -- un tuple position
-
         - depuis - 1.0
-
         - auteur - Julien Burdy
         """
         return (self.__sommets[-2], self.__sommets[-1])
@@ -81,11 +68,8 @@ class Chemin:
     def posArriveeXY(self):
         """
         Renvoie la coordonn§e (tuple x, y) d'arrivee du chemin.
-
         retourne (Tuple(x,y))
-
         - depuis - 1.6
-
         - auteur - Julien Burdy
         """
         sA, sB = self.posArrivee()
@@ -100,11 +84,8 @@ class Chemin:
     def listeSommets(self):
         """
         Renvoie la liste ordonnee des sommets.
-
         retourne (List) -- la liste [0:nbSommet-1]
-
         - depuis - 1.0
-
         - auteur - Julien Burdy
         """
         return self.__sommets
@@ -112,11 +93,8 @@ class Chemin:
     def nbSommets(self):
         """
         Renvoie le nombre de sommets parcourus par le chemin.
-
         retourne (Int) -- le nombre de sommets
-
         - depuis - 1.0
-
         - auteur - Julien Burdy
         """
         return len(self.__sommets)
@@ -124,11 +102,8 @@ class Chemin:
     def nbArcs(self):
         """
         Renvoie le nombre d'arcs parcourus par le chemin.
-
         retourne (Int) -- le nombre d'arcs
-
         - depuis - 1.0
-
         - auteur - Julien Burdy
         """
         return self.nbSommets()-1
@@ -136,11 +111,8 @@ class Chemin:
     def distTotalSommets(self):
         """
         Renvoie la distance totale entre le 1er sommet et le dernier.
-
         retourne (Float) -- la distance
-
         - depuis - 1.0
-
         - auteur - Lionel Guelat
         """
         return self.__distances[-1]
@@ -148,11 +120,8 @@ class Chemin:
     def distTotalPos(self):
         """
         Renvoie la distance totale entre la 1ere position et la derniere.
-
         retourne (Float) -- la distance
-
         - depuis - 1.0
-
         - auteur - Lionel Guelat
         """
         return self.__distances[-1] \
@@ -162,13 +131,9 @@ class Chemin:
     def distEntreSommets(self, a, b):
         """
         Renvoie la distance entre le sommet a et le sommet b.
-
         a, b -- les deux sommets
-
         retourne (Float) -- la distance
-
         - depuis - 1.0
-
         - auteur - Lionel Guelat
         """
         # ! cette m§thode n'a en fait pas lieu d'exister
@@ -197,13 +162,9 @@ class Chemin:
     def distEntrePos(self, a, b):
         """
         Renvoie la distance entre la position a et la position b.
-
         a, b -- les deux arcs (tuple de sommets)
-
         retourne (Float) -- la distance
-
         - depuis - 1.0
-
         - auteur - Lionel Guelat
         """
         # trouver le premier arc

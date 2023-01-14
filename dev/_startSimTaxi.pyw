@@ -1,15 +1,11 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
-Lancement de SimTaxi (multiOS) apr§s divers contr§les.
-
-- contr§le des d§pendances
-
-- cr§ation de l'environement appropri§
-
+Lancement de SimTaxi (multiOS) après divers contrôles.
+- contrôle des d§pendances
+- création de l'environement approprié
 $Id: startSimTaxi.pyw,v 1.9 2003/02/06 16:33:31 erreur Exp $
 """
-
 
 # disctionnaire des lib dont nous sommes d§pendant
 dependance = {'OpenGL': 'http://pyopengl.sourceforge.net',
@@ -22,16 +18,12 @@ avertissement = """************************
 Attention: impossible de lancer l'execution.
 SimTaxi ne peut pas acceder aux librairies Python suivantes:"""
 
-
 def fixerPYTHONPATH():
     """
     Fixe la varibable d'environement.
-
-    Cette variable d'environement est obligatoire pour pouvoir acc§der § nos
+    Cette variable d'environement est obligatoire pour pouvoir acceder § nos
     module contenu dans les paquetage de SimTaxi.
-
     - depuis - 1.1
-
     - auteur - Julien Burdy
     """
     from os import curdir, listdir  # , sep, pathsep, , putenv, getenv
@@ -42,19 +34,13 @@ def fixerPYTHONPATH():
 
 def dependanceOK(dicoDep, avertissement):
     """
-    Contr§le que les librairies dont nous avons besoin sont disponnible.
-
+    contrôle que les librairies dont nous avons besoin sont disponnible.
     Si au moins une librairie est absente, un message d'avertissement s'affiche
     puis les librairies manquantes sont list§e, avec leurs URL.
-
     dicoDep (dict) -- le dico contenant les librairies et leurs URL
-
     avertissement (string) -- le msg d'avertissement
-
     retourne (bool) -- faux s'il manque au moins une librairie
-
     - depuis - 1.4
-
     - auteur - Julien Burdy
     """
     depOK = True
@@ -76,7 +62,7 @@ def dependanceOK(dicoDep, avertissement):
 if dependanceOK(dependance, avertissement):
     fixerPYTHONPATH()
     # import SimTaxiGUI # provisoire, lancement de l'ancien affichage
-    import SimTaxi
-    SimTaxi.main()
+    import _SimTaxi
+    _SimTaxi.main()
 else:
     input()

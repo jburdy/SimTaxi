@@ -17,12 +17,9 @@ from Singleton import Singleton
 class GestionnairePreferences(Singleton):
     """
     Gestionnaire de preferences.
-
     Ce gestionnaire contient les valeurs de configuration importees
     d'un fichier. Une option se distinge par son nom et sa valeur.
-
     Le format du fichier doit etre::
-
       ==============================
       # ceci est un commentaire
       nbMax : 500
@@ -33,13 +30,9 @@ class GestionnairePreferences(Singleton):
     def init(self, nomFichier=''):
         """
         Creation du gestionnaire (Singleton).
-
         nomFichier (String) -- Le nom du fichier de config
-
         retourne (GestionnairePreferences) -- le gestionnaire
-
         - depuis - 1.0
-
         - auteur - Julien Burdy
         """
         self.__dico = {}
@@ -50,20 +43,16 @@ class GestionnairePreferences(Singleton):
     def importer(self, nomFichier):
         """
         Importe les preferences depuis le fichier.
-
         La suppression des valeurs superflue est automatique (tab, espaces,...)
-
         nomFichier (String) -- Le nom du fichier d'importation
-
         - depuis - 1.0
-
         - auteur - Julien Burdy
         """
         # recuperation des lignes du fichier
         try:
             contenu = open(nomFichier).readlines()
         except:
-            raise nomFichier
+            raise Exception(f"problème de lecture avec {nomFichier}")
 
         # suppression des commentaires
         contenu = [x.split('#')[0] for x in contenu]
@@ -81,30 +70,22 @@ class GestionnairePreferences(Singleton):
     def valeurDe(self, option):
         """
         Revois la valeur d'une option.
-
         option (String) -- l'option dont on veut la valeur
-
         returne -- la valeur (exception si elle n'existe pas)
-
         - depuis - 1.0
-
         - auteur - Julien Burdy
         """
         try:
             return self.__dico[option]
         except:
-            raise "option non definie"
+            raise Exception("option non definie")
 
     def optionDefinie(self, option):
         """
         Revois si une option est definie ou non.
-
         option (String) -- l'option en question
-
         returne -- 0 si elle ne l'est pas
-
         - depuis - 1.0
-
         - auteur - Julien Burdy
         """
         return option in self.__dico
@@ -112,15 +93,10 @@ class GestionnairePreferences(Singleton):
     def mettreAJour(self, option, nouvelValeur):
         """
         Mise a jour de la valeur d'une option.
-
         Creation de l'option si elle n'existe pas.
-
         option (String) -- l'option a mettre a jour
-
         nouvelValeur -- la valeur a mettre a jour
-
         - depuis - 1.0
-
         - auteur - Julien Burdy
         """
         self.__dico.update({option: nouvelValeur})
@@ -128,15 +104,10 @@ class GestionnairePreferences(Singleton):
     def ajouterOption(self, option, valeur):
         """
         Ajoute une option au gestionnaire.
-
         Actuelement ceci est un alias de mettreAJour()
-
         option (String) -- l'option a ajouter
-
         valeur -- sa valeur
-
         - depuis - 1.0
-
         - auteur - Julien Burdy
         """
         self.mettreAJour(option, valeur)
@@ -144,11 +115,8 @@ class GestionnairePreferences(Singleton):
     def listeOptions(self):
         """
         Retourne la liste des options presente dans le gestionnaire.
-
         returne (List) -- La liste des options
-
         - depuis - 1.0
-
         - auteur - Julien Burdy
         """
         return list(self.__dico.keys())

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
-Module contenant les classes §v§nements.
+Module contenant les classes événements.
 
 $Id: Evenement.py,v 1.19 2003/02/09 12:17:38 vega01 Exp $
 """
@@ -28,15 +28,10 @@ class Evenement:
     def __init__(self, temps, traiter=None):
         """
         Constructeur
-
         temps (Int) -- Le moment ou l'evenement aura lieu
-
         traiter (Function) -- Le code a executer lorsque l'evenement a lieu
-
         retourne (Evenement) -- Un objet evenement
-
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         self._temps = temps
@@ -45,12 +40,9 @@ class Evenement:
     def traiter(self):
         """
         Traitement associe § l'evenement.
-
-        Par d§faut aucun traitement associe. Peut d§clencher l'exception
+        Par d§faut aucun traitement associe. Peut déclencher l'exception
         Erreur_Traiter.
-
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         self._traiter()
@@ -58,19 +50,15 @@ class Evenement:
     def temps(self):
         """
         Donne le temps auquel l'evenement doit avoir lieu.
-
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         return self._temps
 
     def __repr__(self):
         """
-        Donne des infos sur l'§v§nement
-
+        Donne des infos sur l'événement
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         return self.__class__.__name__ + "\ntemps : " + str(self._temps)
@@ -79,22 +67,16 @@ class Evenement:
 class EvClient(Evenement):
     """
     Evenement client.
-
     Permet de savoir qu'un client a appelle un taxi est § quel moment.
     """
 
     def __init__(self, temps, positions):
         """
         Constructeur
-
         temps (Int) -- Le moment ou l'evenement aura lieu
-
         positions (Tuple) -- Tuple contenant la position + la destination
-
         retourne (EvClient) -- Un objet EvClient
-
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         Evenement.__init__(self, temps, self.__traitementClient)
@@ -105,12 +87,8 @@ class EvClient(Evenement):
     def chemin(self):
         """
         Selecteur.
-
-        retourne (Chemin) -- Chemin pour aller de la position intial a
-                                  la destination.
-
+        retourne (Chemin) -- Chemin pour aller de la position intial a la destination.
         - depuis - 1.1
-
         - auteur - Vincent Decorges
         """
         return self.__chemin
@@ -118,12 +96,8 @@ class EvClient(Evenement):
     def cheminClient(self):
         """
         Selecteur.
-
-        retourne (Chemin) -- Chemin que le taxi doit faire pour aller
-                                  chercher le client.
-
+        retourne (Chemin) -- Chemin que le taxi doit faire pour aller chercher le client.
         - depuis - 1.3
-
         - auteur - Vincent Decorges
         """
         return self.__cheminClient
@@ -131,12 +105,8 @@ class EvClient(Evenement):
     def positions(self):
         """
         Selecteur.
-
         retourne (Tuple arcs) -- Position du client et destination
-
-
         - depuis - 1.3
-
         - auteur - Vincent Decorges
         """
         return self.__positions
@@ -144,11 +114,8 @@ class EvClient(Evenement):
     def __traitementClient(self):
         """
         Appeler par traiter.
-
-        Choisi un taxi d'apr§s la politique.
-
+        Choisi un taxi d'après la politique.
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
 
@@ -168,10 +135,8 @@ class EvClient(Evenement):
 
     def __repr__(self):
         """
-        Donne des infos sur l'§v§nement
-
+        Donne des infos sur l'événement
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         return Evenement.__repr__(self) + "\nchemin : " + str(self.__chemin) \
@@ -181,24 +146,17 @@ class EvClient(Evenement):
 class EvTaxi(Evenement):
     """
     Evenement Taxi.
-
     Classe racine des evenements que peut lancer un taxi.
     """
 
     def __init__(self, temps, taxi, traiter=None):
         """
         Constructeur
-
         temps (Int) -- Le moment ou l'evenement aura lieu
-
         taxi (Taxi) -- Le taxi qui cree l'evenement
-
         traitement (Function) -- Traitement a effectue
-
         retourne (EvTaxi) -- Un objet EvTaxi
-
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         Evenement.__init__(self, temps, traiter)
@@ -207,21 +165,16 @@ class EvTaxi(Evenement):
     def taxi(self):
         """
         Retourne le taxi qui a cree l'evenement
-
         retourne (Taxi) -- Un objet Taxi
-
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         return self._taxi
 
     def __repr__(self):
         """
-        Donne des infos sur l'§v§nement
-
+        Donne des infos sur l'événement
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         return Evenement.__repr__(self) + "\ntaxi : " + str(self._taxi.getNo())
@@ -235,17 +188,11 @@ class EvChargerClient(EvTaxi):
     def __init__(self, temps, taxi, client):
         """
         Constructeur.
-
         temps (Int) -- Le moment ou l'evenement aura lieu
-
         taxi (Taxi) -- Le taxi qui cree l'evenement
-
         client (EvClient) -- Le client que le taxi charge
-
         retourne (EvChargerClient) -- Un objet EvChargerClient
-
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         EvTaxi.__init__(self, temps, taxi, self.__traitementCharger)
@@ -254,11 +201,8 @@ class EvChargerClient(EvTaxi):
     def client(self):
         """
         Retourne l'evenement client.
-
         retourne (EvClient) -- Un objet EvClient
-
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         return self._client
@@ -266,21 +210,16 @@ class EvChargerClient(EvTaxi):
     def __traitementCharger(self):
         """
         Appeler par traiter.
-
         S'envoye au taxi.
-
         - depuis - 1.3
-
         - auteur - Vincent Decorges
         """
         self._taxi.traiterEvenement(self)
 
     def __repr__(self):
         """
-        Donne des infos sur l'§v§nement
-
+        Donne des infos sur l'événement
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         return EvTaxi.__repr__(self) + "\nclient : " + self._client.__repr__()
@@ -294,15 +233,10 @@ class EvPoserClient(EvChargerClient):
     def __init__(self, temps, taxi, client):
         """
         Constructeur.
-
         temps (Int) -- Le moment ou l'evenement aura lieu
-
         taxi (Taxi) -- Le taxi qui cree l'evenement
-
         retourne (EvTaxi) -- Un objet EvTaxi
-
         - depuis - 1.3
-
         - auteur - Vincent Decorges
         """
         EvTaxi.__init__(self, temps, taxi, self.__traitementStation)
@@ -312,11 +246,9 @@ class EvPoserClient(EvChargerClient):
     def cheminStation(self):
         """
         Selecteur.
-
         retourne (Chemin) -- Chemin que le taxi doit faire pour aller
                          chercher le client.
         - depuis - 1.3
-
         - auteur - Vincent Decorges
         """
         return self.__cheminStation
@@ -324,11 +256,8 @@ class EvPoserClient(EvChargerClient):
     def station(self):
         """
         la station ou est le taxi.
-
         retourne (Station) -- Un objet Station
-
         - depuis - 1.6
-
         - auteur - Vincent Decorges
         """
         return self._station
@@ -336,11 +265,8 @@ class EvPoserClient(EvChargerClient):
     def __traitementStation(self):
         """
         Appeler par traiter.
-
         D'apres la politique redonne une station.
-
         - depuis - 1.4
-
         - auteur - Vincent Decorges
         """
         # On recupere la central pour avoir la politique
@@ -356,10 +282,8 @@ class EvPoserClient(EvChargerClient):
 
     def __repr__(self):
         """
-        Donne des infos sur l'§v§nement
-
+        Donne des infos sur l'événement
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         return EvChargerClient.__repr__(self) + "\nclient : " + self._client.__repr__() \
@@ -374,17 +298,11 @@ class EvArriverStation(EvTaxi):
     def __init__(self, temps, taxi, station):
         """
         Constructeur.
-
         temps (Int) -- Le moment ou l'evenement aura lieu
-
         taxi (Taxi) -- Le taxi qui cree l'evenement
-
         station (Station) -- La station ou le taxi arrive
-
         retourne (EvArriverStation) -- EvArriverStation
-
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         EvTaxi.__init__(self, temps, taxi, self.__traitementStation)
@@ -393,21 +311,16 @@ class EvArriverStation(EvTaxi):
     def __traitementStation(self):
         """
         Appeler par traiter.
-
         Doit transmettre des infos § la station.
-
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         self._taxi.traiterEvenement(self)
 
     def __repr__(self):
         """
-        Donne des infos sur l'§v§nement
-
+        Donne des infos sur l'événement
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         return EvTaxi.__repr__(self) + "\nstation : " + str(self._station.getNo())

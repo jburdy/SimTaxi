@@ -84,7 +84,7 @@ class FenetreControl(wxFrame):
     Fenetre principale.
     
     Fenetre principale gerant les autres fen§tres et contenant les
-    contr§les principaux.
+    contrôles principaux.
     
     :version: $Revision 1.0 $
     :author: Gregory Burri

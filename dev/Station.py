@@ -13,7 +13,6 @@ __date__ = '2002-11-20'
 class ErreurReservation(Exception):
     """
     Exception quand on veut r§server une place qui n'existe pas.
-
     """
     pass
 
@@ -23,7 +22,6 @@ class ErreurTaxisInconnu(Exception):
     Exception quand un taxi d§sire quitter une station dans laquelle
     il ne se trouve pas.
     """
-
     pass
 
 
@@ -31,7 +29,6 @@ class ErreurSommetsIdentiques(Exception):
     """
     Exception quand on cr§e une station avec 2 sommets identiques
     """
-
     pass
 
 
@@ -54,20 +51,13 @@ class Station:
     def __init__(self, nbPlaces, no, sommet1, sommet2):
         """
         Constructeur.
-
         Permet de creer un objet de la classe.
-
         nbPlaces (int) -- Le nombre de places de la station
-
         no (int) -- Le no de la station
-
         sommet1, sommet2 (tuple(nomSommet, Point)) -- Les sommets entre lesquels est la station
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
-
         # Si les 2 sommets sont identiques
         if sommet1[0] == sommet2[0]:
             raise ErreurSommetsIdentiques
@@ -84,12 +74,9 @@ class Station:
     def reserverPlace(self):
         """
         Reserver une place dans la station.
-
         Permet de reserver une place dans la station. Si il ne reste plus de
         places, on propage une Exception.
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
         # Si il n'y a plus de places,
@@ -104,15 +91,11 @@ class Station:
     def quitterPlace(self, noTaxi):
         """
         Quitter une place.
-
         Permet de liberer une place dans la station. Le no du taxi qui part
         est passe en parametre. Si le taxi n'est pas dans la station, une
         Exception est propagee.
-
         noTaxi (int) -- le no du taxi qui quitte la station
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
         # Si le taxi n'est pas dans la liste,
@@ -130,12 +113,9 @@ class Station:
     def annulerReservation(self):
         """
         Annuler une reservation anterieure.
-
         Permet d'annuler une reservation faite plus t§t. Si aucune reservation
         n'existe, une exception est propagee.
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
         # Si aucune reservation
@@ -151,13 +131,9 @@ class Station:
     def getNbPlacesTot(self):
         """
         Renvoie le nombre de places de la station.
-
         Permet de connaitre le nombre de places totales de la station.
-
         retourne (int) -- le nombre de places
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
         return self.__nbPlacesTot
@@ -165,13 +141,9 @@ class Station:
     def getNbPlacesLibres(self):
         """
         Renvoie le nombre de places libres de la station.
-
         Permet de connaitre le nombre de places libres de la station.
-
         retourne (int) -- le nombre de places libres
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
         return self.__nbPlacesLibres
@@ -179,19 +151,14 @@ class Station:
     def getPosition(self):
         """
         Renvoie la position de la station.
-
         Permet de connaitre la position de la station sur le graphe en
         fonction des informations contenues dans les sommets.
-
         retourne (tuple(tuple(float,float),tuple(float,float))) -- un tuple contenant 2 tuples.
                         1 avec la position (x,y)  et le 2e avec
                         vecteur d'orientation.
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
-
         # Calcul des positions x et y de la station
         x = self.__sommetAvant[1].getX() + \
             (self.__sommetApres[1].getX() - self.__sommetAvant[1].getX()) / 2.0
@@ -208,14 +175,10 @@ class Station:
     def prendPlace(self, noTaxi):
         """
         Pour dire qu'un taxi prend place dans la station.
-
         Est appelee quand un taxi prend place dans la station. Si aucune place
         n'a ete reservee, une exception est levee.
-
         noTaxi (int) -- Le no du taxi qui prend place dans la station
-
         - depuis - 1.0
-
         - auteur - Lucien Chaboudez
         """
         # Si aucune place n'est reservee,
@@ -231,13 +194,9 @@ class Station:
     def getNo(self):
         """
         Renvoie le no de la station.
-
         Permet de connaitre le no qui a ete attribue a la station.
-
         retourne (int) -- Le no attribu§
-
         - depuis - 1.2
-
         - auteur - Lucien Chaboudez
         """
         # Retour du no
@@ -246,19 +205,13 @@ class Station:
     def affecterTaxi(self, noTaxi):
         """
         affecte un taxi a la station.
-
-        Permet d'affecter un taxi a la station. Sera appelee a
-        l'initialisation du programme.
-
+        Permet d'affecter un taxi a la station. Sera appelee a l'initialisation du programme.
         noTaxi (int) -- Le no du taxi a ajouter
-
         - depuis - 1.2
-
         - auteur - Lucien Chaboudez
         """
         # Si il n'y a plus de place libre,
         if self.__nbPlacesLibres == 0:
-
             raise Exception("erreur Affectation Impossible")
 
         # Modification de l'etat
@@ -268,13 +221,9 @@ class Station:
     def arc(self):
         """
         renvoie l'arc sur lequel la station se trouve.
-
         Permet de connaitre l'arc sur laquelle la station se trouve.
-
-        retourne (tuple(NomSommet,NomSommet)) -- un tuple contenant les sommets entre lesquels la
-                               station se trouve.
+        retourne (tuple(NomSommet,NomSommet)) -- un tuple contenant les sommets entre lesquels la station se trouve.
         - depuis - 1.3
-
         - auteur - Lucien Chaboudez
         """
         return (self.__sommetAvant[0], self.__sommetApres[0])
@@ -282,26 +231,19 @@ class Station:
     def getNbTaxis(self):
         """
         renvoie le nombre de taxi.
-
         Permet de connaitre le nombre de taxis qui sont dans la station.
-
         retourne (int) -- le nombre de taxis.
         - depuis - 1.14
-
         - auteur - Lucien Chaboudez
         """
-
         return len(self.__listeTaxis)
 
     def getTaxiSuivant(self):
         """
         renvoie le no du 1er taxi de la liste.
-
         Permet de connaitre le no du taxi qui est en t§te de la liste.
-
         retourne (int) -- le no du taxi.
         - depuis - 1.14
-
         - auteur - Lucien Chaboudez
         """
         # Si il n'y a pas de taxis,

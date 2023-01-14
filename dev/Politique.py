@@ -25,29 +25,20 @@ class Politique:
 
     def choisirTaxi(self, client):
         """
-        Retourne un taxi pour prendre en charge un client 
-        d'apr§s la politique courante.
-
+        Retourne un taxi pour prendre en charge un client d'après la politique courante.
         client (EvClient) -- Le client qui veut faire la course
-
         retourne (Tuple(Taxi, Chemin)) -- Le taxi qui va prendre en charge la course
-
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         raise ErreurAbstraite
 
     def choisirStation(self, taxi):
         """
-        Retourne une station d'apr§s la politique courante.
-
-        taxi (EvTaxi) -- Le taxi qui va § une station
-
+        Retourne une station d'après la politique courante.
+        taxi (EvTaxi) -- Le taxi qui va à une station
         retourne (Station, Chemin) -- La station
-
         - depuis - 1.0
-
         - auteur - Vincent Decorges
         """
         raise ErreurAbstraite

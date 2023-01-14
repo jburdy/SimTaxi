@@ -15,7 +15,6 @@ from Singleton import Singleton
 class Graphe(Singleton):
     """
     Graphe oriente et pondere (pondere par des attributs).
-
     Les sommets et les arcs ont des attributs de n'importe quel type.
     Attentio, cette classe est un singleton, c'est-a-dire qu'un seule objet
     peut etre cree. Les suivants pointent sur le premier.
@@ -24,15 +23,10 @@ class Graphe(Singleton):
     def init(self, fichierImport=None):
         """
         Cette methode sert a creer un graphe.
-
         On peut importer un graphe a partir d'un fichier donne.
-
         fichierImport (String) -- Le nom du fichier a importer
-
         retourne (Graphe) -- Un objet Graphe
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         # le dico representant le graphe
@@ -44,9 +38,7 @@ class Graphe(Singleton):
     def initialiser(self):
         """
         Cette methode permet d'initialiser le graphe.
-
         - depuis - 1.9
-
         - auteur - Joel Jaquemet
         """
         # effacer le graphe
@@ -55,14 +47,10 @@ class Graphe(Singleton):
     def importer(self, fichierImport):
         """
         Cette methode permet d'importer un graphe depuis un fichier.
-
         Le fichier a du etre cree avec la methode "exporter" auparavant pour
         que le type soit compatible. De plus, le graphe actuel sera ecrase.
-
         fichierImport (String) -- Le nom du fichier d'importation
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         import pickle
@@ -81,11 +69,8 @@ class Graphe(Singleton):
     def exporter(self, fichierExport):
         """
         Cette methode permet d'exporter un graphe vers un fichier.
-
         fichierExport (String) -- Le nom du fichier d'exportation
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         import pickle
@@ -103,15 +88,10 @@ class Graphe(Singleton):
     def insererSommet(self, nomSommet, attributsSommet=None):
         """
         Cette methode permet d'inserer un sommet avec ses attributs.
-
         Exception levee si le sommet est deja defini dans le graphe.
-
         nomSommet -- Le nom du sommet
-
         attributsSommet -- Les attributs du sommet
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         # controle du sommet donne
@@ -124,18 +104,12 @@ class Graphe(Singleton):
     def insererArc(self, sommetDep, sommetArr, attributsArc=None):
         """
         Cette methode permet d'inserer un arc avec ses attributs.
-
         Exception levee si les sommets ne sont pas definis dans le graphe ou
         si l'arc est deja defini.
-
         sommetDep -- Le nom du sommet de depart de l'arc
-
         sommetArr -- Le nom du sommet d'arrivee de l'arc
-
         attributsArc -- Les attributs de l'arc
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         # controle que l'arc ne soit pas deja defini
@@ -148,14 +122,10 @@ class Graphe(Singleton):
     def supprimerSommet(self, sommet):
         """
         Cette methode permet de supprimer un sommet.
-
         Les arcs relies au sommet sont aussi supprimes.
         Exception levee si le sommet n'est pas defini dans le graphe.
-
         sommet -- Le nom du sommet
-
         - depuis - 1.3
-
         - auteur - Joel Jaquemet
         """
         # controle du sommet donne
@@ -172,16 +142,11 @@ class Graphe(Singleton):
     def supprimerArc(self, sommetDep, sommetArr):
         """
         Cette methode permet de supprimer un arc.
-
         Exception levee si les sommets ou l'arc ne sont pas definis dans le
         graphe.
-
         sommetDep -- Le nom du sommet de depart de l'arc
-
         sommetArr -- Le nom du sommet d'arrivee de l'arc
-
         - depuis - 1.3
-
         - auteur - Joel Jaquemet
         """
         # controle que l'arc soit deja defini
@@ -194,15 +159,10 @@ class Graphe(Singleton):
     def remplacerAttributsSommet(self, sommet, attributsSommet):
         """
         Cette methode permet de modifier les attributs d'un sommet.
-
         Exception levee si le sommet n'est pas defini dans le graphe.
-
         sommet -- Le nom du sommet
-
         attributsSommet -- Les nouveaux attributs du sommet
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         # controle du sommet donne
@@ -215,18 +175,12 @@ class Graphe(Singleton):
     def remplacerAttributsArc(self, sommetDep, sommetArr, attributsArc):
         """
         Cette methode permet de modifier les attributs d'un arc.
-
         Exception levee si les sommets ou l'arc ne sont pas definis dans le
         graphe.
-
         sommetDep -- Le nom du sommet de depart de l'arc
-
         sommetArr -- Le nom du sommet d'arrivee de l'arc
-
         attributsArc -- Les nouveaux attributs de l'arc
-
         - depuis - 1.2
-
         - auteur - Joel Jaquemet
         """
         # controle que l'arc soit deja defini
@@ -240,12 +194,9 @@ class Graphe(Singleton):
         """
         Cette methode permet d'ajouter tous les arcs de sens contraire a ceux
         deja definis dans le graphe.
-
         Les nouveaux arcs ont les memes attributs que ceux de sens oppose.
         Exception levee si un arcs a deja un semblable de sens contraire.
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         sauve = self.__dico.copy()  # pour restituer le graphe en cas d'erreur
@@ -269,15 +220,10 @@ class Graphe(Singleton):
     def attributsSommet(self, sommet):
         """
         Cette methode permet de connaitre les attributs d'un sommet.
-
         Exception levee si le sommet n'est pas defini dans le graphe.
-
         sommet -- Le nom du sommet
-
         retourne -- Les attributs du sommet donne
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         # controle du sommet donne
@@ -290,18 +236,12 @@ class Graphe(Singleton):
     def attributsArc(self, sommetDep, sommetArr):
         """
         Cette methode permet de connaitre les attributs d'un arc.
-
         Exception levee si les sommets ou l'arc ne sont pas definis dans le
         graphe.
-
         sommetDep -- Le nom du sommet de depart de l'arc
-
         sommetArr -- Le nom du sommet d'arrivee de l'arc
-
         retourne -- : Les attributs de l'arc donne
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         # controle de l'arc donne
@@ -314,11 +254,8 @@ class Graphe(Singleton):
     def nbSommets(self):
         """
         Cette methode donne le nombre de sommets du graphe.
-
         retourne (Int) -- Le nombre de sommets du graphe
-
         - depuis - 1.2
-
         - auteur - Joel Jaquemet
         """
         # retourner le nombre d'entrees du dico
@@ -327,11 +264,8 @@ class Graphe(Singleton):
     def nbArcs(self):
         """
         Cette methode donne le nombre d'arcs du graphe.
-
         retourne (Int) -- Le nombre d'arcs du graphe
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         nbArcs = 0
@@ -344,20 +278,15 @@ class Graphe(Singleton):
         """
         Cette methode donne la liste contenant tous les sommets du graphe
         avec leurs attributs si on le souhaite.
-
         Par defaut (attributs = faux), la liste contient uniquement le nom
         des sommets et pas leurs attributs.
         Si attributs = vrai, la liste contiendra des tuples (1 par sommet)
         qui contiendront (dans l'ordre) le nom du sommet et ses attributs.
         L'ordre des sommets est identique a celui de l'insertion de ces
         derniers.
-
         attributs (Boolean) -- Les sommets avec leurs attributs ou pas
-
         retourne (List) -- La liste des sommets du graphe
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         if attributs:  # retourner la liste des sommets avec attributs
@@ -373,18 +302,13 @@ class Graphe(Singleton):
     def listeArcs(self, attributs=0):
         """
         Cette methode donne la liste contenant tous les arcs du graphe.
-
         La liste contient des tuples (1 par arc) qui contiennent (dans
         l'ordre) les noms de ces sommets de depart et d'arrivee et ses
         attributs.
         Par defaut, les attributs ne sont pas mis dans les tuples des arcs.
-
         attributs (Boolean) -- Les arcs avec leurs attributs ou pas
-
         retourne (List) -- La liste des arcs du graphe
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         liste = []
@@ -401,15 +325,10 @@ class Graphe(Singleton):
     def sommetsVus(self, sommet):
         """
         Cette methode donne une liste des sommets vus par le sommet donne.
-
         Exception levee si le sommet n'est pas defini dans le graphe.
-
         sommet -- Le nom du sommet
-
         retourne -- Liste : Liste des sommets vus par le sommet donne
-
         - depuis - 1.5
-
         - auteur - Joel Jaquemet
         """
         # controle du sommet donne
@@ -422,15 +341,10 @@ class Graphe(Singleton):
     def sommetsVoyants(self, sommet):
         """
         Cette methode donne une liste des sommets qui voient le sommet donne.
-
         Exception levee si le sommet n'est pas defini dans le graphe.
-
         sommet -- Le nom du sommet
-
         retourne (List) -- Liste des sommets qui voient le sommet donne
-
         - depuis - 1.5
-
         - auteur - Joel Jaquemet
         """
         # controle du sommet donne
@@ -447,13 +361,9 @@ class Graphe(Singleton):
     def sommetDefini(self, sommet):
         """
         Cette methode permet de savoir si un sommet est defini ou pas.
-
         sommet -- Le nom du sommet
-
         retourne (Boolean) -- Indique si le sommet est defini ou pas
-
         - depuis - 1.2
-
         - auteur - Joel Jaquemet
         """
         # retourner si le sommet est defini ou pas
@@ -462,17 +372,11 @@ class Graphe(Singleton):
     def arcDefini(self, sommetDep, sommetArr):
         """
         Cette methode permet de savoir si un arc est defini ou pas.
-
         Exception levee si les sommets ne sont pas definis dans le graphe.
-
         sommetDep -- Le nom du sommet de depart de l'arc
-
         sommetArr -- Le nom du sommet d'arrivee de l'arc
-
         retourne (Boolean) -- Indique si l'arc est defini ou pas
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         # controle des sommets donnes
@@ -487,11 +391,8 @@ class Graphe(Singleton):
     def afficher(self):
         """
         Cette methode permet d'afficher un graphe (en String).
-
         Cette methode est utile uniquement pour le deboguage.
-
         - depuis - 1.0
-
         - auteur - Joel Jaquemet
         """
         # parcourir et afficher chaque structure des sommets du graphe
